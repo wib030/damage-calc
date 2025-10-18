@@ -1649,7 +1649,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Chinchou: {abilities: {0: 'Volt Absorb'}},
   Cleffa: {abilities: {0: 'Cute Charm'}},
   Corsola: {abilities: {0: 'Hustle'}},
-  Crobat: {abilities: {0: 'Inner Focus'}},
+  Crobat: {abilities: {0: 'Speed Boost'}},
   Croconaw: {abilities: {0: 'Torrent'}},
   Cyndaquil: {abilities: {0: 'Blaze'}},
   Delibird: {abilities: {0: 'Vital Spirit'}},
