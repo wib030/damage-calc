@@ -3164,13 +3164,13 @@ var DPP_PATCH = {
     },
     Floatzel: {
         types: ['Water'],
-        bs: { hp: 85, at: 105, df: 55, sa: 85, sd: 50, sp: 115 },
+        bs: { hp: 85, at: 115, df: 75, sa: 85, sd: 70, sp: 115 },
         weightkg: 33.5,
         abilities: { 0: 'Swift Swim' }
     },
     Froslass: {
         types: ['Ice', 'Ghost'],
-        bs: { hp: 70, at: 80, df: 70, sa: 80, sd: 70, sp: 110 },
+        bs: { hp: 70, at: 80, df: 70, sa: 95, sd: 70, sp: 110 },
         weightkg: 26.6,
         abilities: { 0: 'Snow Cloak' }
     },
@@ -3183,9 +3183,9 @@ var DPP_PATCH = {
     },
     Gallade: {
         types: ['Psychic', 'Fighting'],
-        bs: { hp: 68, at: 125, df: 65, sa: 65, sd: 115, sp: 80 },
+        bs: { hp: 68, at: 125, df: 65, sa: 65, sd: 115, sp: 85 },
         weightkg: 52,
-        abilities: { 0: 'Steadfast' }
+        abilities: { 0: "Sharpness" }
     },
     Garchomp: {
         types: ['Dragon', 'Ground'],
@@ -3843,6 +3843,63 @@ var DPP_PATCH = {
     Electrode: {
         bs: { hp: 60, at: 75, df: 70, sa: 80, sd: 80, sp: 150 },
         abilities: { 0: "Sturdy" }
+    },
+    Entei: {
+        bs: { hp: 115, at: 115, df: 105, sa: 90, sd: 95, sp: 100 },
+        abilities: { 0: "Pressure" }
+    },
+    Espeon: {
+        abilities: { 0: "Solar Power" }
+    },
+    'Farfetch\u2019d': {
+        bs: { hp: 42, at: 145, df: 35, sa: 58, sd: 42, sp: 60 },
+        abilities: { 0: "Huge Power" }
+    },
+    Spearow: {
+        types: ["Dark", "Flying"],
+        abilities: { 0: "Intimidate" }
+    },
+    Fearow: {
+        types: ["Dark", "Flying"],
+        bs: { hp: 88, at: 110, df: 95, sa: 61, sd: 103, sp: 100 },
+        abilities: { 0: "Intimidate" }
+    },
+    Croconaw: {
+        abilities: { 0: "Shakedown" }
+    },
+    Feraligatr: {
+        bs: { hp: 85, at: 115, df: 100, sa: 79, sd: 93, sp: 78 },
+        abilities: { 0: "Strong Jaw" }
+    },
+    Flareon: {
+        bs: { hp: 65, at: 130, df: 60, sa: 95, sd: 110, sp: 85 },
+        abilities: { 0: "Hotheaded" }
+    },
+    Vibrava: {
+        bs: { hp: 50, at: 100, df: 50, sa: 80, sd: 50, sp: 80 },
+        abilities: { 0: "Compound Eyes" }
+    },
+    Flygon: {
+        bs: { hp: 80, at: 125, df: 80, sa: 80, sd: 80, sp: 105 },
+        abilities: { 0: "Thick Fat" }
+    },
+    Sentret: {
+        abilities: { 0: "Unburden" }
+    },
+    Furret: {
+        bs: { hp: 85, at: 106, df: 64, sa: 45, sd: 55, sp: 90 },
+        abilities: { 0: "Unburden" }
+    },
+    Ralts: {
+        types: ["Psychic"]
+    },
+    Kirlia: {
+        types: ["Psychic"]
+    },
+    Gardevoir: {
+        types: ["Psychic"],
+        bs: { hp: 68, at: 65, df: 65, sa: 125, sd: 115, sp: 90 },
+        abilities: { 0: "Rivalry" }
     }
 };
 var DPP = (0, util_1.extend)(true, {}, ADV, DPP_PATCH);
