@@ -181,7 +181,7 @@ var RBY = {
     Ditto: { types: ['Normal'], bs: { hp: 48, at: 48, df: 48, sp: 48, sl: 48 }, weightkg: 4 },
     Dodrio: {
         types: ['Normal', 'Flying'],
-        bs: { hp: 80, at: 110, df: 80, sp: 110, sl: 60 },
+        bs: { hp: 60, at: 110, df: 70, sp: 100, sl: 60 },
         weightkg: 85.2
     },
     Doduo: {
@@ -865,7 +865,7 @@ var GSC_PATCH = {
     Dewgong: { bs: { sa: 70, sd: 95 } },
     Diglett: { bs: { sa: 35, sd: 45 } },
     Ditto: { bs: { sa: 48, sd: 48 }, gender: 'N' },
-    Dodrio: { bs: { sa: 60, sd: 90 } },
+    Dodrio: { bs: { sa: 60, sd: 60 } },
     Doduo: { bs: { sa: 35, sd: 35 } },
     Dragonair: { bs: { sa: 70, sd: 70 } },
     Dragonite: { bs: { sa: 100, sd: 100 } },
@@ -1548,8 +1548,8 @@ var ADV_PATCH = {
     Dewgong: { abilities: { 0: 'Thick Fat' } },
     Diglett: { abilities: { 0: 'Sand Veil' } },
     Ditto: { abilities: { 0: 'Limber' } },
-    Dodrio: { abilities: { 0: 'Adaptability' } },
-    Doduo: { abilities: { 0: 'Early Bird' } },
+    Dodrio: { abilities: { 0: 'Run Away' } },
+    Doduo: { abilities: { 0: 'Run Away' } },
     Dragonair: { abilities: { 0: 'Shed Skin' } },
     Dragonite: { abilities: { 0: 'Inner Focus' } },
     Dratini: { abilities: { 0: 'Shed Skin' } },
@@ -1688,7 +1688,7 @@ var ADV_PATCH = {
     Chinchou: { abilities: { 0: 'Volt Absorb' } },
     Cleffa: { abilities: { 0: 'Cute Charm' } },
     Corsola: { abilities: { 0: 'Hustle' } },
-    Crobat: { abilities: { 0: 'Speed Boost' } },
+    Crobat: { abilities: { 0: 'Inner Focus' } },
     Croconaw: { abilities: { 0: 'Torrent' } },
     Cyndaquil: { abilities: { 0: 'Blaze' } },
     Delibird: { abilities: { 0: 'Vital Spirit' } },
@@ -3822,6 +3822,27 @@ var DPP_PATCH = {
         bs: { hp: 86, at: 76, df: 86, sa: 116, sd: 56, sp: 95 },
         weightkg: 51.5,
         abilities: { 0: 'Speed Boost' }
+    },
+    Crobat: {
+        abilities: { 0: 'Speed Boost' }
+    },
+    Doduo: {
+        abilities: { 0: 'Early Bird' }
+    },
+    Dodrio: {
+        bs: { hp: 80, at: 110, df: 80, sa: 60, sd: 90, sp: 110 },
+        abilities: { 0: 'Adaptability' }
+    },
+    Delibird: {
+        bs: { hp: 45, at: 85, df: 45, sa: 105, sd: 45, sp: 105 },
+        abilities: { 0: "Slush Rush" }
+    },
+    Voltorb: {
+        abilities: { 0: "Sturdy" }
+    },
+    Electrode: {
+        bs: { hp: 60, at: 75, df: 70, sa: 80, sd: 80, sp: 150 },
+        abilities: { 0: "Sturdy" }
     }
 };
 var DPP = (0, util_1.extend)(true, {}, ADV, DPP_PATCH);
