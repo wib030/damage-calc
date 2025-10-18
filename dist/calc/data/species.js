@@ -2409,7 +2409,7 @@ var ADV_PATCH = {
         types: ['Grass', 'Poison'],
         bs: { hp: 50, at: 60, df: 45, sa: 100, sd: 80, sp: 65 },
         weightkg: 2,
-        abilities: { 0: 'Natural Cure' }
+        abilities: { 0: "Technician" }
     },
     Sableye: {
         types: ['Dark', 'Ghost'],
@@ -2715,16 +2715,34 @@ var DPP_PATCH = {
     Dusclops: { nfe: true },
     Electabuzz: { nfe: true },
     Gligar: { nfe: true },
-    Lickitung: { nfe: true },
+    Lickitung: {
+        nfe: true,
+        abilities: { 0: "Free Sample" }
+    },
     Magmar: { nfe: true },
-    Magneton: { nfe: true },
+    Magneton: {
+        nfe: true,
+        bs: { hp: 50, at: 60, df: 95, sa: 120, sd: 70, sp: 80 }
+    },
     Misdreavus: { nfe: true },
     Murkrow: { nfe: true },
-    Nosepass: { nfe: true },
-    Piloswine: { nfe: true },
+    Nosepass: {
+        nfe: true,
+        abilities: { 0: "Sand Stream" }
+    },
+    Piloswine: {
+        nfe: true,
+        abilities: { 0: "Thick Fat" }
+    },
     Pichu: { otherFormes: ['Pichu-Spiky-eared'] },
-    Porygon2: { nfe: true },
-    Rhydon: { nfe: true },
+    Porygon2: {
+        nfe: true,
+        bs: { hp: 85, at: 80, df: 125, sa: 105, sd: 130, sp: 60 }
+    },
+    Rhydon: {
+        nfe: true,
+        abilities: { 0: "Rock Head" }
+    },
     Roselia: { nfe: true },
     Sneasel: { nfe: true },
     Tangela: { nfe: true },
@@ -2961,7 +2979,7 @@ var DPP_PATCH = {
         bs: { hp: 40, at: 30, df: 35, sa: 50, sd: 70, sp: 55 },
         weightkg: 1.2,
         nfe: true,
-        abilities: { 0: 'Natural Cure' }
+        abilities: { 0: "Poison Point" }
     },
     Buizel: {
         types: ['Water'],
@@ -3049,7 +3067,7 @@ var DPP_PATCH = {
         bs: { hp: 67, at: 125, df: 40, sa: 30, sd: 30, sp: 58 },
         weightkg: 31.5,
         nfe: true,
-        abilities: { 0: 'Mold Breaker' }
+        abilities: { 0: "Chloroplast" }
     },
     Cresselia: {
         types: ['Psychic'],
@@ -3195,9 +3213,9 @@ var DPP_PATCH = {
     },
     Gastrodon: {
         types: ['Water', 'Ground'],
-        bs: { hp: 111, at: 83, df: 68, sa: 92, sd: 82, sp: 39 },
+        bs: { hp: 111, at: 83, df: 78, sa: 92, sd: 92, sp: 39 },
         weightkg: 29.9,
-        abilities: { 0: 'Sticky Hold' }
+        abilities: { 0: "Storm Drain" }
     },
     Gible: {
         types: ['Dragon', 'Ground'],
@@ -3224,9 +3242,9 @@ var DPP_PATCH = {
     },
     Glaceon: {
         types: ['Ice'],
-        bs: { hp: 65, at: 60, df: 110, sa: 130, sd: 95, sp: 65 },
+        bs: { hp: 65, at: 60, df: 120, sa: 130, sd: 95, sp: 85 },
         weightkg: 25.9,
-        abilities: { 0: 'Snow Cloak' }
+        abilities: { 0: "Technician" }
     },
     Glameow: {
         types: ['Normal'],
@@ -3276,15 +3294,15 @@ var DPP_PATCH = {
     },
     Honchkrow: {
         types: ['Dark', 'Flying'],
-        bs: { hp: 100, at: 125, df: 52, sa: 105, sd: 52, sp: 71 },
+        bs: { hp: 100, at: 136, df: 72, sa: 105, sd: 72, sp: 81 },
         weightkg: 27.3,
-        abilities: { 0: 'Insomnia' }
+        abilities: { 0: "Shakedown" }
     },
     Infernape: {
         types: ['Fire', 'Fighting'],
-        bs: { hp: 76, at: 104, df: 71, sa: 104, sd: 71, sp: 108 },
+        bs: { hp: 76, at: 104, df: 71, sa: 114, sd: 71, sp: 113 },
         weightkg: 55,
-        abilities: { 0: 'Blaze' }
+        abilities: { 0: "Blaze" }
     },
     Kitsunoh: {
         types: ['Ghost', 'Steel'],
@@ -3313,65 +3331,65 @@ var DPP_PATCH = {
     },
     Leafeon: {
         types: ['Grass'],
-        bs: { hp: 65, at: 110, df: 130, sa: 60, sd: 65, sp: 95 },
+        bs: { hp: 65, at: 130, df: 130, sa: 60, sd: 65, sp: 95 },
         weightkg: 25.5,
-        abilities: { 0: 'Leaf Guard' }
+        abilities: { 0: "Chlorophyll" }
     },
     Lickilicky: {
         types: ['Normal'],
-        bs: { hp: 110, at: 85, df: 95, sa: 80, sd: 95, sp: 50 },
+        bs: { hp: 110, at: 105, df: 95, sa: 80, sd: 95, sp: 50 },
         weightkg: 140,
-        abilities: { 0: 'Own Tempo' }
+        abilities: { 0: "Aftermath" }
     },
     Lopunny: {
-        types: ['Normal'],
-        bs: { hp: 65, at: 76, df: 84, sa: 54, sd: 96, sp: 105 },
+        types: ['Normal', 'Fighting'],
+        bs: { hp: 65, at: 116, df: 74, sa: 54, sd: 96, sp: 122 },
         weightkg: 33.3,
-        abilities: { 0: 'Cute Charm' }
+        abilities: { 0: "Scrappy" }
     },
     Lucario: {
         types: ['Fighting', 'Steel'],
-        bs: { hp: 70, at: 110, df: 70, sa: 115, sd: 70, sp: 90 },
+        bs: { hp: 60, at: 110, df: 70, sa: 125, sd: 55, sp: 99 },
         weightkg: 54,
-        abilities: { 0: 'Steadfast' }
+        abilities: { 0: 'Scrappy' }
     },
     Lumineon: {
         types: ['Water'],
-        bs: { hp: 69, at: 69, df: 76, sa: 69, sd: 86, sp: 91 },
+        bs: { hp: 109, at: 69, df: 76, sa: 69, sd: 86, sp: 91 },
         weightkg: 24,
         abilities: { 0: 'Swift Swim' }
     },
     Luxio: {
-        types: ['Electric'],
-        bs: { hp: 60, at: 85, df: 49, sa: 60, sd: 49, sp: 60 },
+        types: ["Electric", "Dark"],
+        bs: { hp: 60, at: 85, df: 49, sa: 60, sd: 49, sp: 70 },
         weightkg: 30.5,
         nfe: true,
-        abilities: { 0: 'Rivalry' }
+        abilities: { 0: "Guts" }
     },
     Luxray: {
-        types: ['Electric'],
-        bs: { hp: 80, at: 120, df: 79, sa: 95, sd: 79, sp: 70 },
+        types: ["Electric", "Dark"],
+        bs: { hp: 100, at: 120, df: 79, sa: 95, sd: 79, sp: 87 },
         weightkg: 42,
-        abilities: { 0: 'Rivalry' }
+        abilities: { 0: "Guts" }
     },
     Magmortar: {
         types: ['Fire'],
-        bs: { hp: 75, at: 95, df: 67, sa: 125, sd: 95, sp: 83 },
+        bs: { hp: 75, at: 95, df: 67, sa: 155, sd: 95, sp: 93 },
         weightkg: 68,
         abilities: { 0: 'Flame Body' }
     },
     Magnezone: {
         types: ['Electric', 'Steel'],
-        bs: { hp: 70, at: 70, df: 115, sa: 130, sd: 90, sp: 60 },
+        bs: { hp: 70, at: 70, df: 115, sa: 130, sd: 90, sp: 70 },
         weightkg: 180,
         gender: 'N',
         abilities: { 0: 'Magnet Pull' }
     },
     Mamoswine: {
         types: ['Ice', 'Ground'],
-        bs: { hp: 110, at: 130, df: 80, sa: 70, sd: 60, sp: 80 },
+        bs: { hp: 110, at: 130, df: 80, sa: 100, sd: 60, sp: 80 },
         weightkg: 291,
-        abilities: { 0: 'Oblivious' }
+        abilities: { 0: 'Thick Fat' }
     },
     Manaphy: {
         types: ['Water'],
@@ -3385,11 +3403,11 @@ var DPP_PATCH = {
         bs: { hp: 45, at: 20, df: 50, sa: 60, sd: 120, sp: 50 },
         weightkg: 65,
         nfe: true,
-        abilities: { 0: 'Swift Swim' }
+        abilities: { 0: "Rain Dish" }
     },
     Mesprit: {
         types: ['Psychic'],
-        bs: { hp: 80, at: 105, df: 105, sa: 105, sd: 105, sp: 80 },
+        bs: { hp: 105, at: 105, df: 80, sa: 105, sd: 80, sp: 105 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
         gender: 'N'
@@ -3403,7 +3421,7 @@ var DPP_PATCH = {
     },
     Mismagius: {
         types: ['Ghost'],
-        bs: { hp: 60, at: 60, df: 60, sa: 105, sd: 105, sp: 105 },
+        bs: { hp: 60, at: 60, df: 60, sa: 115, sd: 115, sp: 115 },
         weightkg: 4.4,
         abilities: { 0: 'Levitate' }
     },
@@ -3423,9 +3441,9 @@ var DPP_PATCH = {
     },
     Mothim: {
         types: ['Bug', 'Flying'],
-        bs: { hp: 70, at: 94, df: 50, sa: 94, sd: 50, sp: 66 },
+        bs: { hp: 70, at: 124, df: 50, sa: 124, sd: 50, sp: 86 },
         weightkg: 23.3,
-        abilities: { 0: 'Swarm' }
+        abilities: { 0: "Tinted Lens" }
     },
     Munchlax: {
         types: ['Normal'],
@@ -3443,9 +3461,9 @@ var DPP_PATCH = {
     },
     Pachirisu: {
         types: ['Electric'],
-        bs: { hp: 60, at: 45, df: 70, sa: 45, sd: 90, sp: 95 },
+        bs: { hp: 80, at: 45, df: 70, sa: 75, sd: 110, sp: 95 },
         weightkg: 3.9,
-        abilities: { 0: 'Run Away' }
+        abilities: { 0: 'Serene Grace' }
     },
     Palkia: {
         types: ['Water', 'Dragon'],
@@ -3456,9 +3474,9 @@ var DPP_PATCH = {
     },
     Phione: {
         types: ['Water'],
-        bs: { hp: 80, at: 80, df: 80, sa: 80, sd: 80, sp: 80 },
+        bs: { hp: 1, at: 80, df: 80, sa: 80, sd: 80, sp: 80 },
         weightkg: 3.1,
-        abilities: { 0: 'Hydration' },
+        abilities: { 0: "Reckless" },
         gender: 'N'
     },
     'Pichu-Spiky-eared': {
@@ -3477,7 +3495,7 @@ var DPP_PATCH = {
     },
     'Porygon-Z': {
         types: ['Normal'],
-        bs: { hp: 85, at: 80, df: 70, sa: 135, sd: 75, sp: 90 },
+        bs: { hp: 85, at: 80, df: 70, sa: 145, sd: 75, sp: 95 },
         weightkg: 34,
         gender: 'N',
         abilities: { 0: 'Adaptability' }
@@ -3498,9 +3516,9 @@ var DPP_PATCH = {
     },
     Probopass: {
         types: ['Rock', 'Steel'],
-        bs: { hp: 60, at: 55, df: 145, sa: 75, sd: 150, sp: 40 },
+        bs: { hp: 70, at: 55, df: 145, sa: 75, sd: 150, sp: 40 },
         weightkg: 340,
-        abilities: { 0: 'Sturdy' }
+        abilities: { 0: "Sand Stream" }
     },
     Protowatt: {
         types: ['Electric', 'Water'],
@@ -3523,9 +3541,9 @@ var DPP_PATCH = {
     },
     Rampardos: {
         types: ['Rock'],
-        bs: { hp: 97, at: 165, df: 60, sa: 65, sd: 50, sp: 58 },
+        bs: { hp: 97, at: 165, df: 60, sa: 65, sd: 65, sp: 70 },
         weightkg: 102.5,
-        abilities: { 0: 'Mold Breaker' }
+        abilities: { 0: "Chloroplast" }
     },
     Rebble: {
         types: ['Rock'],
@@ -3549,67 +3567,67 @@ var DPP_PATCH = {
         abilities: { 0: 'Air Lock' }
     },
     Rhyperior: {
-        types: ['Ground', 'Rock'],
-        bs: { hp: 115, at: 140, df: 130, sa: 55, sd: 55, sp: 40 },
+        types: ["Fighting", "Rock"],
+        bs: { hp: 115, at: 140, df: 130, sa: 55, sd: 55, sp: 50 },
         weightkg: 282.8,
-        abilities: { 0: 'Lightning Rod' }
+        abilities: { 0: "Filter" }
     },
     Riolu: {
         types: ['Fighting'],
-        bs: { hp: 40, at: 70, df: 40, sa: 35, sd: 40, sp: 60 },
+        bs: { hp: 40, at: 70, df: 40, sa: 75, sd: 40, sp: 60 },
         weightkg: 20.2,
         nfe: true,
-        abilities: { 0: 'Steadfast' }
+        abilities: { 0: 'Inner Focus' }
     },
     Roserade: {
         types: ['Grass', 'Poison'],
-        bs: { hp: 60, at: 70, df: 55, sa: 125, sd: 105, sp: 90 },
+        bs: { hp: 75, at: 70, df: 65, sa: 130, sd: 115, sp: 101 },
         weightkg: 14.5,
-        abilities: { 0: 'Natural Cure' }
+        abilities: { 0: "Technician" }
     },
     Rotom: {
         types: ['Electric', 'Ghost'],
-        bs: { hp: 50, at: 50, df: 77, sa: 95, sd: 77, sp: 91 },
+        bs: { hp: 50, at: 50, df: 77, sa: 105, sd: 77, sp: 106 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
         gender: 'N',
         otherFormes: ['Rotom-Fan', 'Rotom-Frost', 'Rotom-Heat', 'Rotom-Mow', 'Rotom-Wash']
     },
     'Rotom-Mow': {
-        types: ['Electric', 'Ghost'],
-        bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
+        types: ['Electric', 'Grass'],
+        bs: { hp: 50, at: 65, df: 107, sa: 125, sd: 107, sp: 96 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
         gender: 'N',
         baseSpecies: 'Rotom'
     },
     'Rotom-Frost': {
-        types: ['Electric', 'Ghost'],
-        bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
+        types: ['Electric', 'Ice'],
+        bs: { hp: 75, at: 65, df: 117, sa: 120, sd: 107, sp: 91 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
         gender: 'N',
         baseSpecies: 'Rotom'
     },
     'Rotom-Heat': {
-        types: ['Electric', 'Ghost'],
-        bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
+        types: ['Electric', 'Fire'],
+        bs: { hp: 50, at: 65, df: 107, sa: 115, sd: 107, sp: 96 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
         gender: 'N',
         baseSpecies: 'Rotom'
     },
     'Rotom-Fan': {
-        types: ['Electric', 'Ghost'],
-        bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
+        types: ['Electric', 'Flying'],
+        bs: { hp: 50, at: 65, df: 107, sa: 115, sd: 107, sp: 111 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
         gender: 'N',
         baseSpecies: 'Rotom'
     },
     'Rotom-Wash': {
-        types: ['Electric', 'Ghost'],
-        bs: { hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86 },
+        types: ['Electric', 'Water'],
+        bs: { hp: 55, at: 65, df: 117, sa: 105, sd: 107, sp: 91 },
         weightkg: 0.3,
         abilities: { 0: 'Levitate' },
         gender: 'N',
@@ -3636,7 +3654,7 @@ var DPP_PATCH = {
         bs: { hp: 76, at: 48, df: 48, sa: 57, sd: 62, sp: 34 },
         weightkg: 6.3,
         nfe: true,
-        abilities: { 0: 'Sticky Hold' }
+        abilities: { 0: "Storm Drain" }
     },
     Shieldon: {
         types: ['Rock', 'Steel'],
@@ -3900,6 +3918,426 @@ var DPP_PATCH = {
         types: ["Psychic"],
         bs: { hp: 68, at: 65, df: 65, sa: 125, sd: 115, sp: 90 },
         abilities: { 0: "Rivalry" }
+    },
+    Gengar: {
+        bs: { hp: 60, at: 65, df: 60, sa: 130, sd: 75, sp: 122 },
+        abilities: { 0: "Levitate" }
+    },
+    Girafarig: {
+        bs: { hp: 95, at: 80, df: 105, sa: 90, sd: 105, sp: 85 },
+        abilities: { 0: "Early Bird" }
+    },
+    Glalie: {
+        bs: { hp: 80, at: 80, df: 80, sa: 80, sd: 80, sp: 150 },
+        abilities: { 0: "Inner Focus" }
+    },
+    Psyduck: {
+        abilities: { 0: "Headache" }
+    },
+    Golduck: {
+        bs: { hp: 80, at: 82, df: 78, sa: 115, sd: 80, sp: 95 },
+        abilities: { 0: "Headache" }
+    },
+    Geodude: {
+        abilities: { 0: "Sturdy" }
+    },
+    Graveler: {
+        abilities: { 0: "Sturdy" }
+    },
+    Golem: {
+        bs: { hp: 90, at: 130, df: 160, sa: 55, sd: 65, sp: 55 },
+        abilities: { 0: "Sturdy" }
+    },
+    Gorebyss: {
+        bs: { hp: 65, at: 84, df: 105, sa: 124, sd: 75, sp: 72 }
+    },
+    Snubbull: {
+        types: ["Normal"],
+        abilities: { 0: "Run Away" }
+    },
+    Granbull: {
+        types: ["Normal"],
+        bs: { hp: 100, at: 120, df: 75, sa: 60, sd: 90, sp: 45 },
+        abilities: { 0: "Guts" }
+    },
+    Groudon: {
+        bs: { hp: 100, at: 170, df: 140, sa: 100, sd: 90, sp: 95 }
+    },
+    Kyogre: {
+        bs: { hp: 110, at: 100, df: 100, sa: 130, sd: 140, sp: 90 }
+    },
+    Spoink: {
+        abilities: { 0: "Own Tempo" }
+    },
+    Grumpig: {
+        bs: { hp: 100, at: 45, df: 80, sa: 90, sd: 110, sp: 80 },
+        abilities: { 0: "Scrappy" }
+    },
+    Makuhita: {
+        abilities: { 0: "Free Sample" }
+    },
+    Hariyama: {
+        bs: { hp: 144, at: 120, df: 60, sa: 40, sd: 85, sp: 75 },
+        abilities: { 0: "Gluttony" }
+    },
+    Heracross: {
+        bs: { hp: 80, at: 135, df: 85, sa: 40, sd: 95, sp: 95 },
+        abilities: { 0: "Compound Eyes" }
+    },
+    Hitmonchan: {
+        bs: { hp: 50, at: 135, df: 99, sa: 35, sd: 110, sp: 76 },
+        abilities: { 0: "Technician" }
+    },
+    Hitmonlee: {
+        bs: { hp: 50, at: 120, df: 53, sa: 35, sd: 110, sp: 97 },
+        abilities: { 0: "Unburden" }
+    },
+    Hitmontop: {
+        bs: { hp: 50, at: 105, df: 105, sa: 35, sd: 110, sp: 70 }
+    },
+    'Ho-Oh': {
+        abilities: { 0: "Magic Guard" }
+    },
+    Houndoom: {
+        bs: { hp: 75, at: 110, df: 50, sa: 120, sd: 80, sp: 105 },
+        abilities: { 0: "Solar Power" }
+    },
+    Weedle: {
+        abilities: { 0: "Adaptability" }
+    },
+    Kakuna: {
+        abilities: { 0: "Adaptability" }
+    },
+    Beedrill: {
+        bs: { hp: 60, at: 124, df: 35, sa: 15, sd: 90, sp: 132 },
+        abilities: { 0: "Adaptability" }
+    },
+    Illumise: {
+        bs: { hp: 65, at: 47, df: 65, sa: 73, sd: 85, sp: 155 },
+        abilities: { 0: "Poison Heal" }
+    },
+    Jolteon: {
+        bs: { hp: 65, at: 65, df: 60, sa: 120, sd: 95, sp: 130 }
+    },
+    Jumpluff: {
+        bs: { hp: 75, at: 55, df: 70, sa: 75, sd: 95, sp: 121 }
+    },
+    Kabutops: {
+        bs: { hp: 60, at: 135, df: 105, sa: 95, sd: 70, sp: 90 }
+    },
+    Kangaskhan: {
+        bs: { hp: 135, at: 105, df: 80, sa: 40, sd: 80, sp: 90 },
+        abilities: { 0: "Scrappy" }
+    },
+    Kecleon: {
+        bs: { hp: 80, at: 90, df: 70, sa: 60, sd: 120, sp: 40 }
+    },
+    Kingdra: {
+        bs: { hp: 75, at: 95, df: 95, sa: 95, sd: 95, sp: 90 }
+    },
+    Kingler: {
+        bs: { hp: 70, at: 130, df: 115, sa: 50, sd: 50, sp: 75 },
+        abilities: { 0: "Sheer Force" }
+    },
+    Lanturn: {
+        bs: { hp: 125, at: 58, df: 68, sa: 86, sd: 86, sp: 77 },
+        abilities: { 0: "Volt Absorb" }
+    },
+    Lapras: {
+        bs: { hp: 130, at: 85, df: 90, sa: 115, sd: 105, sp: 60 },
+        abilities: { 0: "Ice Body" }
+    },
+    Ledyba: {
+        types: ["Bug", "Ground"],
+        bs: { hp: 60, at: 20, df: 35, sa: 40, sd: 80, sp: 55 },
+        abilities: { 0: "Early Bird" }
+    },
+    Ledian: {
+        types: ["Bug", "Ground"],
+        bs: { hp: 85, at: 35, df: 55, sa: 55, sd: 120, sp: 85 },
+        abilities: { 0: "Early Bird" }
+    },
+    Zigzagoon: {
+        abilities: { 0: "Gluttony" }
+    },
+    Linoone: {
+        bs: { hp: 78, at: 90, df: 61, sa: 50, sd: 61, sp: 100 },
+        abilities: { 0: "Gluttony" }
+    },
+    Ludicolo: {
+        bs: { hp: 80, at: 70, df: 70, sa: 110, sd: 100, sp: 70 }
+    },
+    Lunatone: {
+        bs: { hp: 90, at: 55, df: 85, sa: 116, sd: 115, sp: 70 }
+    },
+    Luvdisc: {
+        bs: { hp: 43, at: 30, df: 55, sa: 105, sd: 65, sp: 97 }
+    },
+    Machamp: {
+        bs: { hp: 90, at: 135, df: 80, sa: 108, sd: 85, sp: 55 }
+    },
+    Slugma: {
+        abilities: { 0: "Water Absorb" }
+    },
+    Magcargo: {
+        bs: { hp: 70, at: 95, df: 120, sa: 95, sd: 80, sp: 30 },
+        abilities: { 0: "Water Absorb" }
+    },
+    Swinub: {
+        abilities: { 0: "Thick Fat" }
+    },
+    Electrike: {
+        abilities: { 0: "Motor Drive" }
+    },
+    Manectric: {
+        bs: { hp: 70, at: 95, df: 60, sa: 115, sd: 60, sp: 115 },
+        abilities: { 0: "Motor Drive" }
+    },
+    Mantine: {
+        bs: { hp: 85, at: 40, df: 70, sa: 85, sd: 140, sp: 70 },
+        abilities: { 0: "Rain Dish" }
+    },
+    Masquerain: {
+        types: ["Bug", "Water"],
+        bs: { hp: 80, at: 70, df: 72, sa: 105, sd: 102, sp: 80 }
+    },
+    Mawile: {
+        types: ["Steel", "Dragon"],
+        bs: { hp: 50, at: 95, df: 75, sa: 65, sd: 55, sp: 40 },
+        abilities: { 0: "Huge Power" }
+    },
+    Medicham: {
+        bs: { hp: 70, at: 80, df: 45, sa: 90, sd: 45, sp: 85 }
+    },
+    Chikorita: {
+        abilities: { 0: "Photosynthesis" }
+    },
+    Bayleef: {
+        abilities: { 0: "Photosynthesis" }
+    },
+    Meganium: {
+        bs: { hp: 110, at: 82, df: 110, sa: 83, sd: 110, sp: 75 },
+        abilities: { 0: "Drought" }
+    },
+    Beldum: {
+        abilities: { 0: "Sand Force" }
+    },
+    Metang: {
+        abilities: { 0: "Sand Force" }
+    },
+    Metagross: {
+        bs: { hp: 80, at: 135, df: 130, sa: 95, sd: 90, sp: 75 },
+        abilities: { 0: "Sand Force" }
+    },
+    Mewtwo: {
+        bs: { hp: 106, at: 110, df: 90, sa: 204, sd: 90, sp: 130 }
+    },
+    Poochyena: {
+        abilities: { 0: "Run Away" }
+    },
+    Mightyena: {
+        bs: { hp: 90, at: 110, df: 90, sa: 60, sd: 60, sp: 80 }
+    },
+    Milotic: {
+        bs: { hp: 95, at: 60, df: 79, sa: 110, sd: 125, sp: 81 },
+        abilities: { 0: "Marvel Scale" }
+    },
+    Miltank: {
+        bs: { hp: 125, at: 95, df: 105, sa: 40, sd: 80, sp: 100 },
+        abilities: { 0: "Fresh Milk" }
+    },
+    Moltres: {
+        abilities: { 0: "Flame Body" }
+    },
+    'Mr. Mime': {
+        bs: { hp: 75, at: 45, df: 65, sa: 105, sd: 130, sp: 115 }
+    },
+    Grimer: {
+        abilities: { 0: "Slurp Up" }
+    },
+    Muk: {
+        bs: { hp: 120, at: 105, df: 75, sa: 65, sd: 115, sp: 50 },
+        abilities: { 0: "Slurp Up" }
+    },
+    'Nidoran-M': {
+        bs: { hp: 46, at: 77, df: 40, sa: 55, sd: 40, sp: 50 }
+    },
+    Nidorino: {
+        bs: { hp: 61, at: 92, df: 57, sa: 70, sd: 55, sp: 65 }
+    },
+    Nidoking: {
+        bs: { hp: 81, at: 122, df: 77, sa: 115, sd: 75, sp: 105 },
+        abilities: { 0: "Sheer Force" }
+    },
+    'Nidoran-F': {
+        bs: { hp: 55, at: 57, df: 52, sa: 65, sd: 40, sp: 41 }
+    },
+    Nidorina: {
+        bs: { hp: 70, at: 72, df: 67, sa: 80, sd: 55, sp: 56 }
+    },
+    Nidoqueen: {
+        bs: { hp: 102, at: 92, df: 107, sa: 75, sd: 105, sp: 76 },
+        abilities: { 0: "Poison Point" }
+    },
+    Vulpix: {
+        abilities: { 0: "Drought" }
+    },
+    Ninetales: {
+        bs: { hp: 73, at: 76, df: 75, sa: 91, sd: 100, sp: 111 },
+        abilities: { 0: "Drought" }
+    },
+    Noctowl: {
+        bs: { hp: 130, at: 50, df: 50, sa: 86, sd: 126, sp: 70 },
+        abilities: { 0: "Intimidate" }
+    },
+    Remoraid: {
+        abilities: { 0: "Sniper" }
+    },
+    Octillery: {
+        bs: { hp: 95, at: 105, df: 75, sa: 155, sd: 75, sp: 45 },
+        abilities: { 0: "Sniper" }
+    },
+    Paras: {
+        abilities: { 0: "Chlorophyll" }
+    },
+    Parasect: {
+        bs: { hp: 60, at: 115, df: 80, sa: 90, sd: 80, sp: 59 },
+        abilities: { 0: "Chlorophyll" }
+    },
+    Wingull: {
+        abilities: { 0: "Rain Dish" }
+    },
+    Pelipper: {
+        abilities: { 0: "Drizzle" }
+    },
+    Persian: {
+        bs: { hp: 65, at: 100, df: 60, sa: 95, sd: 65, sp: 135 },
+        abilities: { 0: "Technician" }
+    },
+    Pidgey: {
+        abilities: { 0: "Keen Eye" }
+    },
+    Pidgeotto: {
+        abilities: { 0: "Keen Eye" }
+    },
+    Pidgeot: {
+        bs: { hp: 83, at: 80, df: 75, sa: 108, sd: 70, sp: 116 },
+        abilities: { 0: "No Guard" }
+    },
+    Pinsir: {
+        bs: { hp: 85, at: 135, df: 100, sa: 55, sd: 70, sp: 90 }
+    },
+    Poliwag: {
+        abilities: { 0: "Damp" }
+    },
+    Poliwhirl: {
+        abilities: { 0: "Damp" }
+    },
+    Politoed: {
+        bs: { hp: 100, at: 75, df: 85, sa: 90, sd: 110, sp: 70 },
+        abilities: { 0: "Drizzle" }
+    },
+    Poliwrath: {
+        bs: { hp: 90, at: 105, df: 95, sa: 70, sd: 90, sp: 90 },
+        abilities: { 0: "Technician" }
+    },
+    Primeape: {
+        bs: { hp: 65, at: 115, df: 60, sa: 60, sd: 70, sp: 105 },
+        abilities: { 0: "Defiant" }
+    },
+    Qwilfish: {
+        bs: { hp: 65, at: 115, df: 85, sa: 85, sd: 55, sp: 90 },
+        abilities: { 0: "Intimidate" }
+    },
+    Raikou: {
+        bs: { hp: 100, at: 95, df: 85, sa: 125, sd: 110, sp: 120 },
+        abilities: { 0: "Pressure" }
+    },
+    Ponyta: {
+        abilities: { 0: "Flash Fire" }
+    },
+    Rapidash: {
+        bs: { hp: 65, at: 100, df: 70, sa: 80, sd: 80, sp: 155 },
+        abilities: { 0: "Flash Fire" }
+    },
+    Rattata: {
+        bs: { hp: 30, at: 26, df: 35, sa: 25, sd: 35, sp: 72 },
+        abilities: { 0: "Simple" }
+    },
+    Raticate: {
+        bs: { hp: 55, at: 61, df: 60, sa: 80, sd: 70, sp: 102 },
+        abilities: { 0: "Simple" }
+    },
+    Regice: {
+        bs: { hp: 120, at: 50, df: 100, sa: 100, sd: 200, sp: 50 },
+        abilities: { 0: "Ice Body" }
+    },
+    Regirock: {
+        bs: { hp: 120, at: 100, df: 200, sa: 50, sd: 100, sp: 50 },
+        abilities: { 0: "Rough Skin" }
+    },
+    Registeel: {
+        bs: { hp: 120, at: 75, df: 150, sa: 75, sd: 150, sp: 50 },
+        abilities: { 0: "Scrappy" }
+    },
+    Relicanth: {
+        bs: { hp: 100, at: 120, df: 130, sa: 85, sd: 65, sp: 69 }
+    },
+    Rhyhorn: {
+        abilities: { 0: "Rock Head" }
+    },
+    Sableye: {
+        bs: { hp: 70, at: 75, df: 95, sa: 65, sd: 85, sp: 65 },
+        abilities: { 0: "Magic Bounce" }
+    },
+    Sandshrew: {
+        abilities: { 0: "Anger Point" }
+    },
+    Sandslash: {
+        bs: { hp: 90, at: 115, df: 130, sa: 45, sd: 70, sp: 70 },
+        abilities: { 0: "Rough Skin" }
+    },
+    Scizor: {
+        bs: { hp: 70, at: 135, df: 100, sa: 55, sd: 80, sp: 70 },
+        abilities: { 0: "Technician" }
+    },
+    Grovyle: {
+        abilities: { 0: "Unburden" }
+    },
+    Sceptile: {
+        types: ["Grass", "Dragon"],
+        bs: { hp: 70, at: 85, df: 65, sa: 115, sd: 85, sp: 120 },
+        abilities: { 0: "Unburden" }
+    },
+    Goldeen: {
+        abilities: { 0: "Volt Absorb" }
+    },
+    Seaking: {
+        bs: { hp: 110, at: 92, df: 95, sa: 65, sd: 110, sp: 78 },
+        abilities: { 0: "Volt Absorb" }
+    },
+    Seviper: {
+        bs: { hp: 73, at: 135, df: 60, sa: 135, sd: 60, sp: 75 }
+    },
+    Carvanha: {
+        abilities: { 0: "Strong Jaw" }
+    },
+    Sharpedo: {
+        bs: { hp: 80, at: 130, df: 40, sa: 125, sd: 40, sp: 105 },
+        abilities: { 0: "Strong Jaw" }
+    },
+    Shedinja: {
+        bs: { hp: 1, at: 110, df: 45, sa: 65, sd: 30, sp: 65 }
+    },
+    Seedot: {
+        abilities: { 0: "Chlorophyll" }
+    },
+    Nuzleaf: {
+        abilities: { 0: "Chlorophyll" }
+    },
+    Shiftry: {
+        bs: { hp: 90, at: 120, df: 60, sa: 110, sd: 60, sp: 90 },
+        abilities: { 0: "Chlorophyll" }
     }
 };
 var DPP = (0, util_1.extend)(true, {}, ADV, DPP_PATCH);
