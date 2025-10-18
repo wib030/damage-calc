@@ -136,7 +136,7 @@ const RBY: {[name: string]: SpeciesData} = {
   Ditto: {types: ['Normal'], bs: {hp: 48, at: 48, df: 48, sp: 48, sl: 48}, weightkg: 4},
   Dodrio: {
     types: ['Normal', 'Flying'],
-    bs: {hp: 60, at: 110, df: 70, sp: 100, sl: 60},
+    bs: {hp: 80, at: 110, df: 80, sp: 110, sl: 60},
     weightkg: 85.2,
   },
   Doduo: {
@@ -822,7 +822,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Dewgong: {bs: {sa: 70, sd: 95}},
   Diglett: {bs: {sa: 35, sd: 45}},
   Ditto: {bs: {sa: 48, sd: 48}, gender: 'N'},
-  Dodrio: {bs: {sa: 60, sd: 60}},
+  Dodrio: {bs: {sa: 60, sd: 90}},
   Doduo: {bs: {sa: 35, sd: 35}},
   Dragonair: {bs: {sa: 70, sd: 70}},
   Dragonite: {bs: {sa: 100, sd: 100}},
@@ -1508,8 +1508,8 @@ const ADV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Dewgong: {abilities: {0: 'Thick Fat'}},
   Diglett: {abilities: {0: 'Sand Veil'}},
   Ditto: {abilities: {0: 'Limber'}},
-  Dodrio: {abilities: {0: 'Run Away'}},
-  Doduo: {abilities: {0: 'Run Away'}},
+  Dodrio: {abilities: {0: 'Adaptability'}},
+  Doduo: {abilities: {0: 'Early Bird'}},
   Dragonair: {abilities: {0: 'Shed Skin'}},
   Dragonite: {abilities: {0: 'Inner Focus'}},
   Dratini: {abilities: {0: 'Shed Skin'}},
