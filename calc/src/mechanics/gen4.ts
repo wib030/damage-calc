@@ -196,7 +196,10 @@ export function calculateDPP(
   if (move.hits > 1) {
     desc.hits = move.hits;
   }
-
+  
+  if (move.named('Judgment')) {
+	move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
+  }
   const isPhysical = move.category === 'Physical';
 
   // #endregion
@@ -224,7 +227,7 @@ export function calculateDPP(
     Math.floor((Math.floor((2 * attacker.level) / 5 + 2) * basePower * attack) / 50) / defense
   );
 
-  if (attacker.hasStatus('brn') && isPhysical && !attacker.hasAbility('Guts')) {
+  if (attacker.hasStatus('brn') && isPhysical && !attacker.hasAbility('Guts') && !move.named('Facade')) {
     baseDamage = Math.floor(baseDamage * 0.5);
     desc.isBurned = true;
   }
@@ -358,7 +361,7 @@ export function calculateBasePowerDPP(
     desc.moveBP = basePower;
     break;
   case 'Facade':
-    if (attacker.hasStatus('par', 'psn', 'tox', 'brn')) {
+    if (attacker.hasStatus('par', 'psn', 'tox', 'brn', 'slp')) {
       basePower = move.bp * 2;
       desc.moveBP = basePower;
     }
@@ -395,12 +398,14 @@ export function calculateBasePowerDPP(
     desc.moveBP = basePower;
     break;
   case 'Pursuit':
+  case 'Fire Chase':
     const switching = field.defenderSide.isSwitching === 'out';
     basePower = move.bp * (switching ? 2 : 1);
     if (switching) desc.isSwitching = 'out';
     desc.moveBP = basePower;
     break;
   case 'Wake-Up Slap':
+  case 'Peek-A-Boo':
     if (defender.hasStatus('slp')) {
       basePower *= 2;
       desc.moveBP = basePower;
@@ -425,6 +430,13 @@ export function calculateBasePowerDPP(
     basePower = move.bp * (field.weather ? 2 : 1);
     desc.moveBP = basePower;
     break;
+  case 'Knock Off':
+    if (defender.item)
+    {
+		basePower = move.bp * 1.5;
+		desc.moveBP = basePower;
+    }
+	break;
   default:
     basePower = move.bp;
   }
@@ -448,7 +460,10 @@ export function calculateBPModsDPP(
     basePower = Math.floor(basePower * 1.5);
     desc.attackerAbility = attacker.ability;
   }
-
+  
+  if (move.named('Judgment')) {
+	move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
+  }
   const isPhysical = move.category === 'Physical';
   if ((attacker.hasItem('Muscle Band') && isPhysical) ||
       (attacker.hasItem('Wise Glasses') && !isPhysical)) {
@@ -515,6 +530,9 @@ export function calculateAttackDPP(
   desc: RawDesc,
   isCritical = false
 ) {
+  if (move.named('Judgment')) {
+	move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
+  }
   const isPhysical = move.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spa';
   desc.attackEVs = getStatDescriptionText(gen, attacker, attackStat, attacker.nature);
@@ -594,8 +612,11 @@ export function calculateDefenseDPP(
   desc: RawDesc,
   isCritical = false
 ) {
+  if (move.named('Judgment')) {
+	move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
+  }
   const isPhysical = move.category === 'Physical';
-  const defenseStat = isPhysical ? 'def' : 'spd';
+  const defenseStat = move.overrideDefensiveStat || isPhysical ? 'def' : 'spd';
   desc.defenseEVs = getStatDescriptionText(gen, defender, defenseStat, defender.nature);
   let defense: number;
   const defenseBoost = defender.boosts[defenseStat];
@@ -607,7 +628,7 @@ export function calculateDefenseDPP(
     rawDefense = defender.rawStats.atk;
   }
 
-  if (defenseBoost === 0 || (isCritical && defenseBoost > 0)) {
+  if (defenseBoost === 0 || (isCritical && defenseBoost > 0) || move.ignoreDefensive) {
     defense = rawDefense;
   } else if (attacker.hasAbility('Unaware')) {
     defense = rawDefense;
@@ -650,10 +671,6 @@ export function calculateDefenseDPP(
     desc.weather = field.weather;
   }
 
-  if (move.named('Explosion') || move.named('Self-Destruct')) {
-    defense = Math.floor(defense * 0.5);
-  }
-
   if (defense < 1) {
     defense = 1;
   }
@@ -668,8 +685,11 @@ function calculateFinalModsDPP(
   desc: RawDesc,
   isCritical = false,
 ) {
+  if (move.named('Judgment')) {
+	move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
+  }
   const isPhysical = move.category === 'Physical';
-  if (!isCritical) {
+  if (!isCritical || !move.ignoreScreens) {
     const screenMultiplier = field.gameType !== 'Singles' ? 2 / 3 : 1 / 2;
     if (isPhysical && field.defenderSide.isReflect) {
       baseDamage = Math.floor(baseDamage * screenMultiplier);

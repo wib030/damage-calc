@@ -95,6 +95,7 @@ export interface Move extends Data<MoveName> {
     readonly priority?: number;
     readonly self?: SelfOrSecondaryEffect | null;
     readonly ignoreDefensive?: boolean;
+    readonly ignoreScreens?: boolean;
     readonly overrideOffensiveStat?: StatIDExceptHP;
     readonly overrideDefensiveStat?: StatIDExceptHP;
     readonly overrideOffensivePokemon?: 'target' | 'source';

@@ -165,6 +165,9 @@ function calculateDPP(gen, attacker, defender, move, field) {
     if (move.hits > 1) {
         desc.hits = move.hits;
     }
+    if (move.named('Judgment')) {
+        move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
+    }
     var isPhysical = move.category === 'Physical';
     var basePower = calculateBasePowerDPP(gen, attacker, defender, move, field, desc);
     if (basePower === 0) {
@@ -174,7 +177,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
     var attack = calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritical);
     var defense = calculateDefenseDPP(gen, attacker, defender, move, field, desc, isCritical);
     var baseDamage = Math.floor(Math.floor((Math.floor((2 * attacker.level) / 5 + 2) * basePower * attack) / 50) / defense);
-    if (attacker.hasStatus('brn') && isPhysical && !attacker.hasAbility('Guts')) {
+    if (attacker.hasStatus('brn') && isPhysical && !attacker.hasAbility('Guts') && !move.named('Facade')) {
         baseDamage = Math.floor(baseDamage * 0.5);
         desc.isBurned = true;
     }
@@ -286,7 +289,7 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, hit) 
             desc.moveBP = basePower;
             break;
         case 'Facade':
-            if (attacker.hasStatus('par', 'psn', 'tox', 'brn')) {
+            if (attacker.hasStatus('par', 'psn', 'tox', 'brn', 'slp')) {
                 basePower = move.bp * 2;
                 desc.moveBP = basePower;
             }
@@ -323,6 +326,7 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, hit) 
             desc.moveBP = basePower;
             break;
         case 'Pursuit':
+        case 'Fire Chase':
             var switching = field.defenderSide.isSwitching === 'out';
             basePower = move.bp * (switching ? 2 : 1);
             if (switching)
@@ -330,6 +334,7 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, hit) 
             desc.moveBP = basePower;
             break;
         case 'Wake-Up Slap':
+        case 'Peek-A-Boo':
             if (defender.hasStatus('slp')) {
                 basePower *= 2;
                 desc.moveBP = basePower;
@@ -354,6 +359,12 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, hit) 
             basePower = move.bp * (field.weather ? 2 : 1);
             desc.moveBP = basePower;
             break;
+        case 'Knock Off':
+            if (defender.item) {
+                basePower = move.bp * 1.5;
+                desc.moveBP = basePower;
+            }
+            break;
         default:
             basePower = move.bp;
     }
@@ -368,6 +379,9 @@ function calculateBPModsDPP(attacker, defender, move, field, desc, basePower) {
     if (attacker.hasAbility('Technician') && basePower <= 60) {
         basePower = Math.floor(basePower * 1.5);
         desc.attackerAbility = attacker.ability;
+    }
+    if (move.named('Judgment')) {
+        move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
     }
     var isPhysical = move.category === 'Physical';
     if ((attacker.hasItem('Muscle Band') && isPhysical) ||
@@ -426,6 +440,9 @@ function calculateBPModsDPP(attacker, defender, move, field, desc, basePower) {
 exports.calculateBPModsDPP = calculateBPModsDPP;
 function calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritical) {
     if (isCritical === void 0) { isCritical = false; }
+    if (move.named('Judgment')) {
+        move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
+    }
     var isPhysical = move.category === 'Physical';
     var attackStat = isPhysical ? 'atk' : 'spa';
     desc.attackEVs = (0, util_1.getStatDescriptionText)(gen, attacker, attackStat, attacker.nature);
@@ -494,8 +511,11 @@ function calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritic
 exports.calculateAttackDPP = calculateAttackDPP;
 function calculateDefenseDPP(gen, attacker, defender, move, field, desc, isCritical) {
     if (isCritical === void 0) { isCritical = false; }
+    if (move.named('Judgment')) {
+        move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
+    }
     var isPhysical = move.category === 'Physical';
-    var defenseStat = isPhysical ? 'def' : 'spd';
+    var defenseStat = move.overrideDefensiveStat || isPhysical ? 'def' : 'spd';
     desc.defenseEVs = (0, util_1.getStatDescriptionText)(gen, defender, defenseStat, defender.nature);
     var defense;
     var defenseBoost = defender.boosts[defenseStat];
@@ -504,7 +524,7 @@ function calculateDefenseDPP(gen, attacker, defender, move, field, desc, isCriti
         desc.isPowerTrickDefender = true;
         rawDefense = defender.rawStats.atk;
     }
-    if (defenseBoost === 0 || (isCritical && defenseBoost > 0)) {
+    if (defenseBoost === 0 || (isCritical && defenseBoost > 0) || move.ignoreDefensive) {
         defense = rawDefense;
     }
     else if (attacker.hasAbility('Unaware')) {
@@ -547,9 +567,6 @@ function calculateDefenseDPP(gen, attacker, defender, move, field, desc, isCriti
         defense = Math.floor(defense * 1.5);
         desc.weather = field.weather;
     }
-    if (move.named('Explosion') || move.named('Self-Destruct')) {
-        defense = Math.floor(defense * 0.5);
-    }
     if (defense < 1) {
         defense = 1;
     }
@@ -558,8 +575,11 @@ function calculateDefenseDPP(gen, attacker, defender, move, field, desc, isCriti
 exports.calculateDefenseDPP = calculateDefenseDPP;
 function calculateFinalModsDPP(baseDamage, attacker, move, field, desc, isCritical) {
     if (isCritical === void 0) { isCritical = false; }
+    if (move.named('Judgment')) {
+        move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
+    }
     var isPhysical = move.category === 'Physical';
-    if (!isCritical) {
+    if (!isCritical || !move.ignoreScreens) {
         var screenMultiplier = field.gameType !== 'Singles' ? 2 / 3 : 1 / 2;
         if (isPhysical && field.defenderSide.isReflect) {
             baseDamage = Math.floor(baseDamage * screenMultiplier);
