@@ -205,11 +205,11 @@ export function calculateDPP(
   // #endregion
   // #region Base Power
 
-  let basePower = calculateBasePowerDPP(gen, attacker, defender, move, field, desc);
+  let basePower = calculateBasePowerDPP(gen, attacker, defender, move, field, desc, defender.curHP());
   if (basePower === 0) {
     return result;
   }
-  basePower = calculateBPModsDPP(attacker, defender, move, field, desc, basePower, defender.curHP());
+  basePower = calculateBPModsDPP(attacker, defender, move, field, desc, basePower);
 
   // #endregion
   // #region (Special) Attack
@@ -299,8 +299,8 @@ export function calculateDPP(
     for (let times = 1; times < numAttacks; times++) {
       usedItems = checkMultihitBoost(gen, attacker, defender, move,
         field, desc, usedItems[0], usedItems[1]);
-      let newBasePower = calculateBasePowerDPP(gen, attacker, defender, move, field, desc);
-      newBasePower = calculateBPModsDPP(attacker, defender, move, field, desc, newBasePower, virtualHP);
+      let newBasePower = calculateBasePowerDPP(gen, attacker, defender, move, field, desc, virtualHP);
+      newBasePower = calculateBPModsDPP(attacker, defender, move, field, desc, newBasePower);
       const newAtk = calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritical);
       let baseDamage = Math.floor(
         Math.floor(
@@ -346,6 +346,7 @@ export function calculateBasePowerDPP(
   move: Move,
   field: Field,
   desc: RawDesc,
+  virtualHP: number,
   hit = 1,
 ) {
   let basePower = move.bp;
@@ -448,7 +449,7 @@ export function calculateBasePowerDPP(
 	}
 	break;
   case 'Chum Rush':
-    basePower = (move.bp * 2 / 3) * defender.maxHP() / defender.curHP();
+    basePower = (move.bp * 2 / 3) * defender.maxHP() / virtualHP;
 	desc.moveBP = basePower;
 	break;
   default:
@@ -464,7 +465,6 @@ export function calculateBPModsDPP(
   field: Field,
   desc: RawDesc,
   basePower: number,
-  virtualHP: number,
 ) {
   if (field.attackerSide.isHelpingHand) {
     basePower = Math.floor(basePower * 1.5);

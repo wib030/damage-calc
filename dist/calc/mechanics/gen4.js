@@ -169,11 +169,11 @@ function calculateDPP(gen, attacker, defender, move, field) {
         move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
     }
     var isPhysical = move.category === 'Physical';
-    var basePower = calculateBasePowerDPP(gen, attacker, defender, move, field, desc);
+    var basePower = calculateBasePowerDPP(gen, attacker, defender, move, field, desc, defender.curHP());
     if (basePower === 0) {
         return result;
     }
-    basePower = calculateBPModsDPP(attacker, defender, move, field, desc, basePower, defender.curHP());
+    basePower = calculateBPModsDPP(attacker, defender, move, field, desc, basePower);
     var attack = calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritical);
     var defense = calculateDefenseDPP(gen, attacker, defender, move, field, desc, isCritical);
     var baseDamage = Math.floor(Math.floor((Math.floor((2 * attacker.level) / 5 + 2) * basePower * attack) / 50) / defense);
@@ -242,8 +242,8 @@ function calculateDPP(gen, attacker, defender, move, field) {
         var damageMatrix = [damage];
         for (var times = 1; times < numAttacks; times++) {
             usedItems = (0, util_1.checkMultihitBoost)(gen, attacker, defender, move, field, desc, usedItems[0], usedItems[1]);
-            var newBasePower = calculateBasePowerDPP(gen, attacker, defender, move, field, desc);
-            newBasePower = calculateBPModsDPP(attacker, defender, move, field, desc, newBasePower, virtualHP);
+            var newBasePower = calculateBasePowerDPP(gen, attacker, defender, move, field, desc, virtualHP);
+            newBasePower = calculateBPModsDPP(attacker, defender, move, field, desc, newBasePower);
             var newAtk = calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritical);
             var baseDamage_1 = Math.floor(Math.floor((Math.floor((2 * attacker.level) / 5 + 2) * newBasePower * newAtk) / 50) / defense);
             if (attacker.hasStatus('brn') && isPhysical && !attacker.hasAbility('Guts')) {
@@ -274,7 +274,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
     return result;
 }
 exports.calculateDPP = calculateDPP;
-function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, hit) {
+function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, virtualHP, hit) {
     if (hit === void 0) { hit = 1; }
     var basePower = move.bp;
     var turnOrder = attacker.stats.spe > defender.stats.spe ? 'first' : 'last';
@@ -377,7 +377,7 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, hit) 
             }
             break;
         case 'Chum Rush':
-            basePower = (move.bp * 2 / 3) * defender.maxHP() / defender.curHP();
+            basePower = (move.bp * 2 / 3) * defender.maxHP() / virtualHP;
             desc.moveBP = basePower;
             break;
         default:
@@ -386,7 +386,7 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, hit) 
     return basePower;
 }
 exports.calculateBasePowerDPP = calculateBasePowerDPP;
-function calculateBPModsDPP(attacker, defender, move, field, desc, basePower, virtualHP) {
+function calculateBPModsDPP(attacker, defender, move, field, desc, basePower) {
     if (field.attackerSide.isHelpingHand) {
         basePower = Math.floor(basePower * 1.5);
         desc.isHelpingHand = true;
