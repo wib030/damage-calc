@@ -346,9 +346,12 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, hit) 
             basePower = 80;
             desc.moveName = 'Tri Attack';
             break;
-        case 'Crush Grip':
         case 'Wring Out':
             basePower = Math.floor((defender.curHP() * 120) / defender.maxHP()) + 1;
+            desc.moveBP = basePower;
+            break;
+        case 'Crush Grip':
+            basePower = Math.floor((defender.curHP() * 160) / defender.maxHP()) + 1;
             desc.moveBP = basePower;
             break;
         case 'Triple Kick':
@@ -364,6 +367,16 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, hit) 
                 basePower = move.bp * 1.5;
                 desc.moveBP = basePower;
             }
+            break;
+        case 'Feint':
+            if (field.defenderSide.isProtected) {
+                basePower = move.bp * 2;
+                desc.moveBP = basePower;
+            }
+            break;
+        case 'Chum Rush':
+            basePower = (move.bp * 2 / 3) * defender.maxHP() / defender.curHP();
+            desc.moveBP = basePower;
             break;
         default:
             basePower = move.bp;

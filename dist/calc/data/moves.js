@@ -586,7 +586,7 @@ var DPP_PATCH = {
     Endeavor: { category: 'Physical' },
     Explosion: { category: 'Physical' },
     'Extreme Speed': { category: 'Physical', priority: 2 },
-    'Fake Out': { makesContact: true, category: 'Physical' },
+    'Fake Out': { makesContact: true, category: 'Physical', secondaries: true, priority: 3 },
     'Fire Spin': { category: 'Special', bp: 35 },
     Flail: { category: 'Physical' },
     Fly: { bp: 90, category: 'Physical' },
@@ -632,7 +632,7 @@ var DPP_PATCH = {
     Thief: { category: 'Physical' },
     Thrash: { category: 'Physical', bp: 120 },
     Thunder: { category: 'Special', secondaries: true },
-    'Triple Kick': { category: 'Physical' },
+    'Triple Kick': { category: 'Physical', bp: 20 },
     Twineedle: { category: 'Physical', secondaries: true },
     Twister: { category: 'Special', secondaries: true },
     Uproar: { category: 'Special', bp: 60 },
@@ -788,13 +788,13 @@ var DPP_PATCH = {
     Waterfall: { category: 'Physical', secondaries: true },
     'Water Gun': { category: 'Special' },
     'Water Pulse': { category: 'Special', secondaries: true },
-    'Water Spout': { category: 'Special' },
+    'Water Spout': { category: 'Special', bp: 140 },
     'Wing Attack': { category: 'Physical' },
     'Zap Cannon': { bp: 120, category: 'Special', secondaries: true },
     Acupressure: { bp: 0, type: 'Normal' },
     'Aqua Ring': { bp: 0, type: 'Water' },
     Assurance: {
-        bp: 50,
+        bp: 60,
         type: 'Dark',
         makesContact: true,
         category: 'Physical'
@@ -844,7 +844,7 @@ var DPP_PATCH = {
     },
     Embargo: { bp: 0, type: 'Dark' },
     Feint: {
-        bp: 50,
+        bp: 60,
         type: 'Normal',
         priority: 2,
         breaksProtect: true,
@@ -1284,6 +1284,45 @@ var DPP_PATCH = {
         type: 'Psychic',
         category: 'Special',
         overrideDefensiveStat: 'def'
+    },
+    Howl: { isSound: true },
+    'Low Sweep': {
+        bp: 65,
+        type: 'Fighting',
+        makesContact: true,
+        category: 'Physical',
+        secondaries: true
+    },
+    'Sticky Web': { bp: 0, type: 'Bug' },
+    'Mind Virus': { bp: 0, type: 'Psychic' },
+    Detect: { priority: 4 },
+    Protect: { priority: 4 },
+    Tantrum: {
+        bp: 45,
+        type: 'Dark',
+        category: 'Physical',
+        makesContact: true
+    },
+    Plow: {
+        bp: 45,
+        type: 'Dark',
+        category: 'Physical',
+        makesContact: true
+    },
+    Snap: {
+        bp: 50,
+        type: 'Water',
+        category: 'Physical',
+        makesContact: true,
+        isBite: true
+    },
+    'Chum Rush': {
+        bp: 10,
+        type: 'Water',
+        category: 'Physical',
+        makesContact: true,
+        isBite: true,
+        multihit: [2, 10]
     }
 };
 var DPP = (0, util_1.extend)(true, {}, ADV, DPP_PATCH);
@@ -1451,13 +1490,6 @@ var BW_PATCH = {
         category: 'Physical'
     },
     Incinerate: { bp: 30, type: 'Fire', target: 'allAdjacentFoes', category: 'Special' },
-    'Low Sweep': {
-        bp: 60,
-        type: 'Fighting',
-        makesContact: true,
-        category: 'Physical',
-        secondaries: true
-    },
     'Magic Room': { bp: 0, type: 'Psychic' },
     'Quick Guard': { bp: 0, type: 'Fighting', priority: 3 },
     'Rage Powder': { bp: 0, type: 'Bug', priority: 3 },
@@ -2036,7 +2068,6 @@ var XY_PATCH = {
         category: 'Physical',
         secondaries: true
     },
-    'Sticky Web': { bp: 0, type: 'Bug' },
     'Topsy-Turvy': { bp: 0, type: 'Dark' },
     'Trick-or-Treat': { bp: 0, type: 'Ghost' },
     'Venom Drench': { bp: 0, type: 'Poison', target: 'allAdjacentFoes' }
