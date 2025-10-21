@@ -449,7 +449,8 @@ export function calculateBasePowerDPP(
 	}
 	break;
   case 'Chum Rush':
-    basePower = Math.floor((move.bp * 2 / 3) * defender.maxHP() / virtualHP);
+	let checkHP = (virtualHP > 0) ? virtualHP : 1;
+    basePower = Math.floor((move.bp * 2 / 3) * defender.maxHP() / checkHP);
 	if (basePower > 80) {
 	  basePower = 80;
 	}
