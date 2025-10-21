@@ -1913,7 +1913,7 @@ var ADV_PATCH = {
         bs: { hp: 70, at: 70, df: 70, sa: 70, sd: 70, sp: 70 },
         weightkg: 0.8,
         abilities: { 0: 'Forecast' },
-        otherFormes: ['Castform-Rainy', 'Castform-Snowy', 'Castform-Sunny']
+        otherFormes: ['Castform-Rainy', 'Castform-Snowy', 'Castform-Sunny', 'Castform-Sandy']
     },
     'Castform-Rainy': {
         types: ['Water'],
@@ -1931,6 +1931,13 @@ var ADV_PATCH = {
     },
     'Castform-Sunny': {
         types: ['Fire'],
+        bs: { hp: 70, at: 70, df: 70, sa: 70, sd: 70, sp: 70 },
+        weightkg: 0.8,
+        abilities: { 0: 'Forecast' },
+        baseSpecies: 'Castform'
+    },
+    'Castform-Sandy': {
+        types: ['Rock'],
         bs: { hp: 70, at: 70, df: 70, sa: 70, sd: 70, sp: 70 },
         weightkg: 0.8,
         abilities: { 0: 'Forecast' },
@@ -2716,7 +2723,10 @@ var DPP_PATCH = {
         abilities: { 0: "Technician" }
     },
     Dusclops: { nfe: true },
-    Electabuzz: { nfe: true },
+    Electabuzz: {
+        nfe: true,
+        abilities: { 0: "Static" }
+    },
     Gligar: {
         nfe: true,
         abilities: { 0: "Immunity" }
@@ -2725,7 +2735,10 @@ var DPP_PATCH = {
         nfe: true,
         abilities: { 0: "Free Sample" }
     },
-    Magmar: { nfe: true },
+    Magmar: {
+        nfe: true,
+        bs: { hp: 75, at: 95, df: 87, sa: 125, sd: 105, sp: 83 }
+    },
     Magneton: {
         nfe: true,
         bs: { hp: 50, at: 60, df: 95, sa: 120, sd: 70, sp: 80 }
@@ -3103,8 +3116,8 @@ var DPP_PATCH = {
         abilities: { 0: 'Shield Dust' }
     },
     Darkrai: {
-        types: ['Dark'],
-        bs: { hp: 70, at: 90, df: 90, sa: 135, sd: 90, sp: 125 },
+        types: ["Dark", "Ghost"],
+        bs: { hp: 60, at: 90, df: 90, sa: 135, sd: 90, sp: 125 },
         weightkg: 50.5,
         abilities: { 0: 'Bad Dreams' },
         gender: 'N'
@@ -3131,7 +3144,7 @@ var DPP_PATCH = {
     },
     Drifblim: {
         types: ['Ghost', 'Flying'],
-        bs: { hp: 150, at: 80, df: 44, sa: 90, sd: 54, sp: 80 },
+        bs: { hp: 150, at: 80, df: 64, sa: 90, sd: 74, sp: 80 },
         weightkg: 15,
         abilities: { 0: 'Aftermath' }
     },
@@ -3151,12 +3164,12 @@ var DPP_PATCH = {
     },
     Dusknoir: {
         types: ['Ghost'],
-        bs: { hp: 45, at: 100, df: 135, sa: 65, sd: 135, sp: 45 },
+        bs: { hp: 75, at: 115, df: 135, sa: 35, sd: 135, sp: 45 },
         weightkg: 106.6,
-        abilities: { 0: 'Pressure' }
+        abilities: { 0: "Iron Fist" }
     },
     Electivire: {
-        types: ['Electric'],
+        types: ["Electric", "Fighting"],
         bs: { hp: 75, at: 123, df: 67, sa: 95, sd: 85, sp: 95 },
         weightkg: 138.6,
         abilities: { 0: 'Motor Drive' }
@@ -3170,9 +3183,9 @@ var DPP_PATCH = {
     },
     Empoleon: {
         types: ['Water', 'Steel'],
-        bs: { hp: 84, at: 86, df: 88, sa: 111, sd: 101, sp: 60 },
+        bs: { hp: 84, at: 86, df: 93, sa: 111, sd: 101, sp: 60 },
         weightkg: 84.5,
-        abilities: { 0: 'Torrent' }
+        abilities: { 0: 'Competitive' }
     },
     Fidgit: {
         types: ['Poison', 'Ground'],
@@ -3211,7 +3224,7 @@ var DPP_PATCH = {
         bs: { hp: 68, at: 90, df: 65, sa: 50, sd: 55, sp: 82 },
         weightkg: 56,
         nfe: true,
-        abilities: { 0: 'Sand Veil' }
+        abilities: { 0: "Rough Skin" }
     },
     Gallade: {
         types: ['Psychic', 'Fighting'],
@@ -3223,7 +3236,7 @@ var DPP_PATCH = {
         types: ['Dragon', 'Ground'],
         bs: { hp: 108, at: 130, df: 95, sa: 80, sd: 85, sp: 102 },
         weightkg: 95,
-        abilities: { 0: 'Sand Veil' }
+        abilities: { 0: "Rough Skin" }
     },
     Gastrodon: {
         types: ['Water', 'Ground'],
@@ -3464,7 +3477,7 @@ var DPP_PATCH = {
         bs: { hp: 135, at: 85, df: 40, sa: 40, sd: 85, sp: 5 },
         weightkg: 105,
         nfe: true,
-        abilities: { 0: 'Pickup' }
+        abilities: { 0: 'Free Sample' }
     },
     Nohface: {
         types: ['Ghost'],
@@ -3543,7 +3556,7 @@ var DPP_PATCH = {
     },
     Purugly: {
         types: ['Normal'],
-        bs: { hp: 71, at: 82, df: 64, sa: 64, sd: 59, sp: 112 },
+        bs: { hp: 81, at: 92, df: 64, sa: 74, sd: 99, sp: 112 },
         weightkg: 43.8,
         abilities: { 0: 'Thick Fat' }
     },
@@ -3569,7 +3582,7 @@ var DPP_PATCH = {
     },
     Regigigas: {
         types: ['Normal'],
-        bs: { hp: 110, at: 160, df: 110, sa: 80, sd: 110, sp: 100 },
+        bs: { hp: 110, at: 160, df: 110, sa: 160, sd: 110, sp: 100 },
         weightkg: 420,
         abilities: { 0: 'Slow Start' },
         gender: 'N'
@@ -4707,6 +4720,203 @@ var DPP_PATCH = {
     },
     Exeggutor: {
         bs: { hp: 95, at: 95, df: 85, sa: 135, sd: 75, sp: 65 }
+    },
+    Huntail: {
+        bs: { hp: 65, at: 114, df: 105, sa: 94, sd: 75, sp: 72 }
+    },
+    Dragonite: {
+        bs: { hp: 91, at: 136, df: 95, sa: 100, sd: 100, sp: 91 },
+        abilities: { 0: "Multiscale" }
+    },
+    Skitty: {
+        abilities: { 0: "Normalize" }
+    },
+    Delcatty: {
+        types: ["Normal", "Ghost"],
+        bs: { hp: 95, at: 85, df: 65, sa: 65, sd: 85, sp: 90 },
+        abilities: { 0: "Normalize" }
+    },
+    Shellder: {
+        abilities: { 0: "Skill Link" }
+    },
+    Cloyster: {
+        bs: { hp: 50, at: 135, df: 180, sa: 85, sd: 45, sp: 70 },
+        abilities: { 0: "Skill Link" }
+    },
+    Seel: {
+        abilities: { 0: "Unaware" }
+    },
+    Dewgong: {
+        bs: { hp: 100, at: 90, df: 90, sa: 100, sd: 115, sp: 79 },
+        abilities: { 0: "Unaware" }
+    },
+    Dustox: {
+        bs: { hp: 60, at: 75, df: 70, sa: 95, sd: 120, sp: 95 }
+    },
+    Koffing: {
+        abilities: { 0: "Levitate" }
+    },
+    Weezing: {
+        bs: { hp: 65, at: 90, df: 120, sa: 105, sd: 85, sp: 60 },
+        abilities: { 0: "Levitate" }
+    },
+    Charizard: {
+        types: ["Fire", "Dragon"],
+        bs: { hp: 88, at: 94, df: 84, sa: 114, sd: 85, sp: 102 }
+    },
+    Elekid: {
+        abilities: { 0: "Static" }
+    },
+    Wooper: {
+        abilities: { 0: "Water Absorb" }
+    },
+    Quagsire: {
+        bs: { hp: 95, at: 95, df: 105, sa: 85, sd: 95, sp: 35 },
+        abilities: { 0: "Water Absorb" }
+    },
+    Scyther: {
+        bs: { hp: 70, at: 120, df: 70, sa: 55, sd: 80, sp: 117 },
+        abilities: { 0: "Technician" }
+    },
+    Ninjask: {
+        bs: { hp: 61, at: 90, df: 45, sa: 50, sd: 50, sp: 175 }
+    },
+    Diglett: {
+        abilities: { 0: "Arena Trap" }
+    },
+    Dugtrio: {
+        bs: { hp: 35, at: 90, df: 50, sa: 50, sd: 70, sp: 140 },
+        abilities: { 0: "Arena Trap" }
+    },
+    Eevee: {
+        abilities: { 0: "Adaptability" }
+    },
+    Shelgon: {
+        bs: { hp: 65, at: 95, df: 130, sa: 60, sd: 100, sp: 50 }
+    },
+    Squirtle: {
+        abilities: { 0: "Torrent" }
+    },
+    Wartortle: {
+        bs: { hp: 59, at: 63, df: 100, sa: 65, sd: 100, sp: 58 },
+        abilities: { 0: "Torrent" }
+    },
+    Unown: {
+        bs: { hp: 48, at: 72, df: 48, sa: 72, sd: 48, sp: 72 },
+        abilities: { 0: "Unown Energy" }
+    },
+    Whismur: {
+        abilities: { 0: "Forewarn" }
+    },
+    Loudred: {
+        abilities: { 0: "Forewarn" }
+    },
+    Exploud: {
+        bs: { hp: 104, at: 91, df: 63, sa: 121, sd: 73, sp: 68 },
+        abilities: { 0: "Relentless" }
+    },
+    Magikarp: {
+        abilities: { 0: "Anger Point" }
+    },
+    Clamperl: {
+        abilities: { 0: "Slush Rush" }
+    },
+    Omanyte: {
+        bs: { hp: 35, at: 40, df: 75, sa: 90, sd: 55, sp: 35 },
+        abilities: { 0: "Swift Swim" }
+    },
+    Omastar: {
+        bs: { hp: 90, at: 60, df: 125, sa: 125, sd: 70, sp: 75 },
+        abilities: { 0: "Swift Swim" }
+    },
+    Lugia: {
+        types: ["Water", "Flying"],
+        abilities: { 0: "Multiscale" }
+    },
+    Meowth: {
+        abilities: { 0: "Free Sample" }
+    },
+    Oddish: {
+        abilities: { 0: "Free Sample" }
+    },
+    Growlithe: {
+        abilities: { 0: "Shakedown" }
+    },
+    Golbat: {
+        abilities: { 0: "Free Sample" }
+    },
+    Castform: {
+        types: ["Flying"],
+        bs: { hp: 90, at: 70, df: 70, sa: 70, sd: 70, sp: 120 }
+    },
+    'Castform-Rainy': {
+        bs: { hp: 90, at: 35, df: 105, sa: 93, sd: 105, sp: 90 }
+    },
+    'Castform-Snowy': {
+        bs: { hp: 90, at: 105, df: 105, sa: 116, sd: 93, sp: 90 }
+    },
+    'Castform-Sunny': {
+        bs: { hp: 90, at: 105, df: 52, sa: 105, sd: 52, sp: 132 }
+    },
+    'Castform-Sandy': {
+        bs: { hp: 90, at: 105, df: 116, sa: 93, sd: 116, sp: 90 }
+    },
+    Latios: {
+        bs: { hp: 80, at: 90, df: 80, sa: 130, sd: 110, sp: 118 }
+    },
+    Latias: {
+        bs: { hp: 80, at: 80, df: 90, sa: 110, sd: 130, sp: 118 }
+    },
+    Sudowoodo: {
+        bs: { hp: 75, at: 120, df: 125, sa: 50, sd: 65, sp: 25 },
+        abilities: { 0: "Rock Solid" }
+    },
+    Trapinch: {
+        abilities: { 0: "Arena Trap" }
+    },
+    Drowzee: {
+        bs: { hp: 65, at: 58, df: 65, sa: 53, sd: 90, sp: 43 },
+        abilities: { 0: "Bad Dreams" }
+    },
+    Hypno: {
+        bs: { hp: 95, at: 98, df: 90, sa: 88, sd: 115, sp: 69 },
+        abilities: { 0: "Bad Dreams" }
+    },
+    Tyrogue: {
+        bs: { hp: 35, at: 60, df: 60, sa: 35, sd: 35, sp: 35 }
+    },
+    Marowak: {
+        bs: { hp: 70, at: 80, df: 120, sa: 50, sd: 80, sp: 65 },
+        abilities: { 0: "Skill Link" }
+    },
+    Phanpy: {
+        abilities: { 0: "Pickup" }
+    },
+    Donphan: {
+        abilities: { 0: "Steadfast" }
+    },
+    Dunsparce: {
+        bs: { hp: 110, at: 90, df: 80, sa: 65, sd: 70, sp: 49 },
+        abilities: { 0: "Serene Grace" }
+    },
+    'Scream Tail': {
+        types: ["Normal", "Ground"],
+        bs: { hp: 115, at: 115, df: 65, sa: 99, sd: 65, sp: 111 },
+        weightkg: 48.4,
+        abilities: { 0: 'Rock Star' }
+    },
+    Wibblypuff: {
+        nfe: true,
+        types: ["Normal"],
+        bs: { hp: 100, at: 24, df: 100, sa: 24, sd: 100, sp: 90 },
+        weightkg: 5.5,
+        abilities: { 0: 'Pest' }
+    },
+    Megamarill: {
+        types: ["Water"],
+        bs: { hp: 140, at: 50, df: 95, sa: 70, sd: 65, sp: 35 },
+        weightkg: 130,
+        abilities: { 0: 'Thick Fat' }
     }
 };
 var DPP = (0, util_1.extend)(true, {}, ADV, DPP_PATCH);
@@ -10689,13 +10899,6 @@ var SV_PATCH = {
         bs: { hp: 65, at: 108, df: 65, sa: 108, sd: 65, sp: 75 },
         weightkg: 15,
         abilities: { 0: 'Chlorophyll' }
-    },
-    'Scream Tail': {
-        types: ['Fairy', 'Psychic'],
-        bs: { hp: 115, at: 65, df: 99, sa: 65, sd: 115, sp: 111 },
-        weightkg: 8,
-        gender: 'N',
-        abilities: { 0: 'Protosynthesis' }
     },
     Shox: {
         types: ['Electric', 'Normal'],
