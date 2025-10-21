@@ -91,7 +91,6 @@ var Move = (function () {
         this.flags = data.flags;
         this.priority = data.priority || 0;
         this.ignoreDefensive = !!data.ignoreDefensive;
-        this.ignoreScreens = !!data.ignoreScreens;
         this.overrideOffensiveStat = data.overrideOffensiveStat;
         this.overrideDefensiveStat = data.overrideDefensiveStat;
         this.overrideOffensivePokemon = data.overrideOffensivePokemon;

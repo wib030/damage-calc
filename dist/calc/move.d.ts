@@ -29,7 +29,6 @@ export declare class Move implements State.Move {
     priority: number;
     dropsStats?: number;
     ignoreDefensive: boolean;
-    ignoreScreens: boolean;
     overrideOffensiveStat?: I.StatIDExceptHP;
     overrideDefensiveStat?: I.StatIDExceptHP;
     overrideOffensivePokemon?: 'target' | 'source';

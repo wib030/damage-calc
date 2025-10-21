@@ -590,7 +590,7 @@ var DPP_PATCH = {
     'Fire Spin': { category: 'Special', bp: 35 },
     Flail: { category: 'Physical' },
     Fly: { bp: 90, category: 'Physical' },
-    'Focus Punch': { isPunch: true, category: 'Physical', bp: 160, ignoreDefensive: true, ignoreScreens: true },
+    'Focus Punch': { isPunch: true, category: 'Physical', bp: 160, ignoreDefensive: true },
     'Fury Attack': { category: 'Physical' },
     'Fury Cutter': { category: 'Physical', bp: 30, isSlicing: true },
     'Fury Swipes': { category: 'Physical' },

@@ -579,15 +579,17 @@ function calculateFinalModsDPP(baseDamage, attacker, move, field, desc, isCritic
         move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
     }
     var isPhysical = move.category === 'Physical';
-    if (!isCritical || !move.ignoreScreens) {
-        var screenMultiplier = field.gameType !== 'Singles' ? 2 / 3 : 1 / 2;
-        if (isPhysical && field.defenderSide.isReflect) {
-            baseDamage = Math.floor(baseDamage * screenMultiplier);
-            desc.isReflect = true;
-        }
-        else if (!isPhysical && field.defenderSide.isLightScreen) {
-            baseDamage = Math.floor(baseDamage * screenMultiplier);
-            desc.isLightScreen = true;
+    if (!isCritical) {
+        if (!move.named('Focus Punch')) {
+            var screenMultiplier = field.gameType !== 'Singles' ? 2 / 3 : 1 / 2;
+            if (isPhysical && field.defenderSide.isReflect) {
+                baseDamage = Math.floor(baseDamage * screenMultiplier);
+                desc.isReflect = true;
+            }
+            else if (!isPhysical && field.defenderSide.isLightScreen) {
+                baseDamage = Math.floor(baseDamage * screenMultiplier);
+                desc.isLightScreen = true;
+            }
         }
     }
     if (field.gameType !== 'Singles' &&

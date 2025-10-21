@@ -14,7 +14,6 @@ export interface MoveData {
     readonly priority?: number;
     readonly self?: I.SelfOrSecondaryEffect | null;
     readonly ignoreDefensive?: boolean;
-    readonly ignoreScreens?: boolean;
     readonly overrideOffensiveStat?: I.StatIDExceptHP;
     readonly overrideDefensiveStat?: I.StatIDExceptHP;
     readonly overrideOffensivePokemon?: 'target' | 'source';
@@ -64,7 +63,6 @@ declare class Move implements I.Move {
     readonly priority?: number;
     readonly self?: I.SelfOrSecondaryEffect | null;
     readonly ignoreDefensive?: boolean;
-    readonly ignoreScreens?: boolean;
     readonly overrideOffensiveStat?: I.StatIDExceptHP;
     readonly overrideDefensiveStat?: I.StatIDExceptHP;
     readonly overrideOffensivePokemon?: 'target' | 'source';

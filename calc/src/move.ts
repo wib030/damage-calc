@@ -35,7 +35,6 @@ export class Move implements State.Move {
   priority: number;
   dropsStats?: number;
   ignoreDefensive: boolean;
-  ignoreScreens: boolean;
   overrideOffensiveStat?: I.StatIDExceptHP;
   overrideDefensiveStat?: I.StatIDExceptHP;
   overrideOffensivePokemon?: 'target' | 'source';
@@ -153,7 +152,6 @@ export class Move implements State.Move {
     this.priority = data.priority || 0;
 
     this.ignoreDefensive = !!data.ignoreDefensive;
-	this.ignoreScreens = !!data.ignoreScreens;
     this.overrideOffensiveStat = data.overrideOffensiveStat;
     this.overrideDefensiveStat = data.overrideDefensiveStat;
     this.overrideOffensivePokemon = data.overrideOffensivePokemon;
