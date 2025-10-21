@@ -173,7 +173,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
     if (basePower === 0) {
         return result;
     }
-    basePower = calculateBPModsDPP(attacker, defender, move, field, desc, basePower);
+    basePower = calculateBPModsDPP(attacker, defender, move, field, desc, basePower, defender.curHP());
     var attack = calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritical);
     var defense = calculateDefenseDPP(gen, attacker, defender, move, field, desc, isCritical);
     var baseDamage = Math.floor(Math.floor((Math.floor((2 * attacker.level) / 5 + 2) * basePower * attack) / 50) / defense);
@@ -227,6 +227,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
     }
     result.damage = damage;
     if (move.timesUsed > 1 || move.hits > 1) {
+        var virtualHP = defender.curHP();
         var origDefBoost = desc.defenseBoost;
         var origAtkBoost = desc.attackBoost;
         var numAttacks = 1;
@@ -242,7 +243,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
         for (var times = 1; times < numAttacks; times++) {
             usedItems = (0, util_1.checkMultihitBoost)(gen, attacker, defender, move, field, desc, usedItems[0], usedItems[1]);
             var newBasePower = calculateBasePowerDPP(gen, attacker, defender, move, field, desc);
-            newBasePower = calculateBPModsDPP(attacker, defender, move, field, desc, newBasePower);
+            newBasePower = calculateBPModsDPP(attacker, defender, move, field, desc, newBasePower, virtualHP);
             var newAtk = calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritical);
             var baseDamage_1 = Math.floor(Math.floor((Math.floor((2 * attacker.level) / 5 + 2) * newBasePower * newAtk) / 50) / defense);
             if (attacker.hasStatus('brn') && isPhysical && !attacker.hasAbility('Guts')) {
@@ -250,6 +251,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
                 desc.isBurned = true;
             }
             baseDamage_1 = calculateFinalModsDPP(baseDamage_1, attacker, move, field, desc, isCritical);
+            virtualHP -= baseDamage_1;
             var damageArray = [];
             for (var i = 0; i < 16; i++) {
                 var newFinalDamage = 0;
@@ -384,7 +386,7 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, hit) 
     return basePower;
 }
 exports.calculateBasePowerDPP = calculateBasePowerDPP;
-function calculateBPModsDPP(attacker, defender, move, field, desc, basePower) {
+function calculateBPModsDPP(attacker, defender, move, field, desc, basePower, virtualHP) {
     if (field.attackerSide.isHelpingHand) {
         basePower = Math.floor(basePower * 1.5);
         desc.isHelpingHand = true;

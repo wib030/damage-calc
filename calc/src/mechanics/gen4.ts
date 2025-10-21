@@ -209,7 +209,7 @@ export function calculateDPP(
   if (basePower === 0) {
     return result;
   }
-  basePower = calculateBPModsDPP(attacker, defender, move, field, desc, basePower);
+  basePower = calculateBPModsDPP(attacker, defender, move, field, desc, basePower, defender.curHP());
 
   // #endregion
   // #region (Special) Attack
@@ -283,6 +283,7 @@ export function calculateDPP(
   result.damage = damage;
 
   if (move.timesUsed! > 1 || move.hits > 1) {
+	let virtualHP = defender.curHP();
     // store boosts so intermediate boosts don't show.
     const origDefBoost = desc.defenseBoost;
     const origAtkBoost = desc.attackBoost;
@@ -299,7 +300,7 @@ export function calculateDPP(
       usedItems = checkMultihitBoost(gen, attacker, defender, move,
         field, desc, usedItems[0], usedItems[1]);
       let newBasePower = calculateBasePowerDPP(gen, attacker, defender, move, field, desc);
-      newBasePower = calculateBPModsDPP(attacker, defender, move, field, desc, newBasePower);
+      newBasePower = calculateBPModsDPP(attacker, defender, move, field, desc, newBasePower, virtualHP);
       const newAtk = calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritical);
       let baseDamage = Math.floor(
         Math.floor(
@@ -311,6 +312,7 @@ export function calculateDPP(
         desc.isBurned = true;
       }
       baseDamage = calculateFinalModsDPP(baseDamage, attacker, move, field, desc, isCritical);
+	  virtualHP -= baseDamage;
 
       const damageArray = [];
       for (let i = 0; i < 16; i++) {
@@ -462,6 +464,7 @@ export function calculateBPModsDPP(
   field: Field,
   desc: RawDesc,
   basePower: number,
+  virtualHP: number,
 ) {
   if (field.attackerSide.isHelpingHand) {
     basePower = Math.floor(basePower * 1.5);
