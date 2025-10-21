@@ -450,6 +450,9 @@ export function calculateBasePowerDPP(
 	break;
   case 'Chum Rush':
     basePower = (move.bp * 2 / 3) * defender.maxHP() / virtualHP;
+	if (basePower > 80) {
+	  basePower = 80;
+	}
 	desc.moveBP = basePower;
 	break;
   default:
