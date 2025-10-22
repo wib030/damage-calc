@@ -504,13 +504,16 @@ function calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritic
         desc.weather = field.weather;
     }
     else if ((isPhysical &&
-        (attacker.hasAbility('Hustle') || (attacker.hasAbility('Guts') && attacker.status)) ||
-        (!isPhysical && attacker.abilityOn && attacker.hasAbility('Plus', 'Minus')))) {
+        (attacker.hasAbility('Hustle') || (attacker.hasAbility('Guts') && attacker.status)))) {
         attack = Math.floor(attack * 1.5);
         desc.attackerAbility = attacker.ability;
     }
     else if (isPhysical && attacker.hasAbility('Slow Start') && attacker.abilityOn) {
         attack = Math.floor(attack / 2);
+        desc.attackerAbility = attacker.ability;
+    }
+    if (attacker.abilityOn && attacker.hasAbility('Plus')) {
+        attack = Math.floor(attack * 1.5);
         desc.attackerAbility = attacker.ability;
     }
     if (field.attackerSide.isFlowerGift && !attacker.hasAbility('Flower Gift') &&
@@ -572,6 +575,10 @@ function calculateDefenseDPP(gen, attacker, defender, move, field, desc, isCriti
         defense = Math.floor(defense * 1.5);
         desc.defenderAbility = defender.ability;
         desc.weather = field.weather;
+    }
+    if (attacker.abilityOn && attacker.hasAbility('Minus')) {
+        defense = Math.floor(defense * 1.5);
+        desc.defenderAbility = defender.ability;
     }
     if (defender.hasItem('Soul Dew') && defender.named('Latios', 'Latias') && !isPhysical) {
         defense = Math.floor(defense * 1.5);
