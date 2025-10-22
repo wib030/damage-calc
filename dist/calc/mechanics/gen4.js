@@ -178,7 +178,8 @@ function calculateDPP(gen, attacker, defender, move, field) {
         (move.hasType('Electric') && defender.hasAbility('Motor Drive', 'Volt Absorb', 'Lightning Rod')) ||
         (move.hasType('Ground') && !field.isGravity &&
             !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
-        (move.flags.sound && defender.hasAbility('Soundproof'))) {
+        (move.flags.sound && defender.hasAbility('Soundproof')) ||
+        ((move.named('Spider Web') || move.named('String Shot')) && defender.hasAbility('Web Master'))) {
         desc.defenderAbility = defender.ability;
         return result;
     }
