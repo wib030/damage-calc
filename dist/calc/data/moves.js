@@ -787,7 +787,7 @@ var DPP_PATCH = {
     'Vital Throw': { category: 'Physical' },
     Waterfall: { category: 'Physical', secondaries: true },
     'Water Gun': { category: 'Special' },
-    'Water Pulse': { category: 'Special', secondaries: true },
+    'Water Pulse': { category: 'Special', secondaries: true, isPulse: true },
     'Water Spout': { category: 'Special', bp: 140 },
     'Wing Attack': { category: 'Physical' },
     'Zap Cannon': { bp: 120, category: 'Special', secondaries: true },
@@ -944,10 +944,10 @@ var DPP_PATCH = {
         category: 'Special'
     },
     'Air Slash': { bp: 75, type: 'Flying', category: 'Special', isSlicing: true, secondaries: true },
-    'Aura Sphere': { bp: 95, type: 'Fighting', category: 'Special' },
+    'Aura Sphere': { bp: 95, type: 'Fighting', category: 'Special', isPulse: true },
     'Bug Buzz': { bp: 90, type: 'Bug', isSound: true, category: 'Special', secondaries: true },
     'Draco Meteor': { bp: 130, type: 'Dragon', self: { boosts: { spa: -2 } }, category: 'Special' },
-    'Dragon Pulse': { bp: 90, type: 'Dragon', category: 'Special' },
+    'Dragon Pulse': { bp: 90, type: 'Dragon', category: 'Special', isPulse: true },
     'Dragon Rush': {
         bp: 100,
         type: 'Dragon',
@@ -1048,7 +1048,7 @@ var DPP_PATCH = {
         isSlicing: true,
         secondaries: true
     },
-    'Dark Pulse': { bp: 80, type: 'Dark', category: 'Special', secondaries: true },
+    'Dark Pulse': { bp: 80, type: 'Dark', category: 'Special', secondaries: true, isPulse: true },
     'Defend Order': { bp: 0, type: 'Bug' },
     Discharge: {
         bp: 80,

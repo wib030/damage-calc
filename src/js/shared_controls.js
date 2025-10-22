@@ -350,21 +350,6 @@ function autosetWeather(ability, i) {
 		lastAutoWeather[i] = "Sun";
 		$("#sun").prop("checked", true);
 		break;
-	case "Forecast":
-		if (item === 'Heat Rock') {
-			lastAutoWeather[i] = "Sun";
-			$("#sun").prop("checked", true);
-		} else if (item === 'Damp Rock') {
-			lastAutoWeather[i] = "Rain";
-			$("#rain").prop("checked", true);
-		} else if (item === 'Icy Rock') {
-			lastAutoWeather[i] = "Hail";
-			$("#hail").prop("checked", true);
-		} else if (item === 'Smooth Rock') {
-			lastAutoWeather[i] = "Sand";
-			$("#sand").prop("checked", true);
-		}
-		break;
 	case "Drizzle":
 		lastAutoWeather[i] = "Rain";
 		$("#rain").prop("checked", true);

@@ -539,6 +539,19 @@ export function calculateBPModsDPP(
     desc.attackerAbility = attacker.ability;
   }
   
+  if (attacker.hasAbility('Chloroplast') && move.hasType('Grass')) {
+	basePower = Math.floor(basePower * 1.5);
+    desc.attackerAbility = attacker.ability;
+  }
+  
+  if (
+    (attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
+    (attacker.hasAbility('Strong Jaw') && move.flags.bite)
+  ) {
+    basePower = Math.floor(basePower * 1.5);
+    desc.attackerAbility = attacker.ability;
+  }
+  
   if (attacker.curHP() <= attacker.maxHP() / 2 && (attacker.hasAbility('Headache') && move.hasType('Psychic'))) {
 	basePower = Math.floor(basePower * 2);
     desc.attackerAbility = attacker.ability;
@@ -563,6 +576,11 @@ export function calculateBPModsDPP(
   
   if (attacker.hasAbility('Sheer Force') && move.secondaries) {
     basePower = Math.floor(basePower * 1.3);
+    desc.attackerAbility = attacker.ability;
+  }
+  
+  if (attacker.hasAbility('Tidal Force') && field.isGravity) {
+    basePower = Math.floor(basePower * 1.33);
     desc.attackerAbility = attacker.ability;
   }
 
@@ -638,6 +656,17 @@ export function calculateAttackDPP(
     attack = Math.floor(attack * 1.5);
     desc.weather = field.weather;
     desc.isFlowerGiftAttacker = true;
+  }
+  
+  if (attacker.hasAbility('Sand Force') && field.hasWeather('Sand')) {
+    attack = Math.floor(attack * 1.3);
+	desc.attackerAbility = attacker.ability;
+    desc.weather = field.weather;
+  }
+  
+  if (!isPhysical && attacker.hasAbility('Flare Boost') && attacker.hasStatus('brn')) {
+	attack = Math.floor(attack * 1.5);
+    desc.attackerAbility = attacker.ability;
   }
 
   if ((isPhysical ? attacker.hasItem('Choice Band') : attacker.hasItem('Choice Specs')) ||
