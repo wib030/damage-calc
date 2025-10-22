@@ -1214,7 +1214,8 @@ var DPP_PATCH = {
         type: 'Psychic',
         target: 'allAdjacentFoes',
         category: 'Special',
-        secondaries: true
+        secondaries: true,
+        isSound: true
     },
     'Peek-A-Boo': {
         bp: 70,

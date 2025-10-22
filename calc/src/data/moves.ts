@@ -1222,6 +1222,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     target: 'allAdjacentFoes',
     category: 'Special',
     secondaries: true,
+	isSound: true,
   },
   'Peek-A-Boo': {
     bp: 70,

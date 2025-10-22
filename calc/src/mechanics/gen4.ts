@@ -586,6 +586,11 @@ export function calculateBPModsDPP(
     desc.attackerItem = attacker.item;
   }
   
+  if (attacker.hasItem('Thick Club') && attacker.named('Cubone', 'Marowak') && (move.named('Bone Club') || move.named('Bonemerang') || move.named('Bone Rush'))) {
+	basePower *= 2;
+    desc.attackerItem = attacker.item; 
+  }
+  
   if ((attacker.hasItem('Silk Scarf') && move.hasType('Normal')) ||
     (attacker.hasItem('Adamant Orb') &&
      attacker.named('Dialga') &&
@@ -760,7 +765,6 @@ export function calculateAttackDPP(
     desc.attackerItem = attacker.item;
   } else if (
     (attacker.hasItem('Light Ball') && attacker.named('Pikachu')) ||
-    (attacker.hasItem('Thick Club') && attacker.named('Cubone', 'Marowak') && isPhysical) ||
     (attacker.hasItem('Deep Sea Tooth') && attacker.named('Clamperl') && !isPhysical)
   ) {
     attack *= 2;
