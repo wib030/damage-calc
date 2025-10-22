@@ -349,6 +349,10 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, virtu
             basePower = (0, items_1.getFlingPower)(attacker.item);
             desc.moveBP = basePower;
             desc.attackerItem = attacker.item;
+            if (attacker.hasItem('Dawn Stone') && defender.hasStatus('slp')) {
+                basePower *= 2;
+                desc.moveBP = basePower;
+            }
             break;
         case 'Grass Knot':
         case 'Low Kick':
@@ -390,12 +394,6 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, virtu
         case 'Wake-Up Slap':
         case 'Peek-A-Boo':
             if (defender.hasStatus('slp')) {
-                basePower *= 2;
-                desc.moveBP = basePower;
-            }
-            break;
-        case 'Fling':
-            if (attacker.hasItem('Dawn Stone') && defender.hasStatus('slp')) {
                 basePower *= 2;
                 desc.moveBP = basePower;
             }
