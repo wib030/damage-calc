@@ -422,7 +422,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
     }
     else if (field.hasWeather('Sand')) {
         if (!defender.hasType('Rock', 'Ground', 'Steel') &&
-            !defender.hasAbility('Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil') &&
+            !defender.hasAbility('Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil', 'Sand Stream') &&
             !defender.hasItem('Safety Goggles')) {
             damage -= Math.floor(defender.maxHP() / (gen.num === 2 ? 8 : 16));
             texts.push('sandstorm damage');
@@ -434,7 +434,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
             texts.push('Ice Body recovery');
         }
         else if (!defender.hasType('Ice') &&
-            !defender.hasAbility('Magic Guard', 'Overcoat', 'Snow Cloak') &&
+            !defender.hasAbility('Magic Guard', 'Overcoat', 'Snow Cloak', 'Snow Warning', 'Slush Rush') &&
             !defender.hasItem('Safety Goggles') &&
             field.hasWeather('Hail')) {
             damage -= Math.floor(defender.maxHP() / 16);

@@ -106,8 +106,8 @@ export function calculateDPP(
     desc.moveBP = move.bp;
     desc.moveType = move.type;
   }
-
-  if (attacker.hasAbility('Normalize') && !move.named('Struggle')) {
+  
+  if (attacker.hasAbility('Normalize') && !move.named('Struggle') && !move.named('Judgment') && !move.named('Natural Gift') && !move.named('Weather Ball')) {
     move.type = 'Normal';
     desc.attackerAbility = attacker.ability;
   }
@@ -172,8 +172,8 @@ export function calculateDPP(
   const ignoresWonderGuard = move.hasType('???') || move.named('Fire Fang');
   if ((!ignoresWonderGuard && defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
       (move.hasType('Fire') && defender.hasAbility('Flash Fire')) ||
-      (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Water Absorb')) ||
-      (move.hasType('Electric') && defender.hasAbility('Motor Drive', 'Volt Absorb')) ||
+      (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Water Absorb', 'Storm Drain')) ||
+      (move.hasType('Electric') && defender.hasAbility('Motor Drive', 'Volt Absorb', 'Lightning Rod')) ||
       (move.hasType('Ground') && !field.isGravity &&
         !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
       (move.flags.sound && defender.hasAbility('Soundproof'))
@@ -483,6 +483,11 @@ export function calculateBPModsDPP(
 
   if (attacker.hasAbility('Technician') && basePower <= 60) {
     basePower = Math.floor(basePower * 1.5);
+    desc.attackerAbility = attacker.ability;
+  }
+  
+  if (attacker.hasAbility('Normalize') && !move.named('Struggle') && !move.named('Judgment') && !move.named('Natural Gift') && !move.named('Weather Ball')) {
+    basePower = Math.floor(basePower * 1.2);
     desc.attackerAbility = attacker.ability;
   }
   
