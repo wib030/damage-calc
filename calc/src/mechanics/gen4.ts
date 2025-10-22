@@ -58,6 +58,11 @@ export function calculateDPP(
     desc.isProtected = true;
     return result;
   }
+  
+  if (move.flags.punch && attacker.hasItem('Loaded Gloves')) {
+    desc.attackerItem = attacker.item;
+    move.flags.contact = 0;
+  }
 
   if (move.name === 'Pain Split') {
     const average = Math.floor((attacker.curHP() + defender.curHP()) / 2);
@@ -154,7 +159,7 @@ export function calculateDPP(
     desc.attackerAbility = attacker.ability;
   }
 
-  const isGhostRevealed = attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
+  const isGhostRevealed = attacker.hasAbility('Scrappy') || field.defenderSide.isForesight || (attacker.hasItem('Cleanse Tag') && move.type === 'Normal');
 
   const typeEffectivenessPrecedenceRules = [
     'Normal',
@@ -222,6 +227,12 @@ export function calculateDPP(
 	  ((move.named('Spider Web') || move.named('String Shot')) && defender.hasAbility('Web Master'))
   ) {
     desc.defenderAbility = defender.ability;
+    return result;
+  }
+  
+  if (move.hasType('Ground') && !move.named('Thousand Arrows') &&
+      !field.isGravity && defender.hasItem('Air Balloon')) {
+    desc.defenderItem = defender.item;
     return result;
   }
 
@@ -557,7 +568,18 @@ export function calculateBPModsDPP(
       (attacker.hasItem('Wise Glasses') && !isPhysical)) {
     basePower = Math.floor(basePower * 1.1);
     desc.attackerItem = attacker.item;
-  } else if (move.hasType(getItemBoostType(attacker.item)) ||
+  } else if ((move.hasType(getItemBoostType(attacker.item)) && (!attacker.hasItem('Silk Scarf')))
+  ) {
+    basePower = Math.floor(basePower * 1.2);
+    desc.attackerItem = attacker.item;
+  }
+  
+  if (attacker.hasItem('Loaded Gloves') && move.flags.punch) {
+    basePower = Math.floor(basePower * 1.2);
+    desc.attackerItem = attacker.item;
+  }
+  
+  if ((attacker.hasItem('Silk Scarf') && move.hasType('Normal')) ||
     (attacker.hasItem('Adamant Orb') &&
      attacker.named('Dialga') &&
      move.hasType('Steel', 'Dragon')) ||
@@ -566,9 +588,9 @@ export function calculateBPModsDPP(
      move.hasType('Water', 'Dragon')) ||
     (attacker.hasItem('Griseous Orb') &&
      attacker.named('Giratina-Origin') &&
-     move.hasType('Ghost', 'Dragon'))
+     move.hasType('Ghost', 'Dragon'))  
   ) {
-    basePower = Math.floor(basePower * 1.2);
+	basePower = Math.floor(basePower * 1.3);
     desc.attackerItem = attacker.item;
   }
 
@@ -809,6 +831,11 @@ export function calculateDefenseDPP(
     (defender.hasItem('Metal Powder') && defender.named('Ditto') && isPhysical)
   ) {
     defense *= 2;
+    desc.defenderItem = defender.item;
+  }
+  
+  if (!isPhysical && defender.hasItem('Assault Vest')) {
+	defense = Math.floor(defense * 1.5);
     desc.defenderItem = defender.item;
   }
 

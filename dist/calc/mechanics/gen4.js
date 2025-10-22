@@ -57,6 +57,10 @@ function calculateDPP(gen, attacker, defender, move, field) {
         desc.isProtected = true;
         return result;
     }
+    if (move.flags.punch && attacker.hasItem('Loaded Gloves')) {
+        desc.attackerItem = attacker.item;
+        move.flags.contact = 0;
+    }
     if (move.name === 'Pain Split') {
         var average = Math.floor((attacker.curHP() + defender.curHP()) / 2);
         var damage_1 = Math.max(0, defender.curHP() - average);
@@ -124,7 +128,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
         move.type = 'Rock';
         desc.attackerAbility = attacker.ability;
     }
-    var isGhostRevealed = attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
+    var isGhostRevealed = attacker.hasAbility('Scrappy') || field.defenderSide.isForesight || (attacker.hasItem('Cleanse Tag') && move.type === 'Normal');
     var typeEffectivenessPrecedenceRules = [
         'Normal',
         'Fire',
@@ -181,6 +185,11 @@ function calculateDPP(gen, attacker, defender, move, field) {
         (move.flags.sound && defender.hasAbility('Soundproof')) ||
         ((move.named('Spider Web') || move.named('String Shot')) && defender.hasAbility('Web Master'))) {
         desc.defenderAbility = defender.ability;
+        return result;
+    }
+    if (move.hasType('Ground') && !move.named('Thousand Arrows') &&
+        !field.isGravity && defender.hasItem('Air Balloon')) {
+        desc.defenderItem = defender.item;
         return result;
     }
     desc.HPEVs = (0, util_1.getStatDescriptionText)(gen, defender, 'hp');
@@ -459,7 +468,15 @@ function calculateBPModsDPP(attacker, defender, move, field, desc, basePower) {
         basePower = Math.floor(basePower * 1.1);
         desc.attackerItem = attacker.item;
     }
-    else if (move.hasType((0, items_1.getItemBoostType)(attacker.item)) ||
+    else if ((move.hasType((0, items_1.getItemBoostType)(attacker.item)) && (!attacker.hasItem('Silk Scarf')))) {
+        basePower = Math.floor(basePower * 1.2);
+        desc.attackerItem = attacker.item;
+    }
+    if (attacker.hasItem('Loaded Gloves') && move.flags.punch) {
+        basePower = Math.floor(basePower * 1.2);
+        desc.attackerItem = attacker.item;
+    }
+    if ((attacker.hasItem('Silk Scarf') && move.hasType('Normal')) ||
         (attacker.hasItem('Adamant Orb') &&
             attacker.named('Dialga') &&
             move.hasType('Steel', 'Dragon')) ||
@@ -469,7 +486,7 @@ function calculateBPModsDPP(attacker, defender, move, field, desc, basePower) {
         (attacker.hasItem('Griseous Orb') &&
             attacker.named('Giratina-Origin') &&
             move.hasType('Ghost', 'Dragon'))) {
-        basePower = Math.floor(basePower * 1.2);
+        basePower = Math.floor(basePower * 1.3);
         desc.attackerItem = attacker.item;
     }
     if ((attacker.hasAbility('Reckless') && (move.recoil || move.hasCrashDamage)) ||
@@ -676,6 +693,10 @@ function calculateDefenseDPP(gen, attacker, defender, move, field, desc, isCriti
     else if ((defender.hasItem('Deep Sea Scale') && defender.named('Clamperl') && !isPhysical) ||
         (defender.hasItem('Metal Powder') && defender.named('Ditto') && isPhysical)) {
         defense *= 2;
+        desc.defenderItem = defender.item;
+    }
+    if (!isPhysical && defender.hasItem('Assault Vest')) {
+        defense = Math.floor(defense * 1.5);
         desc.defenderItem = defender.item;
     }
     if (field.hasWeather('Sand') && defender.hasType('Rock') && !isPhysical) {
