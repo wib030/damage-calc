@@ -109,7 +109,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
         desc.weather = field.weather;
         desc.moveType = move.type;
     }
-    else if (move.named('Judgment') && attacker.item && attacker.item.includes('Plate')) {
+    else if ((move.named('Judgment') || move.named('Fling')) && attacker.item && attacker.item.includes('Plate')) {
         move.type = (0, items_1.getItemBoostType)(attacker.item);
     }
     else if (move.named('Natural Gift') && ((_b = attacker.item) === null || _b === void 0 ? void 0 : _b.endsWith('Berry'))) {
@@ -390,6 +390,12 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, virtu
         case 'Wake-Up Slap':
         case 'Peek-A-Boo':
             if (defender.hasStatus('slp')) {
+                basePower *= 2;
+                desc.moveBP = basePower;
+            }
+            break;
+        case 'Fling':
+            if (attacker.hasItem('Dawn Stone') && defender.hasStatus('slp')) {
                 basePower *= 2;
                 desc.moveBP = basePower;
             }
