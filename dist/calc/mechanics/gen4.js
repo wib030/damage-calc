@@ -435,7 +435,7 @@ function calculateBPModsDPP(attacker, defender, move, field, desc, basePower) {
         basePower = Math.floor(basePower * 1.3);
         desc.attackerAbility = attacker.ability;
     }
-    else if ((attacker.curHP() <= attacker.maxHP() / 3 &&
+    else if ((attacker.curHP() <= attacker.maxHP() / 2 &&
         ((attacker.hasAbility('Overgrow') && move.hasType('Grass')) ||
             (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
             (attacker.hasAbility('Torrent') && move.hasType('Water')) ||
@@ -576,7 +576,7 @@ function calculateDefenseDPP(gen, attacker, defender, move, field, desc, isCriti
         desc.defenderAbility = defender.ability;
         desc.weather = field.weather;
     }
-    if (attacker.abilityOn && attacker.hasAbility('Minus')) {
+    if (defender.abilityOn && defender.hasAbility('Minus')) {
         defense = Math.floor(defense * 1.5);
         desc.defenderAbility = defender.ability;
     }
