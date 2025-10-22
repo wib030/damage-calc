@@ -103,6 +103,7 @@ var Side = (function () {
         this.isPowerSpot = !!side.isPowerSpot;
         this.isSteelySpirit = !!side.isSteelySpirit;
         this.isSwitching = side.isSwitching;
+        this.isDeepSnow = !!side.isDeepSnow;
     }
     Side.prototype.clone = function () {
         return new Side(this);

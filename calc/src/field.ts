@@ -95,6 +95,7 @@ export class Side implements State.Side {
   isPowerSpot: boolean;
   isSteelySpirit: boolean;
   isSwitching?: 'out' | 'in';
+  isDeepSnow: boolean;
 
   constructor(side: State.Side = {}) {
     this.spikes = side.spikes || 0;
@@ -120,6 +121,7 @@ export class Side implements State.Side {
     this.isPowerSpot = !!side.isPowerSpot;
     this.isSteelySpirit = !!side.isSteelySpirit;
     this.isSwitching = side.isSwitching;
+	this.isDeepSnow = !!side.isDeepSnow;
   }
 
   clone() {

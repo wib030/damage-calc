@@ -1218,6 +1218,7 @@ function createField() {
 	var isPowerSpot = [$("#powerSpotL").prop("checked"), $("#powerSpotR").prop("checked")];
 	// TODO: support switching in as well!
 	var isSwitchingOut = [$("#switchingL").prop("checked"), $("#switchingR").prop("checked")];
+	var isDeepSnow = [$("#deepSnowL").prop("checked"), $("#deepSnowR").prop("checked")];
 
 	var createSide = function (i) {
 		return new calc.Side({
@@ -1243,7 +1244,8 @@ function createField() {
 			isAuroraVeil: isAuroraVeil[i],
 			isBattery: isBattery[i],
 			isPowerSpot: isPowerSpot[i],
-			isSwitching: isSwitchingOut[i] ? 'out' : undefined
+			isSwitching: isSwitchingOut[i] ? 'out' : undefined,
+			isDeepSnow: isDeepSnow[i]
 		});
 	};
 	return new calc.Field({
@@ -1536,6 +1538,8 @@ function clearField() {
 	$("#powerSpotR").prop("checked", false);
 	$("#switchingL").prop("checked", false);
 	$("#switchingR").prop("checked", false);
+	$("#deepSnowL").prop("checked", false);
+	$("#deepSnowR").prop("checked", false);
 	$("input:checkbox[name='terrain']").prop("checked", false);
 }
 

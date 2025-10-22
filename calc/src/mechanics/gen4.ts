@@ -121,6 +121,11 @@ export function calculateDPP(
     move.type = 'Normal';
     desc.attackerAbility = attacker.ability;
   }
+  
+  if (attacker.hasAbility('Rock Star') && move.flags.sound && !move.named('Struggle') && !move.named('Judgment') && !move.named('Natural Gift') && !move.named('Weather Ball')) {
+    move.type = 'Rock';
+    desc.attackerAbility = attacker.ability;
+  }
 
   const isGhostRevealed = attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
 
@@ -499,6 +504,11 @@ export function calculateBPModsDPP(
   
   if (attacker.hasAbility('Normalize') && !move.named('Struggle') && !move.named('Judgment') && !move.named('Natural Gift') && !move.named('Weather Ball')) {
     basePower = Math.floor(basePower * 1.2);
+    desc.attackerAbility = attacker.ability;
+  }
+  
+  if (attacker.hasAbility('Rock Star') && move.flags.sound && !move.named('Struggle') && !move.named('Judgment') && !move.named('Natural Gift') && !move.named('Weather Ball')) {
+    basePower = Math.floor(basePower * 1.5);
     desc.attackerAbility = attacker.ability;
   }
   

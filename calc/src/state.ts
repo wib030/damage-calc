@@ -78,5 +78,6 @@ export namespace State {
     isPowerSpot?: boolean;
     isSteelySpirit?: boolean;
     isSwitching?: 'out' | 'in';
+	isDeepSnow?: boolean;
   }
 }
