@@ -665,8 +665,12 @@ export function calculateAttackDPP(
     desc.attackBoost = attackBoost;
   }
   
-  if (attacker.hasAbility('Memory') || defender.hasAbility('Memory')) {
-	attack = rawAttack; 
+  if (attacker.hasAbility('Memory')) {
+	attack = rawAttack;
+	desc.attackerAbility = attacker.ability;
+  } else if (defender.hasAbility('Memory')) {
+	attack = rawAttack;
+	desc.defenderAbility = defender.ability;
   }
 
   if (isPhysical && attacker.hasAbility('Pure Power', 'Huge Power')) {
@@ -766,8 +770,12 @@ export function calculateDefenseDPP(
     desc.defenseBoost = defenseBoost;
   }
   
-  if (attacker.hasAbility('Memory') || defender.hasAbility('Memory')) {
+  if (attacker.hasAbility('Memory')) {
 	defense = rawDefense;
+	desc.attackerAbility = attacker.ability;
+  } else if (defender.hasAbility('Memory')) {
+	defense = rawDefense;
+	desc.defenderAbility = defender.ability;
   }
 
   if (defender.hasAbility('Marvel Scale') && defender.status && isPhysical) {
