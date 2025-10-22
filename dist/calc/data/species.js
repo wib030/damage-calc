@@ -3155,13 +3155,6 @@ var DPP_PATCH = {
         nfe: true,
         abilities: { 0: 'Swift Swim' }
     },
-    Flarelm: {
-        types: ['Fire', 'Grass'],
-        bs: { hp: 90, at: 50, df: 95, sa: 75, sd: 70, sp: 40 },
-        weightkg: 73,
-        nfe: true,
-        abilities: { 0: 'Rock Head' }
-    },
     Floatzel: {
         types: ['Water'],
         bs: { hp: 85, at: 115, df: 75, sa: 85, sd: 70, sp: 115 },
