@@ -602,7 +602,7 @@ export function calculateAttackDPP(
   ) {
     attack = Math.floor(attack * 1.5);
     desc.attackerAbility = attacker.ability;
-  } else if (isPhysical && attacker.hasAbility('Slow Start') && attacker.abilityOn) {
+  } else if (attacker.hasAbility('Slow Start') && attacker.abilityOn) {
     attack = Math.floor(attack / 2);
     desc.attackerAbility = attacker.ability;
   }
