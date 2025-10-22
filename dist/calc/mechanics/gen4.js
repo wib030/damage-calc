@@ -90,10 +90,6 @@ function calculateDPP(gen, attacker, defender, move, field) {
         desc.moveBP = move.bp;
         desc.moveType = move.type;
     }
-    else if (move.named('Brick Break')) {
-        field.defenderSide.isReflect = false;
-        field.defenderSide.isLightScreen = false;
-    }
     if (attacker.hasAbility('Normalize') && !move.named('Struggle')) {
         move.type = 'Normal';
         desc.attackerAbility = attacker.ability;
@@ -607,7 +603,7 @@ function calculateFinalModsDPP(baseDamage, attacker, move, field, desc, isCritic
         move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
     }
     var isPhysical = move.category === 'Physical';
-    if (!isCritical && !move.named('Focus Punch')) {
+    if (!isCritical && !move.named('Focus Punch') && !move.named('Brick Break')) {
         var screenMultiplier = field.gameType !== 'Singles' ? 2 / 3 : 1 / 2;
         if (isPhysical && field.defenderSide.isReflect) {
             baseDamage = Math.floor(baseDamage * screenMultiplier);
@@ -640,11 +636,11 @@ function calculateFinalModsDPP(baseDamage, attacker, move, field, desc, isCritic
     baseDamage += 2;
     if (isCritical) {
         if (attacker.hasAbility('Sniper')) {
-            baseDamage *= 3;
+            baseDamage *= 2;
             desc.attackerAbility = attacker.ability;
         }
         else {
-            baseDamage *= 2;
+            baseDamage = baseDamage * 4 / 3;
         }
         desc.isCritical = isCritical;
     }
