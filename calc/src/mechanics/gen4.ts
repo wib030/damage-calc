@@ -594,7 +594,7 @@ export function calculateAttackDPP(
     attack *= 2;
     desc.attackerAbility = attacker.ability;
   } else if (field.hasWeather('Sun') &&
-    (attacker.hasAbility(isPhysical ? 'Flower Gift' : 'Solar Power'))
+    (attacker.hasAbility('Solar Power'))
   ) {
     attack = Math.floor(attack * 1.5);
     desc.attackerAbility = attacker.ability;
@@ -612,7 +612,7 @@ export function calculateAttackDPP(
   }
 
   if (field.attackerSide.isFlowerGift && !attacker.hasAbility('Flower Gift') &&
-    field.hasWeather('Sun') && isPhysical) {
+    field.hasWeather('Sun')) {
     attack = Math.floor(attack * 1.5);
     desc.weather = field.weather;
     desc.isFlowerGiftAttacker = true;
@@ -675,14 +675,10 @@ export function calculateDefenseDPP(
   if (defender.hasAbility('Marvel Scale') && defender.status && isPhysical) {
     defense = Math.floor(defense * 1.5);
     desc.defenderAbility = defender.ability;
-  } else if (defender.hasAbility('Flower Gift') && field.hasWeather('Sun') && !isPhysical) {
+  } else if (defender.hasAbility('Flower Gift') && field.hasWeather('Sun')) {
     defense = Math.floor(defense * 1.5);
     desc.defenderAbility = defender.ability;
     desc.weather = field.weather;
-  } else if (field.defenderSide.isFlowerGift && field.hasWeather('Sun') && !isPhysical) {
-    defense = Math.floor(defense * 1.5);
-    desc.weather = field.weather;
-    desc.isFlowerGiftDefender = true;
   }
 
   if (defender.hasItem('Soul Dew') && defender.named('Latios', 'Latias') && !isPhysical) {
