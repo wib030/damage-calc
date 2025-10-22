@@ -157,9 +157,9 @@ export function calculateDPP(
   }
 
   let type1Effectiveness =
-    getMoveEffectiveness(gen, move, firstDefenderType, isGhostRevealed, field.isGravity, false, defender);
+    getMoveEffectiveness(gen, move, firstDefenderType, isGhostRevealed, field.isGravity, false, defender, attacker);
   let type2Effectiveness = secondDefenderType
-    ? getMoveEffectiveness(gen, move, secondDefenderType, isGhostRevealed, field.isGravity, false, defender)
+    ? getMoveEffectiveness(gen, move, secondDefenderType, isGhostRevealed, field.isGravity, false, defender, attacker)
     : 1;
 
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
@@ -558,6 +558,11 @@ export function calculateBPModsDPP(
       basePower = Math.floor(basePower * 1.5);
       desc.rivalry = 'buffed';
     }
+    desc.attackerAbility = attacker.ability;
+  }
+  
+  if (attacker.hasAbility('Sheer Force') && move.secondaries) {
+    basePower = Math.floor(basePower * 1.3);
     desc.attackerAbility = attacker.ability;
   }
 

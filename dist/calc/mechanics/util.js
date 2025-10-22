@@ -177,11 +177,14 @@ function getFinalSpeed(gen, pokemon, field, side) {
     return Math.max(0, speed);
 }
 exports.getFinalSpeed = getFinalSpeed;
-function getMoveEffectiveness(gen, move, type, isGhostRevealed, isGravity, isRingTarget, pokemon) {
-    if (pokemon === null || pokemon === void 0 ? void 0 : pokemon.hasAbility('Color Change')) {
+function getMoveEffectiveness(gen, move, type, isGhostRevealed, isGravity, isRingTarget, defender, attacker) {
+    if (defender === null || defender === void 0 ? void 0 : defender.hasAbility('Color Change')) {
         type = move.type;
     }
     if (isGhostRevealed && type === 'Ghost' && move.hasType('Normal', 'Fighting')) {
+        return 1;
+    }
+    else if ((attacker === null || attacker === void 0 ? void 0 : attacker.hasAbility('Corrosion')) && type === 'Steel' && move.hasType('Poison')) {
         return 1;
     }
     else if (isGravity && type === 'Flying' && move.hasType('Ground')) {

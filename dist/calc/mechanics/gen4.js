@@ -123,9 +123,9 @@ function calculateDPP(gen, attacker, defender, move, field) {
             _a = __read([secondDefenderType, firstDefenderType], 2), firstDefenderType = _a[0], secondDefenderType = _a[1];
         }
     }
-    var type1Effectiveness = (0, util_1.getMoveEffectiveness)(gen, move, firstDefenderType, isGhostRevealed, field.isGravity, false, defender);
+    var type1Effectiveness = (0, util_1.getMoveEffectiveness)(gen, move, firstDefenderType, isGhostRevealed, field.isGravity, false, defender, attacker);
     var type2Effectiveness = secondDefenderType
-        ? (0, util_1.getMoveEffectiveness)(gen, move, secondDefenderType, isGhostRevealed, field.isGravity, false, defender)
+        ? (0, util_1.getMoveEffectiveness)(gen, move, secondDefenderType, isGhostRevealed, field.isGravity, false, defender, attacker)
         : 1;
     var typeEffectiveness = type1Effectiveness * type2Effectiveness;
     if (typeEffectiveness === 0 && move.hasType('Ground') &&
@@ -461,6 +461,10 @@ function calculateBPModsDPP(attacker, defender, move, field, desc, basePower) {
             basePower = Math.floor(basePower * 1.5);
             desc.rivalry = 'buffed';
         }
+        desc.attackerAbility = attacker.ability;
+    }
+    if (attacker.hasAbility('Sheer Force') && move.secondaries) {
+        basePower = Math.floor(basePower * 1.3);
         desc.attackerAbility = attacker.ability;
     }
     return basePower;

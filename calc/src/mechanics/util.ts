@@ -147,12 +147,15 @@ export function getMoveEffectiveness(
   isGhostRevealed?: boolean,
   isGravity?: boolean,
   isRingTarget?: boolean,
-  pokemon?: Pokemon,
+  defender?: Pokemon,
+  attacker?: Pokemon,
 ) {
-  if (pokemon?.hasAbility('Color Change')) {
+  if (defender?.hasAbility('Color Change')) {
 	type = move.type;
   }
   if (isGhostRevealed && type === 'Ghost' && move.hasType('Normal', 'Fighting')) {
+    return 1;
+  } else if (attacker?.hasAbility('Corrosion') && type === 'Steel' && move.hasType('Poison')) {
     return 1;
   } else if (isGravity && type === 'Flying' && move.hasType('Ground')) {
     return 1;
