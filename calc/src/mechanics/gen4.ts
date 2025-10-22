@@ -94,6 +94,33 @@ export function calculateDPP(
     defender.ability = '' as AbilityName;
     desc.attackerAbility = attacker.ability;
   }
+  
+  const ignoresNeutralizingGas = [
+    'As One (Glastrier)', 'As One (Spectrier)', 'Battle Bond', 'Comatose',
+    'Disguise', 'Gulp Missile', 'Ice Face', 'Multitype', 'Neutralizing Gas',
+    'Power Construct', 'RKS System', 'Schooling', 'Shields Down',
+    'Stance Change', 'Tera Shift', 'Zen Mode', 'Zero to Hero',
+  ];
+
+  if (attacker.hasAbility('Neutralizing Gas') &&
+    !ignoresNeutralizingGas.includes(defender.ability || '')) {
+    desc.attackerAbility = attacker.ability;
+    if (defender.hasItem('Ability Shield')) {
+      desc.defenderItem = defender.item;
+    } else {
+      defender.ability = '' as AbilityName;
+    }
+  }
+
+  if (defender.hasAbility('Neutralizing Gas') &&
+    !ignoresNeutralizingGas.includes(attacker.ability || '')) {
+    desc.defenderAbility = defender.ability;
+    if (attacker.hasItem('Ability Shield')) {
+      desc.attackerItem = attacker.item;
+    } else {
+      attacker.ability = '' as AbilityName;
+    }
+  }
 
   const isCritical = move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor');
 
@@ -636,6 +663,10 @@ export function calculateAttackDPP(
     attack = getModifiedStat(rawAttack, attackBoost);
     desc.attackBoost = attackBoost;
   }
+  
+  if (attacker.hasAbility('Memory') || defender.hasAbility('Memory')) {
+	attack = rawAttack; 
+  }
 
   if (isPhysical && attacker.hasAbility('Pure Power', 'Huge Power')) {
     attack *= 2;
@@ -732,6 +763,10 @@ export function calculateDefenseDPP(
   } else {
     defense = getModifiedStat(rawDefense, defenseBoost);
     desc.defenseBoost = defenseBoost;
+  }
+  
+  if (attacker.hasAbility('Memory') || defender.hasAbility('Memory')) {
+	defense = rawDefense;
   }
 
   if (defender.hasAbility('Marvel Scale') && defender.status && isPhysical) {
