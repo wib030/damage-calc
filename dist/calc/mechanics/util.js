@@ -135,6 +135,9 @@ function getFinalSpeed(gen, pokemon, field, side) {
     var speedMods = [];
     if (side.isTailwind)
         speedMods.push(8192);
+    if (side.isDeepSnow && !pokemon.hasType('Ice') && isGrounded(pokemon, field)) {
+        speedMods.push(2048);
+    }
     if ((pokemon.hasAbility('Unburden') && pokemon.abilityOn) ||
         (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric')) {
         speedMods.push(8192);

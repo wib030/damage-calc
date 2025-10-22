@@ -98,6 +98,10 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
   if (side.isTailwind) speedMods.push(8192);
   // Pledge swamp would get applied here when implemented
   // speedMods.push(1024);
+  
+  if (side.isDeepSnow && !pokemon.hasType('Ice') && isGrounded(pokemon, field)) {
+	speedMods.push(2048);
+  }
 
   if ((pokemon.hasAbility('Unburden') && pokemon.abilityOn) ||
       (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric')
