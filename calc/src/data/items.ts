@@ -252,11 +252,19 @@ const DPP = ADV.concat([
   'Yache Berry',
   'Zap Plate',
   'Zoom Lens',
+  'Loaded Gloves',
+  'Three-Four-Five Dice',
+  'Cleanse Tag',
+  'Repel',
+  'Ugly Claw',
+  'Assault Vest',
+  'Weakness Policy',
+  'Red Card',
+  'Air Balloon',
 ]);
 
 const BW = DPP.concat([
   'Absorb Bulb',
-  'Air Balloon',
   'Big Nugget',
   'Binding Band',
   'Bug Gem',
@@ -284,7 +292,6 @@ const BW = DPP.concat([
   'Poison Gem',
   'Prism Scale',
   'Psychic Gem',
-  'Red Card',
   'Ring Target',
   'Rock Gem',
   'Rocky Helmet',
@@ -347,7 +354,6 @@ export const MEGA_STONES: {[species: string]: string} = {
 const XY = BW.concat(
   [
     ...Object.keys(MEGA_STONES),
-    'Assault Vest',
     'Blue Orb',
     'Fairy Gem',
     'Jaw Fossil',
@@ -361,7 +367,6 @@ const XY = BW.concat(
     'Safety Goggles',
     'Sail Fossil',
     'Snowball',
-    'Weakness Policy',
     'Whipped Dream',
   ].sort()
 );

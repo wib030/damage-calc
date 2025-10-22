@@ -313,10 +313,18 @@ var DPP = ADV.concat([
     'Yache Berry',
     'Zap Plate',
     'Zoom Lens',
+    'Loaded Gloves',
+    'Three-Four-Five Dice',
+    'Cleanse Tag',
+    'Repel',
+    'Ugly Claw',
+    'Assault Vest',
+    'Weakness Policy',
+    'Red Card',
+    'Air Balloon',
 ]);
 var BW = DPP.concat([
     'Absorb Bulb',
-    'Air Balloon',
     'Big Nugget',
     'Binding Band',
     'Bug Gem',
@@ -344,7 +352,6 @@ var BW = DPP.concat([
     'Poison Gem',
     'Prism Scale',
     'Psychic Gem',
-    'Red Card',
     'Ring Target',
     'Rock Gem',
     'Rocky Helmet',
@@ -403,7 +410,6 @@ exports.MEGA_STONES = {
     Venusaurite: 'Venusaur'
 };
 var XY = BW.concat(__spreadArray(__spreadArray([], __read(Object.keys(exports.MEGA_STONES)), false), [
-    'Assault Vest',
     'Blue Orb',
     'Fairy Gem',
     'Jaw Fossil',
@@ -417,7 +423,6 @@ var XY = BW.concat(__spreadArray(__spreadArray([], __read(Object.keys(exports.ME
     'Safety Goggles',
     'Sail Fossil',
     'Snowball',
-    'Weakness Policy',
     'Whipped Dream',
 ], false).sort());
 var SM = XY.filter(function (i) { return i !== 'Old Amber'; }).concat([

@@ -118,6 +118,14 @@ export function getBerryResistType(berry: string | undefined) {
   }
 }
 
+const FLING_130 = new Set([
+  'Adamant Orb',
+  'Griseous Orb',
+  'Lustrous Orb',
+  'Lagging Tail',
+  'Master Ball',
+]);
+
 const FLING_120 = new Set([
   'TR24',
   'TR28',
@@ -154,6 +162,9 @@ const FLING_100 = new Set([
   'TR10',
   'TR31',
   'TR75',
+  'Sticky Barb',
+  'Soul Dew',
+  'Metal Coat',
 ]);
 
 const FLING_90 = new Set([
@@ -175,6 +186,20 @@ const FLING_90 = new Set([
   'TR86',
   'TR90',
   'TR96',
+  'King\'s Rock',
+  'Light Ball',
+  'Razor Fang',
+  'Stick',
+  'Power Anklet',
+  'Power Band',
+  'Power Belt',
+  'Power Bracer',
+  'Power Lens',
+  'Power Weight',
+  'Protector',
+  'Magmarizer',
+  'Electirizer',
+  'Razor Claw',
 ]);
 
 const FLING_85 = new Set(['TR01', 'TR41', 'TR62', 'TR93', 'TR97', 'TR98']);
@@ -189,13 +214,9 @@ const FLING_80 = new Set([
   'Quick Claw',
   'Dawn Stone',
   'Dusk Stone',
-  'Electirizer',
-  'Magmarizer',
   'Oval Stone',
-  'Protector',
   'Sachet',
   'Whipped Dream',
-  'Razor Claw',
   'Shiny Stone',
   'TR16',
   'TR18',
@@ -218,69 +239,68 @@ const FLING_80 = new Set([
   'TR92',
   'TR95',
   'TR99',
+  'Damp Rock',
+  'Heat Rock',
+  'Smooth Rock',
+  'Icy Rock',
+  'Fire Stone',
+  'Leaf Stone',
+  'Thunder Stone',
+  'Moon Stone',
+  'Sun Stone',
+  'Water Stone',
+  'Magnet',
 ]);
 
 const FLING_70 = new Set([
   'Poison Barb',
   'Dragon Fang',
-  'Power Anklet',
-  'Power Band',
-  'Power Belt',
-  'Power Bracer',
-  'Power Lens',
-  'Power Weight',
+  'Flame Orb',
+  'Life Orb',
+  'Lucky Punch',
+  'Metronome',
+  'Toxic Orb',
+  'Up-Grade',
+  'Dubious Disc',
 ]);
 
 const FLING_60 = new Set([
-  'Adamant Orb',
-  'Damp Rock',
-  'Heat Rock',
   'Leek',
-  'Lustrous Orb',
   'Macho Brace',
   'Rocky Helmet',
-  'Stick',
   'Utility Umbrella',
   'Terrain Extender',
+  'Black Sludge',
+  'Deep Sea Scale',
+  'Wide Lens',
+  'Zoom Lens',
+  'Scope Lens',
+  'Dragon Scale',
+  'Sharp Beak',
+  'Light Clay',
+  'Red Card',
+  'Ugly Claw',
 ]);
+
+const FLING_50 = new Set([
+  'Twisted Spoon',
+]);
+
 const FLING_30 = new Set([
   'Absorb Bulb',
   'Black Belt',
-  'Black Sludge',
   'Black Glasses',
   'Cell Battery',
   'Charcoal',
-  'Deep Sea Scale',
-  'Flame Orb',
-  'King\'s Rock',
-  'Life Orb',
-  'Light Ball',
-  'Light Clay',
-  'Magnet',
-  'Metal Coat',
   'Miracle Seed',
   'Mystic Water',
   'Never-Melt Ice',
-  'Razor Fang',
-  'Scope Lens',
-  'Soul Dew',
   'Spell Tag',
   'Sweet Apple',
   'Tart Apple',
   'Throat Spray',
-  'Toxic Orb',
-  'Twisted Spoon',
-  'Dragon Scale',
   'Energy Powder',
-  'Fire Stone',
-  'Leaf Stone',
-  'Moon Stone',
-  'Sun Stone',
-  'Thunder Stone',
-  'Up-Grade',
-  'Water Stone',
   'Berry Juice',
-  'Black Sludge',
   'Prism Scale',
   'Ice Stone',
   'Gold Bottle Cap',
@@ -288,6 +308,10 @@ const FLING_30 = new Set([
   'Eject Button',
   'Snowball',
   'Bottle Cap',
+  'Big Root',
+  'Cleanse Tag',
+  'Three-Four-Five Dice',
+  'Loaded Gloves',
 ]);
 const FLING_10 = new Set([
   'Air Balloon',
@@ -304,7 +328,6 @@ const FLING_10 = new Set([
   'Focus Sash',
   'Full Incense',
   'Grassy Seed',
-  'Lagging Tail',
   'Lax Incense',
   'Leftovers',
   'Love Sweet',
@@ -319,7 +342,6 @@ const FLING_10 = new Set([
   'Odd Incense',
   'Quick Powder',
   'Reaper Cloth',
-  'Red Card',
   'Ribbon Sweet',
   'Ring Target',
   'Rock Incense',
@@ -328,16 +350,13 @@ const FLING_10 = new Set([
   'Shed Shell',
   'Silk Scarf',
   'Silver Powder',
-  'Smooth Rock',
   'Soft Sand',
   'Soothe Bell',
   'Star Sweet',
   'Strawberry Sweet',
   'Wave Incense',
   'White Herb',
-  'Wide Lens',
   'Wise Glasses',
-  'Zoom Lens',
   'Silver Powder',
   'Power Herb',
   'TR00',
@@ -379,7 +398,8 @@ export function getFlingPower(item?: string) {
   if (!item) return 0;
   if (['Big Nugget', 'Iron Ball', 'TR43', 'TR71'].includes(item)) return 130;
   if (FLING_120.has(item)) return 85;
-  if (['TR03', 'TR06', 'TR09', 'TR15', 'TR89'].includes(item)) return 110;
+  if (FLING_130.has(item)) return 130;
+  if (['TR03', 'TR06', 'TR09', 'TR15', 'TR89', 'Repel'].includes(item)) return 110;
   if (FLING_100.has(item)) return 100;
   if (['TR36', 'TR78', 'TR81', 'TR94'].includes(item)) return 95;
   if (item.includes('Plate') || FLING_90.has(item)) return 90;
@@ -387,8 +407,9 @@ export function getFlingPower(item?: string) {
   if (FLING_80.has(item)) return 80;
   if (FLING_70.has(item)) return 70;
   if (FLING_60.has(item)) return 60;
-  if (['Eject Pack', 'Sharp Beak', 'Dubious Disc'].includes(item)) return 50;
-  if (['Icy Rock', 'Eviolite', 'Lucky Punch'].includes(item)) return 40;
+  if (FLING_50.has(item)) return 50;
+  if (['Eject Pack'].includes(item)) return 50;
+  if (['Eviolite', 'Shell Bell'].includes(item)) return 40;
   if (FLING_30.has(item)) return 30;
   if (item === 'TR82') return 20;
   if (item.includes('Berry') || FLING_10.has(item)) return 10;
