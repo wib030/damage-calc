@@ -291,6 +291,14 @@ export function calculateDPP(
     filterMod = 0.75;
     desc.defenderAbility = defender.ability;
   }
+  
+  let metronomeMod = 1;
+  if (attacker.hasItem('Metronome') && move.timesUsedWithMetronome! >= 1) {
+    const timesUsedWithMetronome = Math.floor(move.timesUsedWithMetronome!);
+    metronomeMod = metronomeMod * ((100 + (15 * timesUsedWithMetronome)) / 100);
+    desc.attackerItem = attacker.item;
+  }
+  
   let ebeltMod = 1;
   if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1) {
     ebeltMod = 1.2;
@@ -318,6 +326,7 @@ export function calculateDPP(
     damage[i] = Math.floor(damage[i] * filterMod);
     damage[i] = Math.floor(damage[i] * ebeltMod);
     damage[i] = Math.floor(damage[i] * tintedMod);
+	damage[i] = Math.floor(damage[i] * metronomeMod);
     damage[i] = Math.floor(damage[i] * berryMod);
     damage[i] = Math.max(1, damage[i]);
   }
