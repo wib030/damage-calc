@@ -546,6 +546,7 @@ export function calculateBPModsDPP(
   
   if (
     (attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
+	(attacker.hasAbility('Sharpness') && move.flags.slicing) ||
     (attacker.hasAbility('Strong Jaw') && move.flags.bite)
   ) {
     basePower = Math.floor(basePower * 1.5);
@@ -828,6 +829,15 @@ function calculateFinalModsDPP(
       !attacker.hasAbility('Parental Bond (Child)')) {
     baseDamage = Math.floor(baseDamage / 2);
     desc.defenderAbility = defender.ability;
+  }
+  
+  if (defender.hasAbility('Unown Energy') && move.type !== '???') {
+	if (move.type === 'Normal') {
+	  baseDamage = Math.floor(baseDamage * 2);
+	} else {
+	  baseDamage = Math.floor(baseDamage / 2);
+	}
+	desc.defenderAbility = defender.ability;
   }
 
   return baseDamage;

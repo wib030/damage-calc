@@ -592,6 +592,12 @@ function getEndOfTurn(
       damage -= Math.floor(defender.maxHP() / 8);
       texts.push(defender.ability + ' damage');
     }
+	if (!healBlock) {
+	  if (defender.hasAbility('Photosynthesis')) {
+		  damage += Math.floor(defender.maxHP() / 16);
+		  texts.push('Photosynthesis recovery');
+		}
+	}
   } else if (field.hasWeather('Rain', 'Heavy Rain') && !healBlock) {
     if (defender.hasAbility('Dry Skin')) {
       damage += Math.floor(defender.maxHP() / 8);

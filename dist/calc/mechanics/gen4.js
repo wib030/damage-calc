@@ -448,6 +448,7 @@ function calculateBPModsDPP(attacker, defender, move, field, desc, basePower) {
         desc.attackerAbility = attacker.ability;
     }
     if ((attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
+        (attacker.hasAbility('Sharpness') && move.flags.slicing) ||
         (attacker.hasAbility('Strong Jaw') && move.flags.bite)) {
         basePower = Math.floor(basePower * 1.5);
         desc.attackerAbility = attacker.ability;
@@ -684,6 +685,15 @@ function calculateFinalModsDPP(baseDamage, attacker, defender, move, field, desc
         !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying')) &&
         !attacker.hasAbility('Parental Bond (Child)')) {
         baseDamage = Math.floor(baseDamage / 2);
+        desc.defenderAbility = defender.ability;
+    }
+    if (defender.hasAbility('Unown Energy') && move.type !== '???') {
+        if (move.type === 'Normal') {
+            baseDamage = Math.floor(baseDamage * 2);
+        }
+        else {
+            baseDamage = Math.floor(baseDamage / 2);
+        }
         desc.defenderAbility = defender.ability;
     }
     return baseDamage;
