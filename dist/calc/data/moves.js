@@ -575,13 +575,13 @@ var DPP_PATCH = {
     Counter: { category: 'Physical' },
     Covet: { makesContact: true, category: 'Physical', bp: 60 },
     Crabhammer: { category: 'Physical', bp: 100 },
-    Dig: { bp: 80, category: 'Physical' },
-    Dive: { bp: 80, category: 'Physical' },
+    Dig: { bp: 100, category: 'Physical' },
+    Dive: { bp: 100, category: 'Physical' },
     'Doom Desire': { category: 'Special', type: 'Steel', bp: 160 },
     'Double-Edge': { category: 'Physical' },
     'Double Kick': { category: 'Physical' },
     'Double Slap': { category: 'Physical', bp: 20 },
-    'Dream Eater': { category: 'Special' },
+    'Dream Eater': { category: 'Special', bp: 160 },
     Earthquake: { category: 'Physical' },
     Endeavor: { category: 'Physical' },
     Explosion: { category: 'Physical' },
@@ -589,7 +589,7 @@ var DPP_PATCH = {
     'Fake Out': { makesContact: true, category: 'Physical', secondaries: true, priority: 3 },
     'Fire Spin': { category: 'Special', bp: 35 },
     Flail: { category: 'Physical' },
-    Fly: { bp: 90, category: 'Physical' },
+    Fly: { bp: 110, category: 'Physical' },
     'Focus Punch': { isPunch: true, category: 'Physical', bp: 160, ignoreDefensive: true },
     'Fury Attack': { category: 'Physical' },
     'Fury Cutter': { category: 'Physical', bp: 30, isSlicing: true },
@@ -724,7 +724,7 @@ var DPP_PATCH = {
     'Drill Peck': { category: 'Physical' },
     'Dynamic Punch': { isPunch: true, category: 'Physical', secondaries: true },
     Ember: { category: 'Special', secondaries: true },
-    Eruption: { category: 'Special' },
+    Eruption: { category: 'Special', bp: 140 },
     'False Swipe': { category: 'Physical', bp: 60 },
     'Fire Punch': { isPunch: true, category: 'Physical', secondaries: true },
     Fissure: { category: 'Physical' },
@@ -769,7 +769,7 @@ var DPP_PATCH = {
     'Shadow Ball': { category: 'Special', secondaries: true },
     'Shadow Punch': { isPunch: true, category: 'Physical' },
     'Shock Wave': { category: 'Special' },
-    'Sky Attack': { category: 'Physical', secondaries: true },
+    'Sky Attack': { category: 'Physical', bp: 160, secondaries: true },
     Slam: { category: 'Physical' },
     Slash: { category: 'Physical', isSlicing: true },
     Sludge: { category: 'Special', secondaries: true },
@@ -967,7 +967,7 @@ var DPP_PATCH = {
     'Power Gem': { bp: 80, type: 'Rock', category: 'Special' },
     'Psycho Shift': { bp: 0, type: 'Psychic' },
     'Shadow Force': {
-        bp: 120,
+        bp: 130,
         type: 'Ghost',
         breaksProtect: true,
         makesContact: true,
@@ -1323,6 +1323,33 @@ var DPP_PATCH = {
         makesContact: true,
         isBite: true,
         multihit: [2, 10]
+    },
+    'Freeze-Dry': {
+        bp: 70,
+        type: 'Ice',
+        category: 'Special',
+        secondaries: true
+    },
+    'Dragon Tail': {
+        bp: 60,
+        type: 'Dragon',
+        makesContact: true,
+        category: 'Physical'
+    },
+    'Wild Charge': {
+        bp: 90,
+        type: 'Electric',
+        recoil: [1, 4],
+        makesContact: true,
+        category: 'Physical'
+    },
+    Hex: { bp: 65, type: 'Ghost', category: 'Special' },
+    'Chilling Spell': { bp: 65, type: 'Ice', category: 'Special' },
+    'Psyscreen': {
+        bp: 40,
+        type: 'Psychic',
+        category: 'Special',
+        secondaries: true
     }
 };
 var DPP = (0, util_1.extend)(true, {}, ADV, DPP_PATCH);
@@ -1642,12 +1669,6 @@ var BW_PATCH = {
     'Clear Smog': { bp: 50, type: 'Poison', category: 'Special' },
     Coil: { bp: 0, type: 'Poison' },
     'Cotton Guard': { bp: 0, type: 'Grass' },
-    'Dragon Tail': {
-        bp: 60,
-        type: 'Dragon',
-        makesContact: true,
-        category: 'Physical'
-    },
     'Dual Chop': {
         bp: 40,
         type: 'Dragon',
@@ -1770,13 +1791,6 @@ var BW_PATCH = {
         category: 'Physical'
     },
     Venoshock: { bp: 65, type: 'Poison', category: 'Special' },
-    'Wild Charge': {
-        bp: 90,
-        type: 'Electric',
-        recoil: [1, 4],
-        makesContact: true,
-        category: 'Physical'
-    },
     'Work Up': { bp: 0, type: 'Normal' }
 };
 var BW = (0, util_1.extend)(true, {}, DPP, BW_PATCH);
@@ -2015,12 +2029,6 @@ var XY_PATCH = {
     'Fairy Wind': { bp: 40, type: 'Fairy', category: 'Special' },
     'Flower Shield': { bp: 0, type: 'Fairy' },
     'Forest\'s Curse': { bp: 0, type: 'Grass' },
-    'Freeze-Dry': {
-        bp: 70,
-        type: 'Ice',
-        category: 'Special',
-        secondaries: true
-    },
     'Happy Hour': { bp: 0, type: 'Normal' },
     'Hold Back': {
         bp: 40,

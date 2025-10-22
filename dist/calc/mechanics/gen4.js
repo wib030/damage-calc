@@ -310,7 +310,16 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, virtu
         case 'Grass Knot':
         case 'Low Kick':
             var w = defender.weightkg;
-            basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
+            basePower = w >= 200 ? 150 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
+            desc.moveBP = basePower;
+            break;
+        case 'Hex':
+        case 'Chilling Spell':
+            basePower = move.bp * (defender.status ? 2 : 1);
+            desc.moveBP = basePower;
+            break;
+        case 'Brick Break':
+            basePower = move.bp * ((field.defenderSide.isReflect || field.defenderSide.isLightScreen) ? 1.5 : 1);
             desc.moveBP = basePower;
             break;
         case 'Gyro Ball':

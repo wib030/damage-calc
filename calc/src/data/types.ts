@@ -356,8 +356,6 @@ const GSC: TypeChart = extend(true, {}, RBY, {
 
 const ADV = GSC;
 
-const DPP = GSC;
-
 const BW = GSC;
 
 const XY: TypeChart = extend(true, {}, GSC, {
@@ -401,6 +399,8 @@ const XY: TypeChart = extend(true, {}, GSC, {
     Fairy: 1,
   },
 });
+
+const DPP = XY;
 
 const SM = XY;
 

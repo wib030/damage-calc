@@ -400,7 +400,6 @@ var GSC = (0, util_1.extend)(true, {}, RBY, {
     }
 });
 var ADV = GSC;
-var DPP = GSC;
 var BW = GSC;
 var XY = (0, util_1.extend)(true, {}, GSC, {
     '???': { Fairy: 1 },
@@ -443,6 +442,7 @@ var XY = (0, util_1.extend)(true, {}, GSC, {
         Fairy: 1
     }
 });
+var DPP = XY;
 var SM = XY;
 var SS = SM;
 var SV = (0, util_1.extend)(true, {}, SS, {
