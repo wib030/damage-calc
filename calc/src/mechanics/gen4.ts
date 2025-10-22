@@ -216,7 +216,7 @@ export function calculateDPP(
     return result;
   }
 
-  const ignoresWonderGuard = move.hasType('???') || move.named('Fire Fang');
+  const ignoresWonderGuard = move.hasType('???');
   if ((!ignoresWonderGuard && defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
       (move.hasType('Fire') && defender.hasAbility('Flash Fire')) ||
       (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Water Absorb', 'Storm Drain')) ||
@@ -447,7 +447,10 @@ export function calculateBasePowerDPP(
     break;
   case 'Grass Knot':
   case 'Low Kick':
-    const w = defender.weightkg;
+    let w = defender.weightkg;
+	if (field.isGravity) {
+	  w *= 2;
+	}
     basePower = w >= 200 ? 150 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
     desc.moveBP = basePower;
     break;

@@ -526,7 +526,12 @@ function getHazards(gen: Generation, defender: Pokemon, defenderSide: Side) {
         ? rockType.effectiveness[defender.teraType]!
         : rockType.effectiveness[defender.types[0]]! *
           (defender.types[1] ? rockType.effectiveness[defender.types[1]]! : 1);
-    damage += Math.floor((effectiveness * defender.maxHP()) / 8);
+	let srDamage = (effectiveness * defender.maxHP()) / 8;
+	srDamage = Math.floor(srDamage * 3 / 4);
+	if (srDamage < 1) {
+	  srDamage = 1;
+	}
+    damage += srDamage;
     texts.push('Stealth Rock');
   }
   if (defenderSide.steelsurge && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
@@ -697,10 +702,10 @@ function getEndOfTurn(
     }
   } else if (defender.hasStatus('brn')) {
     if (defender.hasAbility('Heatproof')) {
-      damage -= Math.floor(defender.maxHP() / (gen.num > 6 ? 32 : 16));
+      damage -= Math.floor(defender.maxHP() / (gen.num > 3 ? 32 : 16));
       texts.push('reduced burn damage');
     } else if (!defender.hasAbility('Magic Guard')) {
-      damage -= Math.floor(defender.maxHP() / (gen.num === 1 || gen.num > 6 ? 16 : 8));
+      damage -= Math.floor(defender.maxHP() / (gen.num === 1 || gen.num > 3 ? 16 : 8));
       texts.push('burn damage');
     }
   } else if (
