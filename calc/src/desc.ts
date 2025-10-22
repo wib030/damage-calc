@@ -655,7 +655,7 @@ function getEndOfTurn(
     let recovery = Math.floor(attacker.maxHP() / (gen.num >= 2 ? 8 : 16));
     if (defender.hasItem('Big Root')) recovery = Math.trunc(recovery * 5324 / 4096);
     if (attacker.hasAbility('Liquid Ooze')) {
-      damage -= recovery;
+      damage -= recovery * 3;
       texts.push('Liquid Ooze damage');
     } else if (!healBlock) {
       damage += recovery;

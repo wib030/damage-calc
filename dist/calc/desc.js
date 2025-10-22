@@ -473,7 +473,7 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
         if (defender.hasItem('Big Root'))
             recovery = Math.trunc(recovery * 5324 / 4096);
         if (attacker.hasAbility('Liquid Ooze')) {
-            damage -= recovery;
+            damage -= recovery * 3;
             texts.push('Liquid Ooze damage');
         }
         else if (!healBlock) {
