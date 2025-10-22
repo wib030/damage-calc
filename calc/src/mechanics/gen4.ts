@@ -516,7 +516,7 @@ export function calculateBPModsDPP(
 
   if ((attacker.hasAbility('Reckless') && (move.recoil || move.hasCrashDamage)) ||
       (attacker.hasAbility('Iron Fist') && move.flags.punch)) {
-    basePower = Math.floor(basePower * 1.2);
+    basePower = Math.floor(basePower * 1.3);
     desc.attackerAbility = attacker.ability;
   } else if ((attacker.curHP() <= attacker.maxHP() / 3 &&
     ((attacker.hasAbility('Overgrow') && move.hasType('Grass')) ||
@@ -539,11 +539,8 @@ export function calculateBPModsDPP(
 
   if (attacker.hasAbility('Rivalry') && ![attacker.gender, defender.gender].includes('N')) {
     if (attacker.gender === defender.gender) {
-      basePower = Math.floor(basePower * 1.25);
+      basePower = Math.floor(basePower * 1.5);
       desc.rivalry = 'buffed';
-    } else {
-      basePower = Math.floor(basePower * 0.75);
-      desc.rivalry = 'nerfed';
     }
     desc.attackerAbility = attacker.ability;
   }

@@ -218,7 +218,7 @@ export function checkWonderRoom(pokemon: Pokemon, wonderRoomActive?: boolean) {
 
 export function checkIntimidate(gen: Generation, source: Pokemon, target: Pokemon) {
   const blocked =
-    target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body') ||
+    target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body', 'Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy', 'Guts', 'Rivalry', 'Unaware', 'Vital Spirit', 'Forewarn', 'Anticipation', 'Huge Power', 'Pure Power', 'Hustle', 'Pressure', 'Reckless', 'Simple', 'Rattled', 'Truant') ||
     // More abilities now block Intimidate in Gen 8+ (DaWoblefet, Cloudy Mistral)
     (gen.num >= 8 && target.hasAbility('Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy')) ||
     target.hasItem('Clear Amulet');

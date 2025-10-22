@@ -248,7 +248,7 @@ function checkWonderRoom(pokemon, wonderRoomActive) {
 }
 exports.checkWonderRoom = checkWonderRoom;
 function checkIntimidate(gen, source, target) {
-    var blocked = target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body') ||
+    var blocked = target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body', 'Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy', 'Guts', 'Rivalry', 'Unaware', 'Vital Spirit', 'Forewarn', 'Anticipation', 'Huge Power', 'Pure Power', 'Hustle', 'Pressure', 'Reckless', 'Simple', 'Rattled', 'Truant') ||
         (gen.num >= 8 && target.hasAbility('Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy')) ||
         target.hasItem('Clear Amulet');
     if (source.hasAbility('Intimidate') && source.abilityOn && !blocked) {
