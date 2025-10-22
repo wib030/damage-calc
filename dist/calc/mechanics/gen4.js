@@ -63,7 +63,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
         result.damage = damage_1;
         return result;
     }
-    var defenderAbilityIgnored = defender.hasAbility('Battle Armor', 'Clear Body', 'Damp', 'Dry Skin', 'Filter', 'Flash Fire', 'Flower Gift', 'Heatproof', 'Hyper Cutter', 'Immunity', 'Inner Focus', 'Insomnia', 'Keen Eye', 'Leaf Guard', 'Levitate', 'Lightning Rod', 'Limber', 'Magma Armor', 'Marvel Scale', 'Motor Drive', 'Oblivious', 'Own Tempo', 'Sand Veil', 'Shell Armor', 'Shield Dust', 'Simple', 'Snow Cloak', 'Solid Rock', 'Soundproof', 'Sticky Hold', 'Storm Drain', 'Sturdy', 'Suction Cups', 'Tangled Feet', 'Thick Fat', 'Unaware', 'Vital Spirit', 'Volt Absorb', 'Water Absorb', 'Water Veil', 'White Smoke', 'Wonder Guard');
+    var defenderAbilityIgnored = defender.hasAbility('Armor Tail', 'Aroma Veil', 'Aura Break', 'Battle Armor', 'Big Pecks', 'Bulletproof', 'Clear Body', 'Contrary', 'Damp', 'Dazzling', 'Disguise', 'Dry Skin', 'Earth Eater', 'Filter', 'Flash Fire', 'Flower Gift', 'Flower Veil', 'Fluffy', 'Friend Guard', 'Fur Coat', 'Good as Gold', 'Grass Pelt', 'Guard Dog', 'Heatproof', 'Heavy Metal', 'Hyper Cutter', 'Ice Face', 'Ice Scales', 'Illuminate', 'Immunity', 'Inner Focus', 'Insomnia', 'Keen Eye', 'Leaf Guard', 'Levitate', 'Light Metal', 'Lightning Rod', 'Limber', 'Magic Bounce', 'Magma Armor', 'Marvel Scale', "Mind's Eye", 'Mirror Armor', 'Motor Drive', 'Multiscale', 'Oblivious', 'Overcoat', 'Own Tempo', 'Pastel Veil', 'Punk Rock', 'Purifying Salt', 'Queenly Majesty', 'Sand Veil', 'Sap Sipper', 'Shell Armor', 'Shield Dust', 'Simple', 'Snow Cloak', 'Solid Rock', 'Soundproof', 'Sticky Hold', 'Storm Drain', 'Sturdy', 'Suction Cups', 'Sweet Veil', 'Tangled Feet', 'Telepathy', 'Tera Shell', 'Thermal Exchange', 'Thick Fat', 'Unaware', 'Vital Spirit', 'Volt Absorb', 'Water Absorb', 'Water Bubble', 'Water Veil', 'Well-Baked Body', 'White Smoke', 'Wind Rider', 'Wonder Guard', 'Wonder Skin');
     if (attacker.hasAbility('Mold Breaker') && defenderAbilityIgnored) {
         defender.ability = '';
         desc.attackerAbility = attacker.ability;
@@ -177,7 +177,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
         baseDamage = Math.floor(baseDamage * 0.5);
         desc.isBurned = true;
     }
-    baseDamage = calculateFinalModsDPP(baseDamage, attacker, move, field, desc, isCritical);
+    baseDamage = calculateFinalModsDPP(baseDamage, attacker, defender, move, field, desc, isCritical);
     var stabMod = 1;
     if (move.hasType.apply(move, __spreadArray([], __read(attacker.types), false))) {
         if (attacker.hasAbility('Adaptability')) {
@@ -246,7 +246,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
                 baseDamage_1 = Math.floor(baseDamage_1 * 0.5);
                 desc.isBurned = true;
             }
-            baseDamage_1 = calculateFinalModsDPP(baseDamage_1, attacker, move, field, desc, isCritical);
+            baseDamage_1 = calculateFinalModsDPP(baseDamage_1, attacker, defender, move, field, desc, isCritical);
             virtualHP -= baseDamage_1;
             var damageArray = [];
             for (var i = 0; i < 16; i++) {
@@ -443,6 +443,10 @@ function calculateBPModsDPP(attacker, defender, move, field, desc, basePower) {
         basePower = Math.floor(basePower * 1.5);
         desc.attackerAbility = attacker.ability;
     }
+    if (attacker.curHP() <= attacker.maxHP() / 2 && (attacker.hasAbility('Headache') && move.hasType('Psychic'))) {
+        basePower = Math.floor(basePower * 2);
+        desc.attackerAbility = attacker.ability;
+    }
     if ((defender.hasAbility('Heatproof') && move.hasType('Fire')) ||
         (defender.hasAbility('Thick Fat') && (move.hasType('Fire', 'Ice')))) {
         basePower = Math.floor(basePower * 0.5);
@@ -599,7 +603,7 @@ function calculateDefenseDPP(gen, attacker, defender, move, field, desc, isCriti
     return defense;
 }
 exports.calculateDefenseDPP = calculateDefenseDPP;
-function calculateFinalModsDPP(baseDamage, attacker, move, field, desc, isCritical) {
+function calculateFinalModsDPP(baseDamage, attacker, defender, move, field, desc, isCritical) {
     if (isCritical === void 0) { isCritical = false; }
     if (move.named('Judgment')) {
         move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
@@ -649,6 +653,12 @@ function calculateFinalModsDPP(baseDamage, attacker, move, field, desc, isCritic
     if (attacker.hasItem('Life Orb')) {
         baseDamage = Math.floor(baseDamage * 1.3);
         desc.attackerItem = attacker.item;
+    }
+    if (defender.hasAbility('Multiscale') && defender.curHP() === defender.maxHP() &&
+        !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying')) &&
+        !attacker.hasAbility('Parental Bond (Child)')) {
+        baseDamage = Math.floor(baseDamage / 2);
+        desc.defenderAbility = defender.ability;
     }
     return baseDamage;
 }

@@ -67,17 +67,27 @@ export function calculateDPP(
   }
 
   const defenderAbilityIgnored = defender.hasAbility(
-    'Battle Armor', 'Clear Body', 'Damp', 'Dry Skin',
-    'Filter', 'Flash Fire', 'Flower Gift', 'Heatproof',
-    'Hyper Cutter', 'Immunity', 'Inner Focus', 'Insomnia',
-    'Keen Eye', 'Leaf Guard', 'Levitate', 'Lightning Rod',
-    'Limber', 'Magma Armor', 'Marvel Scale', 'Motor Drive',
-    'Oblivious', 'Own Tempo', 'Sand Veil', 'Shell Armor',
-    'Shield Dust', 'Simple', 'Snow Cloak', 'Solid Rock',
-    'Soundproof', 'Sticky Hold', 'Storm Drain', 'Sturdy',
-    'Suction Cups', 'Tangled Feet', 'Thick Fat', 'Unaware',
-    'Vital Spirit', 'Volt Absorb', 'Water Absorb', 'Water Veil',
-    'White Smoke', 'Wonder Guard'
+    'Armor Tail', 'Aroma Veil', 'Aura Break', 'Battle Armor',
+    'Big Pecks', 'Bulletproof', 'Clear Body', 'Contrary',
+    'Damp', 'Dazzling', 'Disguise', 'Dry Skin',
+    'Earth Eater', 'Filter', 'Flash Fire', 'Flower Gift',
+    'Flower Veil', 'Fluffy', 'Friend Guard', 'Fur Coat',
+    'Good as Gold', 'Grass Pelt', 'Guard Dog', 'Heatproof',
+    'Heavy Metal', 'Hyper Cutter', 'Ice Face', 'Ice Scales',
+    'Illuminate', 'Immunity', 'Inner Focus', 'Insomnia',
+    'Keen Eye', 'Leaf Guard', 'Levitate', 'Light Metal',
+    'Lightning Rod', 'Limber', 'Magic Bounce', 'Magma Armor',
+    'Marvel Scale', "Mind's Eye", 'Mirror Armor', 'Motor Drive',
+    'Multiscale', 'Oblivious', 'Overcoat', 'Own Tempo',
+    'Pastel Veil', 'Punk Rock', 'Purifying Salt', 'Queenly Majesty',
+    'Sand Veil', 'Sap Sipper', 'Shell Armor', 'Shield Dust',
+    'Simple', 'Snow Cloak', 'Solid Rock', 'Soundproof',
+    'Sticky Hold', 'Storm Drain', 'Sturdy', 'Suction Cups',
+    'Sweet Veil', 'Tangled Feet', 'Telepathy', 'Tera Shell',
+    'Thermal Exchange', 'Thick Fat', 'Unaware', 'Vital Spirit',
+    'Volt Absorb', 'Water Absorb', 'Water Bubble', 'Water Veil',
+    'Well-Baked Body', 'White Smoke', 'Wind Rider', 'Wonder Guard',
+    'Wonder Skin'
   );
 
   if (attacker.hasAbility('Mold Breaker') && defenderAbilityIgnored) {
@@ -229,7 +239,7 @@ export function calculateDPP(
     desc.isBurned = true;
   }
 
-  baseDamage = calculateFinalModsDPP(baseDamage, attacker, move, field, desc, isCritical);
+  baseDamage = calculateFinalModsDPP(baseDamage, attacker, defender, move, field, desc, isCritical);
 
   // the random factor is applied between the LO mod and the STAB mod, so don't apply anything
   // below this until we're inside the loop
@@ -253,6 +263,7 @@ export function calculateDPP(
     ebeltMod = 1.2;
     desc.attackerItem = attacker.item;
   }
+  
   let tintedMod = 1;
   if (attacker.hasAbility('Tinted Lens') && typeEffectiveness < 1) {
     tintedMod = 2;
@@ -308,7 +319,7 @@ export function calculateDPP(
         baseDamage = Math.floor(baseDamage * 0.5);
         desc.isBurned = true;
       }
-      baseDamage = calculateFinalModsDPP(baseDamage, attacker, move, field, desc, isCritical);
+      baseDamage = calculateFinalModsDPP(baseDamage, attacker, defender, move, field, desc, isCritical);
 	  virtualHP -= baseDamage;
 
       const damageArray = [];
@@ -527,6 +538,11 @@ export function calculateBPModsDPP(
     basePower = Math.floor(basePower * 1.5);
     desc.attackerAbility = attacker.ability;
   }
+  
+  if (attacker.curHP() <= attacker.maxHP() / 2 && (attacker.hasAbility('Headache') && move.hasType('Psychic'))) {
+	basePower = Math.floor(basePower * 2);
+    desc.attackerAbility = attacker.ability;
+  }
 
   if ((defender.hasAbility('Heatproof') && move.hasType('Fire')) ||
       (defender.hasAbility('Thick Fat') && (move.hasType('Fire', 'Ice')))) {
@@ -712,6 +728,7 @@ export function calculateDefenseDPP(
 function calculateFinalModsDPP(
   baseDamage: number,
   attacker: Pokemon,
+  defender: Pokemon,
   move: Move,
   field: Field,
   desc: RawDesc,
@@ -770,6 +787,13 @@ function calculateFinalModsDPP(
   if (attacker.hasItem('Life Orb')) {
     baseDamage = Math.floor(baseDamage * 1.3);
     desc.attackerItem = attacker.item;
+  }
+  
+  if (defender.hasAbility('Multiscale') && defender.curHP() === defender.maxHP() &&
+      !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying')) &&
+      !attacker.hasAbility('Parental Bond (Child)')) {
+    baseDamage = Math.floor(baseDamage / 2);
+    desc.defenderAbility = defender.ability;
   }
 
   return baseDamage;
