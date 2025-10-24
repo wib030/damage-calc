@@ -3129,7 +3129,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Ice', 'Ghost'],
     bs: { hp: 70, at: 80, df: 70, sa: 95, sd: 70, sp: 110 },
     weightkg: 26.6,
-    abilities: {0: 'Snow Cloak'},
+    abilities: {0: 'Slush Rush'},
   },
   Gabite: {
     types: ['Dragon', 'Ground'],
