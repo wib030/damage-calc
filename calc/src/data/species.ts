@@ -3863,7 +3863,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 	abilities: { 0: "Poison Heal" },
   },
   Jolteon: {
-	bs: {hp: 65, at: 65, df: 60, sa: 120, sd: 95, sp: 130},
+	bs: {hp: 65, at: 65, df: 60, sa: 120, sd: 95, sp: 131},
   },
   Jumpluff: {
 	bs: {hp: 75, at: 55, df: 70, sa: 75, sd: 95, sp: 121},
