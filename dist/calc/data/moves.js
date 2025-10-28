@@ -667,7 +667,7 @@ var DPP_PATCH = {
     'Hidden Power Water': { category: 'Special', bp: 60 },
     'Hydro Pump': { category: 'Special', bp: 110 },
     'Hyper Voice': { category: 'Special' },
-    'Ice Beam': { category: 'Special', secondaries: true },
+    'Ice Beam': { category: 'Special', secondaries: true, bp: 90 },
     Lick: { category: 'Physical', secondaries: true },
     'Meteor Mash': { isPunch: true, category: 'Physical', bp: 90, secondaries: true },
     'Muddy Water': { category: 'Special', bp: 90, secondaries: true },
