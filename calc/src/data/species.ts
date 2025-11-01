@@ -3146,7 +3146,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Garchomp: {
     types: ['Dragon', 'Ground'],
-    bs: {hp: 108, at: 130, df: 95, sa: 80, sd: 85, sp: 102},
+    bs: {hp: 108, at: 130, df: 95, sa: 80, sd: 85, sp: 100},
     weightkg: 95,
     abilities: {0: "Rough Skin"},
   },
