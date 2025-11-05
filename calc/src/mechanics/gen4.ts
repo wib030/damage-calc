@@ -875,7 +875,7 @@ function calculateFinalModsDPP(
   }
   const isPhysical = move.category === 'Physical';
   if (!isCritical && !move.named('Focus Punch') && !move.named('Brick Break')) {
-	const screenMultiplier = 1 / 2;
+	const screenMultiplier = field.gameType !== 'Singles' ? 2 / 3 : 1 / 2;
 	if (isPhysical && field.defenderSide.isReflect) {
 	  baseDamage = Math.floor(baseDamage * screenMultiplier);
 	  desc.isReflect = true;
