@@ -164,7 +164,7 @@ const DPP = ADV.concat([
   'Sharpness',
   'Strangle Weed',
   'Pest',
-  'Unown Energy',
+  'Unown Force',
   'Rock Solid',
   'Thirsty',
   'Rock Star',

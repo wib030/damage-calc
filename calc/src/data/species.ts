@@ -4622,7 +4622,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Unown: {
 	bs: {hp: 48, at: 72, df: 48, sa: 72, sd: 48, sp: 72},
-	abilities: {0: "Unown Energy"},
+	abilities: {0: "Unown Force"},
   },
   Whismur: {
 	abilities: {0: "Forewarn"},
