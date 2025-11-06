@@ -201,7 +201,7 @@ var DPP = ADV.concat([
     'Sharpness',
     'Strangle Weed',
     'Pest',
-    'Unown Energy',
+    'Unown Force',
     'Rock Solid',
     'Thirsty',
     'Rock Star',
@@ -213,6 +213,7 @@ var DPP = ADV.concat([
     'Neutralizing Gas',
     'Toss and Turn',
     'Web Master',
+    'Antitype',
 ]);
 var BW = DPP.concat([
     'Analytic',

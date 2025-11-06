@@ -3182,7 +3182,7 @@ var DPP_PATCH = {
     },
     Garchomp: {
         types: ['Dragon', 'Ground'],
-        bs: { hp: 108, at: 130, df: 95, sa: 80, sd: 85, sp: 102 },
+        bs: { hp: 108, at: 130, df: 95, sa: 80, sd: 85, sp: 100 },
         weightkg: 95,
         abilities: { 0: "Rough Skin" }
     },
@@ -3204,7 +3204,25 @@ var DPP_PATCH = {
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
-        otherFormes: ['Giratina-Origin'],
+        otherFormes: [
+            'Giratina-Origin',
+            'Giratina-Bug',
+            'Giratina-Dark',
+            'Giratina-Dragon',
+            'Giratina-Electric',
+            'Giratina-Fighting',
+            'Giratina-Fire',
+            'Giratina-Flying',
+            'Giratina-Ghost',
+            'Giratina-Grass',
+            'Giratina-Ground',
+            'Giratina-Ice',
+            'Giratina-Poison',
+            'Giratina-Psychic',
+            'Giratina-Rock',
+            'Giratina-Steel',
+            'Giratina-Water'
+        ],
         abilities: { 0: 'Pressure' }
     },
     'Giratina-Origin': {
@@ -3213,6 +3231,134 @@ var DPP_PATCH = {
         weightkg: 650,
         gender: 'N',
         abilities: { 0: 'Levitate' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Bug': {
+        types: ['Bug'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Dark': {
+        types: ['Dark'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Dragon': {
+        types: ['Dragon'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Electric': {
+        types: ['Electric'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Fighting': {
+        types: ['Fighting'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Fire': {
+        types: ['Fire'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Flying': {
+        types: ['Flying'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Ghost': {
+        types: ['Ghost'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Grass': {
+        types: ['Grass'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Ground': {
+        types: ['Ground'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Ice': {
+        types: ['Ice'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Poison': {
+        types: ['Poison'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Psychic': {
+        types: ['Psychic'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Rock': {
+        types: ['Rock'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Steel': {
+        types: ['Steel'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
+        baseSpecies: 'Giratina'
+    },
+    'Giratina-Water': {
+        types: ['Water'],
+        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        weightkg: 750,
+        gender: 'N',
+        abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
     Glaceon: {
@@ -3899,7 +4045,7 @@ var DPP_PATCH = {
         abilities: { 0: "Poison Heal" }
     },
     Jolteon: {
-        bs: { hp: 65, at: 65, df: 60, sa: 120, sd: 95, sp: 130 }
+        bs: { hp: 65, at: 65, df: 60, sa: 120, sd: 95, sp: 131 }
     },
     Jumpluff: {
         bs: { hp: 75, at: 55, df: 70, sa: 75, sd: 95, sp: 121 }
@@ -4012,7 +4158,7 @@ var DPP_PATCH = {
         abilities: { 0: "Sand Force" }
     },
     Mewtwo: {
-        bs: { hp: 106, at: 110, df: 90, sa: 204, sd: 90, sp: 130 }
+        bs: { hp: 106, at: 120, df: 80, sa: 184, sd: 100, sp: 130 }
     },
     Poochyena: {
         abilities: { 0: "Run Away" }
@@ -4658,7 +4804,7 @@ var DPP_PATCH = {
     },
     Unown: {
         bs: { hp: 48, at: 72, df: 48, sa: 72, sd: 48, sp: 72 },
-        abilities: { 0: "Unown Energy" }
+        abilities: { 0: "Unown Force" }
     },
     Whismur: {
         abilities: { 0: "Forewarn" }

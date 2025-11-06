@@ -176,6 +176,7 @@ const DPP = ADV.concat([
   'Neutralizing Gas',
   'Toss and Turn',
   'Web Master',
+  'Antitype',
 ]);
 
 const BW = DPP.concat([
