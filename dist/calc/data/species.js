@@ -3206,22 +3206,22 @@ var DPP_PATCH = {
         gender: 'N',
         otherFormes: [
             'Giratina-Origin',
-            'Giratina-AntiBug',
-            'Giratina-AntiDark',
-            'Giratina-AntiDragon',
-            'Giratina-AntiElectric',
-            'Giratina-AntiFighting',
-            'Giratina-AntiFire',
-            'Giratina-AntiFlying',
-            'Giratina-AntiGhost',
-            'Giratina-AntiGrass',
-            'Giratina-AntiGround',
-            'Giratina-AntiIce',
-            'Giratina-AntiPoison',
-            'Giratina-AntiPsychic',
-            'Giratina-AntiRock',
-            'Giratina-AntiSteel',
-            'Giratina-AntiWater'
+            'Giratina-Anti-Bug',
+            'Giratina-Anti-Dark',
+            'Giratina-Anti-Dragon',
+            'Giratina-Anti-Electric',
+            'Giratina-Anti-Fighting',
+            'Giratina-Anti-Fire',
+            'Giratina-Anti-Flying',
+            'Giratina-Anti-Ghost',
+            'Giratina-Anti-Grass',
+            'Giratina-Anti-Ground',
+            'Giratina-Anti-Ice',
+            'Giratina-Anti-Poison',
+            'Giratina-Anti-Psychic',
+            'Giratina-Anti-Rock',
+            'Giratina-Anti-Steel',
+            'Giratina-Anti-Water'
         ],
         abilities: { 0: 'Pressure' }
     },
@@ -3233,7 +3233,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Levitate' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiBug': {
+    'Giratina-Anti-Bug': {
         types: ['Flying', 'Steel'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3241,7 +3241,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiDark': {
+    'Giratina-Anti-Dark': {
         types: ['Fighting', 'Dark'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3249,7 +3249,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiDragon': {
+    'Giratina-Anti-Dragon': {
         types: ['Ice', 'Steel'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3257,7 +3257,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiElectric': {
+    'Giratina-Anti-Electric': {
         types: ['Ground', 'Dragon'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3265,7 +3265,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiFighting': {
+    'Giratina-Anti-Fighting': {
         types: ['Flying', 'Ghost'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3273,7 +3273,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiFire': {
+    'Giratina-Anti-Fire': {
         types: ['Water', 'Dragon'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3281,7 +3281,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiFlying': {
+    'Giratina-Anti-Flying': {
         types: ['Electric', 'Steel'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3289,7 +3289,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiGhost': {
+    'Giratina-Anti-Ghost': {
         types: ['Ghost', 'Normal'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3297,7 +3297,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiGrass': {
+    'Giratina-Anti-Grass': {
         types: ['Bug', 'Steel'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3305,7 +3305,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiGround': {
+    'Giratina-Anti-Ground': {
         types: ['Water', 'Flying'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3313,7 +3313,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiIce': {
+    'Giratina-Anti-Ice': {
         types: ['Fighting', 'Steel'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3321,7 +3321,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiPoison': {
+    'Giratina-Anti-Poison': {
         types: ['Psychic', 'Steel'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3329,7 +3329,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiPsychic': {
+    'Giratina-Anti-Psychic': {
         types: ['Ghost', 'Dark'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3337,7 +3337,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiRock': {
+    'Giratina-Anti-Rock': {
         types: ['Fighting', 'Ground'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3345,7 +3345,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiSteel': {
+    'Giratina-Anti-Steel': {
         types: ['Fire', 'Water'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
@@ -3353,7 +3353,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-AntiWater': {
+    'Giratina-Anti-Water': {
         types: ['Electric', 'Dragon'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
