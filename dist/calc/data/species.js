@@ -3206,22 +3206,22 @@ var DPP_PATCH = {
         gender: 'N',
         otherFormes: [
             'Giratina-Origin',
-            'Giratina-Bug',
-            'Giratina-Dark',
-            'Giratina-Dragon',
-            'Giratina-Electric',
-            'Giratina-Fighting',
-            'Giratina-Fire',
-            'Giratina-Flying',
-            'Giratina-Ghost',
-            'Giratina-Grass',
-            'Giratina-Ground',
-            'Giratina-Ice',
-            'Giratina-Poison',
-            'Giratina-Psychic',
-            'Giratina-Rock',
-            'Giratina-Steel',
-            'Giratina-Water'
+            'Giratina-AntiBug',
+            'Giratina-AntiDark',
+            'Giratina-AntiDragon',
+            'Giratina-AntiElectric',
+            'Giratina-AntiFighting',
+            'Giratina-AntiFire',
+            'Giratina-AntiFlying',
+            'Giratina-AntiGhost',
+            'Giratina-AntiGrass',
+            'Giratina-AntiGround',
+            'Giratina-AntiIce',
+            'Giratina-AntiPoison',
+            'Giratina-AntiPsychic',
+            'Giratina-AntiRock',
+            'Giratina-AntiSteel',
+            'Giratina-AntiWater'
         ],
         abilities: { 0: 'Pressure' }
     },
@@ -3233,128 +3233,128 @@ var DPP_PATCH = {
         abilities: { 0: 'Levitate' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Bug': {
-        types: ['Bug'],
+    'Giratina-AntiBug': {
+        types: ['Flying', 'Steel'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Dark': {
-        types: ['Dark'],
+    'Giratina-AntiDark': {
+        types: ['Fighting', 'Dark'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Dragon': {
-        types: ['Dragon'],
+    'Giratina-AntiDragon': {
+        types: ['Ice', 'Steel'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Electric': {
-        types: ['Electric'],
+    'Giratina-AntiElectric': {
+        types: ['Ground', 'Dragon'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Fighting': {
-        types: ['Fighting'],
+    'Giratina-AntiFighting': {
+        types: ['Flying', 'Ghost'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Fire': {
-        types: ['Fire'],
+    'Giratina-AntiFire': {
+        types: ['Water', 'Dragon'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Flying': {
-        types: ['Flying'],
+    'Giratina-AntiFlying': {
+        types: ['Electric', 'Steel'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Ghost': {
-        types: ['Ghost'],
+    'Giratina-AntiGhost': {
+        types: ['Ghost', 'Normal'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Grass': {
-        types: ['Grass'],
+    'Giratina-AntiGrass': {
+        types: ['Bug', 'Steel'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Ground': {
-        types: ['Ground'],
+    'Giratina-AntiGround': {
+        types: ['Water', 'Flying'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Ice': {
-        types: ['Ice'],
+    'Giratina-AntiIce': {
+        types: ['Fighting', 'Steel'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Poison': {
-        types: ['Poison'],
+    'Giratina-AntiPoison': {
+        types: ['Psychic', 'Steel'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Psychic': {
-        types: ['Psychic'],
+    'Giratina-AntiPsychic': {
+        types: ['Ghost', 'Dark'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Rock': {
-        types: ['Rock'],
+    'Giratina-AntiRock': {
+        types: ['Fighting', 'Ground'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Steel': {
-        types: ['Steel'],
+    'Giratina-AntiSteel': {
+        types: ['Fire', 'Water'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
         baseSpecies: 'Giratina'
     },
-    'Giratina-Water': {
-        types: ['Water'],
+    'Giratina-AntiWater': {
+        types: ['Electric', 'Dragon'],
         bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
         weightkg: 750,
         gender: 'N',
