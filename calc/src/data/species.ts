@@ -4358,7 +4358,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 	abilities: {0: "Dabble"},
   },
   Solrock: {
-	bs: {hp: 120, at: 95, df: 95, sa: 55, sd: 65, sp: 70},
+	bs: {hp: 93, at: 100, df: 109, sa: 74, sd: 83, sp: 72},
 	abilities: {0: "Drought"},
   },
   Spinda: {
