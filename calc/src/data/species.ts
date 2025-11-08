@@ -4072,7 +4072,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 	abilities: { 0: "Water Absorb" },
   },
   Magcargo: {
-	bs: {hp: 70, at: 95, df: 120, sa: 95, sd: 80, sp: 30},
+	bs: {hp: 80, at: 105, df: 185, sa: 115, sd: 80, sp: 30},
 	abilities: { 0: "Water Absorb" },
   },
   Swinub: {
