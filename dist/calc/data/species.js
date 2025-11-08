@@ -4096,7 +4096,7 @@ var DPP_PATCH = {
         bs: { hp: 80, at: 70, df: 70, sa: 110, sd: 100, sp: 70 }
     },
     Lunatone: {
-        bs: { hp: 90, at: 55, df: 85, sa: 116, sd: 115, sp: 70 }
+        bs: { hp: 84, at: 60, df: 100, sa: 110, sd: 108, sp: 71 }
     },
     Luvdisc: {
         bs: { hp: 43, at: 30, df: 55, sa: 105, sd: 65, sp: 97 }
@@ -4394,7 +4394,7 @@ var DPP_PATCH = {
         abilities: { 0: "Dabble" }
     },
     Solrock: {
-        bs: { hp: 120, at: 95, df: 95, sa: 55, sd: 65, sp: 70 },
+        bs: { hp: 93, at: 100, df: 109, sa: 74, sd: 83, sp: 72 },
         abilities: { 0: "Drought" }
     },
     Spinda: {
