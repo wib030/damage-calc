@@ -379,6 +379,9 @@ function autosetWeather(ability, i) {
 		lastAutoWeather[i] = "Strong Winds";
 		$("#strong-winds").prop("checked", true);
 		break;
+	case "Roche Radius":
+		$("#gravity").prop("checked", true);
+		break;
 	default:
 		lastAutoWeather[i] = "";
 		var newWeather = lastAutoWeather[1 - i] !== "" ? lastAutoWeather[1 - i] : "";
