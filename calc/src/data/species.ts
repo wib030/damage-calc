@@ -4095,7 +4095,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Mawile: {
 	types: ["Steel", "Dragon"],
-	bs: {hp: 50, at: 95, df: 75, sa: 65, sd: 55, sp: 40},
+	bs: {hp: 50, at: 105, df: 85, sa: 65, sd: 55, sp: 40},
 	abilities: { 0: "Huge Power" },
   },
   Medicham: {
