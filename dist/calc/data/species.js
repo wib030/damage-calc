@@ -3458,7 +3458,7 @@ var DPP_PATCH = {
     },
     Lucario: {
         types: ['Fighting', 'Steel'],
-        bs: { hp: 60, at: 110, df: 70, sa: 125, sd: 55, sp: 99 },
+        bs: { hp: 60, at: 114, df: 80, sa: 129, sd: 55, sp: 99 },
         weightkg: 54,
         abilities: { 0: 'Scrappy' }
     },
