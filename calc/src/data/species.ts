@@ -3723,7 +3723,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Staraptor: {
     types: ["Fighting", "Flying"],
-    bs: {hp: 95, at: 120, df: 80, sa: 50, sd: 50, sp: 105},
+    bs: {hp: 95, at: 120, df: 80, sa: 50, sd: 60, sp: 105},
     weightkg: 24.9,
     abilities: {0: 'Intimidate'},
   },
@@ -4200,6 +4200,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 	abilities: {0: "Rain Dish"},
   },
   Pelipper: {
+	bs: { hp: 60, at: 50, df: 100, sa: 95, sd: 70, sp: 65 },
 	abilities: {0: "Drizzle"},
   },
   Persian: {
@@ -4603,7 +4604,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 	abilities: {0: "Serene Grace"},
   },
   Bellossom: {
-	bs: {hp: 75, at: 80, df: 85, sa: 110, sd: 130, sp: 70},
+	bs: {hp: 75, at: 80, df: 95, sa: 110, sd: 130, sp: 70},
 	abilities: {0: "Chlorophyll"},
   },
   Blastoise: {
@@ -4750,7 +4751,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 	abilities: {0: "Arena Trap"},
   },
   Dugtrio: {
-	bs: {hp: 35, at: 90, df: 50, sa: 50, sd: 70, sp: 140},
+	bs: {hp: 35, at: 100, df: 50, sa: 50, sd: 70, sp: 140},
 	abilities: {0: "Arena Trap"},
   },
   Eevee: {
