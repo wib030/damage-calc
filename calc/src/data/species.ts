@@ -4540,7 +4540,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 	abilities: {0: "Filter"},
   },
   Alakazam: {
-	bs: {hp: 55, at: 50, df: 45, sa: 145, sd: 95, sp: 130},
+	bs: {hp: 55, at: 50, df: 45, sa: 145, sd: 85, sp: 130},
 	abilities: {0: "Magic Guard"},
   },
   Swablu: {
@@ -4555,7 +4555,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Ampharos: {
 	types: ["Electric", "Dragon"],
-	bs: {hp: 100, at: 85, df: 95, sa: 120, sd: 100, sp: 65},
+	bs: {hp: 100, at: 85, df: 95, sa: 130, sd: 100, sp: 65},
 	abilities: {0: "Mold Breaker"},
   },
   Arbok: {
@@ -4603,7 +4603,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 	abilities: {0: "Serene Grace"},
   },
   Bellossom: {
-	bs: {hp: 75, at: 80, df: 95, sa: 110, sd: 130, sp: 70},
+	bs: {hp: 75, at: 80, df: 85, sa: 110, sd: 130, sp: 70},
 	abilities: {0: "Chlorophyll"},
   },
   Blastoise: {
@@ -4634,7 +4634,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 	bs: {hp: 100, at: 80, df: 100, sa: 100, sd: 120, sp: 100},
   },
   Chimecho: {
-	bs: {hp: 75, at: 50, df: 80, sa: 95, sd: 160, sp: 70},
+	bs: {hp: 75, at: 50, df: 70, sa: 95, sd: 160, sp: 70},
   },
   Baltoy: {
 	abilities: {0: "Levitate"},
@@ -4698,7 +4698,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Delcatty: {
 	types: ["Normal", "Ghost"],
-	bs: {hp: 95, at: 85, df: 65, sa: 65, sd: 85, sp: 90},
+	bs: {hp: 95, at: 85, df: 65, sa: 65, sd: 85, sp: 70},
 	abilities: {0: "Normalize"},
   },
   Shellder: {
