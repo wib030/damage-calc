@@ -2036,7 +2036,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Gardevoir: {
     types: ['Psychic'],
-    bs: {hp: 68, at: 65, df: 65, sa: 125, sd: 115, sp: 80},
+    bs: {hp: 98, at: 65, df: 65, sa: 125, sd: 115, sp: 80},
     weightkg: 48.4,
     abilities: {0: 'Synchronize'},
   },
@@ -4684,7 +4684,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 	abilities: {0: "Magic Guard"},
   },
   Exeggutor: {
-    bs: {hp: 95, at: 95, df: 85, sa: 135, sd: 75, sp: 65},
+    bs: {hp: 95, at: 115, df: 85, sa: 135, sd: 85, sp: 65},
   },
   Huntail: {
     bs: {hp: 65, at: 114, df: 105, sa: 94, sd: 75, sp: 72},
