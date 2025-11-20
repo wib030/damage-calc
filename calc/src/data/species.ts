@@ -4728,7 +4728,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Charizard: {
 	types: ["Fire", "Dragon"],
-	bs: {hp: 88, at: 94, df: 84, sa: 114, sd: 85, sp: 102},
+	bs: {hp: 98, at: 99, df: 84, sa: 124, sd: 85, sp: 102},
   },
   Elekid: {
 	abilities: {0: "Static"},
