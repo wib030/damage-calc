@@ -4015,7 +4015,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 	bs: {hp: 75, at: 55, df: 70, sa: 75, sd: 95, sp: 121},
   },
   Kabutops: {
-	bs: {hp: 60, at: 135, df: 105, sa: 95, sd: 70, sp: 90},
+	bs: {hp: 60, at: 135, df: 105, sa: 95, sd: 70, sp: 91},
   },
   Kangaskhan: {
 	bs: {hp: 135, at: 105, df: 80, sa: 40, sd: 80, sp: 90},
