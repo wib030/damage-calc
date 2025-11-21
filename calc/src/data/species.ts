@@ -3063,7 +3063,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Dialga: {
     types: ['Steel', 'Dragon'],
-    bs: {hp: 100, at: 120, df: 120, sa: 150, sd: 100, sp: 90},
+    bs: {hp: 100, at: 130, df: 130, sa: 150, sd: 100, sp: 90},
     weightkg: 683,
     gender: 'N',
     abilities: {0: 'Pressure'},
@@ -3526,7 +3526,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Palkia: {
     types: ['Water', 'Dragon'],
-    bs: {hp: 90, at: 120, df: 100, sa: 150, sd: 120, sp: 100},
+    bs: {hp: 90, at: 120, df: 100, sa: 160, sd: 130, sp: 100},
     weightkg: 336,
     gender: 'N',
     abilities: {0: 'Pressure'},
