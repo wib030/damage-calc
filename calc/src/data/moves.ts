@@ -763,7 +763,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Poison Tail': {category: 'Physical', bp: 70, secondaries: true},
   Pound: {category: 'Physical'},
   'Powder Snow': {category: 'Special', secondaries: true},
-  Present: {category: 'Physical', type: "Ice"},
+  Present: {category: 'Physical', type: 'Ice'},
   Psybeam: {category: 'Special', secondaries: true},
   Psychic: {category: 'Special', secondaries: true},
   'Quick Attack': {category: 'Physical'},
