@@ -206,7 +206,7 @@ export const Stats = new (class {
       return {
         type: HP_TYPES[tr(hpTypeX * 15 / 63)] as TypeName,
         // After Gen 6, Hidden Power is always 60 base power
-        power: (gen.num && gen.num < 6) ? tr(hpPowerX * 40 / 63) + 30 : 60,
+        power: (gen.num && (gen.num < 6 && gen.num !== 4)) ? tr(hpPowerX * 40 / 63) + 30 : 60,
       };
     }
   }

@@ -533,24 +533,6 @@ export function calculateBasePowerDPP(
 	}
 	desc.moveBP = basePower;
 	break;
-  case 'Hidden Power Bug':
-  case 'Hidden Power Dark':
-  case 'Hidden Power Dragon':
-  case 'Hidden Power Electric':
-  case 'Hidden Power Fighting':
-  case 'Hidden Power Fire':
-  case 'Hidden Power Flying':
-  case 'Hidden Power Ghost':
-  case 'Hidden Power Grass':
-  case 'Hidden Power Ground':
-  case 'Hidden Power Ice':
-  case 'Hidden Power Poison':
-  case 'Hidden Power Psychic':
-  case 'Hidden Power Rock':
-  case 'Hidden Power Steel':
-  case 'Hidden Power Water':
-    basePower = 60;
-	break;
   default:
     basePower = move.bp;
   }
