@@ -360,7 +360,7 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, virtu
             if (field.isGravity) {
                 w *= 2;
             }
-            basePower = w >= 200 ? 150 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
+            basePower = w >= 500 ? 150 : w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
             desc.moveBP = basePower;
             break;
         case 'Hex':
