@@ -356,10 +356,7 @@ function calculateBasePowerDPP(gen, attacker, defender, move, field, desc, virtu
             break;
         case 'Grass Knot':
         case 'Low Kick':
-            var w = defender.weightkg;
-            if (field.isGravity) {
-                w *= 2;
-            }
+            var w = field.isGravity ? defender.weightkg * 2 : defender.weightkg;
             basePower = w >= 500 ? 150 : w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
             desc.moveBP = basePower;
             break;
