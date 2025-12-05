@@ -174,7 +174,7 @@ exports.Stats = new ((function () {
             }
             return {
                 type: HP_TYPES[tr(hpTypeX * 15 / 63)],
-                power: (gen.num && (gen.num < 6 && gen.num !== 4)) ? tr(hpPowerX * 40 / 63) + 30 : 60
+                power: 60
             };
         }
     };
