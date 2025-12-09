@@ -58,14 +58,14 @@ export function calculateBWXY(
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
 
-  computeFinalStats(gen, attacker, defender, field, 'def', 'spd', 'spe');
+  computeFinalStats(gen, attacker, defender, field, move, 'def', 'spd', 'spe');
 
   checkIntimidate(gen, attacker, defender);
   checkIntimidate(gen, defender, attacker);
   checkDownload(attacker, defender, field.isWonderRoom);
   checkDownload(defender, attacker, field.isWonderRoom);
 
-  computeFinalStats(gen, attacker, defender, field, 'atk', 'spa');
+  computeFinalStats(gen, attacker, defender, field, move, 'atk', 'spa');
 
   checkInfiltrator(attacker, field.defenderSide);
   checkInfiltrator(defender, field.attackerSide);

@@ -30,8 +30,8 @@ export function calculateADV(
   checkForecast(defender, field.weather);
   checkIntimidate(gen, attacker, defender);
   checkIntimidate(gen, defender, attacker);
-  attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide);
-  defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
+  attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide, move);
+  defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide, move);
 
   const desc: RawDesc = {
     attackerName: attacker.name,

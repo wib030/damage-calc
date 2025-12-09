@@ -75,7 +75,7 @@ export function calculateSMSSSV(
   checkEmbody(attacker, gen);
   checkEmbody(defender, gen);
 
-  computeFinalStats(gen, attacker, defender, field, 'def', 'spd', 'spe');
+  computeFinalStats(gen, attacker, defender, field, move, 'def', 'spd', 'spe');
 
   checkIntimidate(gen, attacker, defender);
   checkIntimidate(gen, defender, attacker);
@@ -96,7 +96,7 @@ export function calculateSMSSSV(
     attacker.boosts.spa = Math.min(6, Math.max(-6, attacker.boosts.spa));
   }
 
-  computeFinalStats(gen, attacker, defender, field, 'atk', 'spa');
+  computeFinalStats(gen, attacker, defender, field, move, 'atk', 'spa');
 
   checkInfiltrator(attacker, field.defenderSide);
   checkInfiltrator(defender, field.attackerSide);
