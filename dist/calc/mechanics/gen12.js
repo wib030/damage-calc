@@ -31,7 +31,7 @@ var result_1 = require("../result");
 var util_1 = require("./util");
 function calculateRBYGSC(gen, attacker, defender, move, field) {
     var _a;
-    (0, util_1.computeFinalStats)(gen, attacker, defender, field, move, 'atk', 'def', 'spa', 'spd', 'spe');
+    (0, util_1.computeFinalStats)(gen, attacker, defender, field, 'atk', 'def', 'spa', 'spd', 'spe');
     var desc = {
         attackerName: attacker.name,
         moveName: move.name,

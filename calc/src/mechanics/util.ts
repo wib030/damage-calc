@@ -74,7 +74,6 @@ export function computeFinalStats(
   attacker: Pokemon,
   defender: Pokemon,
   field: Field,
-  move: Move,
   ...stats: StatID[]
 ) {
   const sides: Array<[Pokemon, Side]> =
@@ -82,7 +81,7 @@ export function computeFinalStats(
   for (const [pokemon, side] of sides) {
     for (const stat of stats) {
       if (stat === 'spe') {
-        pokemon.stats.spe = getFinalSpeed(gen, pokemon, field, side, move);
+        pokemon.stats.spe = getFinalSpeed(gen, pokemon, field, side);
       } else {
         pokemon.stats[stat] = getModifiedStat(pokemon.rawStats[stat]!, pokemon.boosts[stat]!, gen);
       }
@@ -90,7 +89,7 @@ export function computeFinalStats(
   }
 }
 
-export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, side: Side, move: Move) {
+export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, side: Side) {
   const weather = field.weather || '';
   const terrain = field.terrain;
   let speed = getModifiedStat(pokemon.rawStats.spe, pokemon.boosts.spe, gen);
@@ -134,10 +133,6 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
     } else if (pokemon.hasItem('Quick Powder') && pokemon.named('Ditto')) {
       speedMods.push(8192);
     }
-  }
-  
-  if (pokemon.hasAbility('Coward') && move.category === 'Status') {
-	  speedMods.push(8192);
   }
 
   speed = OF32(pokeRound((speed * chainMods(speedMods, 410, 131172)) / 4096));
@@ -352,7 +347,7 @@ export function checkMultihitBoost(
       attackerUsedItem = true;
     } else {
       attacker.boosts.spe = Math.max(attacker.boosts.spe - 1, -6);
-      attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide, move);
+      attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide);
       desc.defenderAbility = defender.ability;
     }
     // BUG: Technically Sitrus/Figy Berry + Unburden can also affect the defender's speed, but
@@ -430,7 +425,7 @@ export function checkMultihitBoost(
       desc.defenderAbility = defender.ability;
     }
     defender.boosts.spe = Math.min(defender.boosts.spe + 2, 6);
-    defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide, move);
+    defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
   }
 
   if (move.dropsStats) {

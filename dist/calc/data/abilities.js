@@ -214,7 +214,6 @@ var DPP = ADV.concat([
     'Toss and Turn',
     'Web Master',
     'Antitype',
-    'Coward',
 ]);
 var BW = DPP.concat([
     'Analytic',

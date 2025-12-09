@@ -42,8 +42,8 @@ function calculateDPP(gen, attacker, defender, move, field) {
     (0, util_1.checkIntimidate)(gen, defender, attacker);
     (0, util_1.checkDownload)(attacker, defender);
     (0, util_1.checkDownload)(defender, attacker);
-    attacker.stats.spe = (0, util_1.getFinalSpeed)(gen, attacker, field, field.attackerSide, move);
-    defender.stats.spe = (0, util_1.getFinalSpeed)(gen, defender, field, field.defenderSide, move);
+    attacker.stats.spe = (0, util_1.getFinalSpeed)(gen, attacker, field, field.attackerSide);
+    defender.stats.spe = (0, util_1.getFinalSpeed)(gen, defender, field, field.defenderSide);
     var desc = {
         attackerName: attacker.name,
         moveName: move.name,

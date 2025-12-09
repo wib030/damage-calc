@@ -14,7 +14,7 @@ export function calculateRBYGSC(
   move: Move,
   field: Field
 ) {
-  computeFinalStats(gen, attacker, defender, field, move, 'atk', 'def', 'spa', 'spd', 'spe');
+  computeFinalStats(gen, attacker, defender, field, 'atk', 'def', 'spa', 'spd', 'spe');
 
   const desc: RawDesc = {
     attackerName: attacker.name,

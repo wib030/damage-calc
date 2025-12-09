@@ -23,7 +23,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
     (0, util_2.checkDauntlessShield)(defender, gen);
     (0, util_2.checkEmbody)(attacker, gen);
     (0, util_2.checkEmbody)(defender, gen);
-    (0, util_2.computeFinalStats)(gen, attacker, defender, field, move, 'def', 'spd', 'spe');
+    (0, util_2.computeFinalStats)(gen, attacker, defender, field, 'def', 'spd', 'spe');
     (0, util_2.checkIntimidate)(gen, attacker, defender);
     (0, util_2.checkIntimidate)(gen, defender, attacker);
     (0, util_2.checkDownload)(attacker, defender, field.isWonderRoom);
@@ -39,7 +39,7 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
                     : 1;
         attacker.boosts.spa = Math.min(6, Math.max(-6, attacker.boosts.spa));
     }
-    (0, util_2.computeFinalStats)(gen, attacker, defender, field, move, 'atk', 'spa');
+    (0, util_2.computeFinalStats)(gen, attacker, defender, field, 'atk', 'spa');
     (0, util_2.checkInfiltrator)(attacker, field.defenderSide);
     (0, util_2.checkInfiltrator)(defender, field.attackerSide);
     var desc = {

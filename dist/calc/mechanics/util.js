@@ -89,11 +89,11 @@ function getModifiedStat(stat, mod, gen) {
     return stat;
 }
 exports.getModifiedStat = getModifiedStat;
-function computeFinalStats(gen, attacker, defender, field, move) {
+function computeFinalStats(gen, attacker, defender, field) {
     var e_1, _a, e_2, _b;
     var stats = [];
-    for (var _i = 5; _i < arguments.length; _i++) {
-        stats[_i - 5] = arguments[_i];
+    for (var _i = 4; _i < arguments.length; _i++) {
+        stats[_i - 4] = arguments[_i];
     }
     var sides = [[attacker, field.attackerSide], [defender, field.defenderSide]];
     try {
@@ -103,7 +103,7 @@ function computeFinalStats(gen, attacker, defender, field, move) {
                 for (var stats_2 = (e_2 = void 0, __values(stats)), stats_2_1 = stats_2.next(); !stats_2_1.done; stats_2_1 = stats_2.next()) {
                     var stat = stats_2_1.value;
                     if (stat === 'spe') {
-                        pokemon.stats.spe = getFinalSpeed(gen, pokemon, field, side, move);
+                        pokemon.stats.spe = getFinalSpeed(gen, pokemon, field, side);
                     }
                     else {
                         pokemon.stats[stat] = getModifiedStat(pokemon.rawStats[stat], pokemon.boosts[stat], gen);
@@ -128,7 +128,7 @@ function computeFinalStats(gen, attacker, defender, field, move) {
     }
 }
 exports.computeFinalStats = computeFinalStats;
-function getFinalSpeed(gen, pokemon, field, side, move) {
+function getFinalSpeed(gen, pokemon, field, side) {
     var weather = field.weather || '';
     var terrain = field.terrain;
     var speed = getModifiedStat(pokemon.rawStats.spe, pokemon.boosts.spe, gen);
@@ -171,9 +171,6 @@ function getFinalSpeed(gen, pokemon, field, side, move) {
         else if (pokemon.hasItem('Quick Powder') && pokemon.named('Ditto')) {
             speedMods.push(8192);
         }
-    }
-    if (pokemon.hasAbility('Coward') && move.category === 'Status') {
-        speedMods.push(8192);
     }
     speed = OF32(pokeRound((speed * chainMods(speedMods, 410, 131172)) / 4096));
     if (pokemon.hasStatus('par') && !pokemon.hasAbility('Quick Feet')) {
@@ -374,7 +371,7 @@ function checkMultihitBoost(gen, attacker, defender, move, field, desc, attacker
         }
         else {
             attacker.boosts.spe = Math.max(attacker.boosts.spe - 1, -6);
-            attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide, move);
+            attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide);
             desc.defenderAbility = defender.ability;
         }
     }
@@ -455,7 +452,7 @@ function checkMultihitBoost(gen, attacker, defender, move, field, desc, attacker
             desc.defenderAbility = defender.ability;
         }
         defender.boosts.spe = Math.min(defender.boosts.spe + 2, 6);
-        defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide, move);
+        defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
     }
     if (move.dropsStats) {
         if (attacker.hasAbility('Unaware')) {
