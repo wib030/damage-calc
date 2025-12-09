@@ -177,6 +177,7 @@ const DPP = ADV.concat([
   'Toss and Turn',
   'Web Master',
   'Antitype',
+  'Coward',
 ]);
 
 const BW = DPP.concat([
