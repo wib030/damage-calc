@@ -509,7 +509,7 @@ $(".move-selector").change(function () {
 					pokeObj.find(".hp .dvs").val(hpDV);
 				}
 				pokeObj.change();
-				moveGroupObj.children(".move-bp").val(gen >= 6 ? 60 : 70);
+				moveGroupObj.children(".move-bp").val(60);
 			}
 		} else {
 			moveGroupObj.children(".move-bp").val(actual.power);
