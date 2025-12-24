@@ -215,6 +215,7 @@ var DPP = ADV.concat([
     'Web Master',
     'Antitype',
     'Coward',
+    'Peal Away',
 ]);
 var BW = DPP.concat([
     'Analytic',

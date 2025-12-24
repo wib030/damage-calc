@@ -178,6 +178,7 @@ const DPP = ADV.concat([
   'Web Master',
   'Antitype',
   'Coward',
+  'Peal Away',
 ]);
 
 const BW = DPP.concat([
