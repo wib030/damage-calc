@@ -4867,7 +4867,7 @@ var DPP_PATCH = {
         bs: { hp: 80, at: 90, df: 80, sa: 130, sd: 110, sp: 118 }
     },
     Latias: {
-        bs: { hp: 80, at: 80, df: 90, sa: 110, sd: 130, sp: 118 }
+        bs: { hp: 90, at: 80, df: 90, sa: 110, sd: 130, sp: 118 }
     },
     Sudowoodo: {
         bs: { hp: 75, at: 120, df: 125, sa: 50, sd: 65, sp: 25 },
