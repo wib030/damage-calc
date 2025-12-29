@@ -4608,7 +4608,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 	abilities: {0: 'Chlorophyll'},
   },
   Blastoise: {
-	bs: {hp: 89, at: 83, df: 120, sa: 105, sd: 105, sp: 78},
+	bs: {hp: 89, at: 83, df: 120, sa: 105, sd: 105, sp: 60},
 	abilities: {0: 'Torrent'},
   },
   Breloom: {
