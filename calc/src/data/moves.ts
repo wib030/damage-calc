@@ -686,7 +686,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Snore: {category: 'Special', bp: 60, secondaries: true},
   Thunderbolt: {category: 'Special', bp: 90, secondaries: true},
   'Vine Whip': {category: 'Physical', bp: 45},
-  'Weather Ball': {category: 'Special', bp: 60, type: 'Flying'},
+  'Weather Ball': {category: 'Special', bp: 55, type: 'Flying'},
   'Ice Ball': {category: 'Physical'},
   Rollout: {category: 'Physical'},
   'Sheer Cold': {category: 'Special'},
