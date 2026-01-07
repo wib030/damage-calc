@@ -4430,7 +4430,7 @@ var DPP_PATCH = {
         abilities: { 0: 'Corrosion' }
     },
     Swalot: {
-        bs: { hp: 120, at: 73, df: 83, sa: 73, sd: 83, sp: 55 },
+        bs: { hp: 120, at: 73, df: 93, sa: 73, sd: 83, sp: 55 },
         abilities: { 0: 'Corrosion' }
     },
     Swampert: {
