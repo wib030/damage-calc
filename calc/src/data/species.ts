@@ -2689,6 +2689,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Dusclops: {nfe: true},
   Electabuzz: {
 	nfe: true,
+	bs: { hp: 65, at: 83, df: 77, sa: 95, sd: 115, sp: 105 },
 	abilities: {0: 'Static'},
   },
   Gligar: {
