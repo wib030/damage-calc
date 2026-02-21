@@ -4106,11 +4106,11 @@ var DPP_PATCH = {
         bs: { hp: 90, at: 135, df: 80, sa: 108, sd: 85, sp: 55 }
     },
     Slugma: {
-        abilities: { 0: 'Water Absorb' }
+        abilities: { 0: 'Exsolution' }
     },
     Magcargo: {
         bs: { hp: 80, at: 105, df: 185, sa: 115, sd: 80, sp: 30 },
-        abilities: { 0: 'Water Absorb' }
+        abilities: { 0: 'Exsolution' }
     },
     Swinub: {
         abilities: { 0: 'Thick Fat' }

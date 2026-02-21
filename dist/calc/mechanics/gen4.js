@@ -178,7 +178,7 @@ function calculateDPP(gen, attacker, defender, move, field) {
     var ignoresWonderGuard = move.hasType('???');
     if ((!ignoresWonderGuard && defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
         (move.hasType('Fire') && defender.hasAbility('Flash Fire')) ||
-        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Water Absorb', 'Storm Drain')) ||
+        (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Water Absorb', 'Storm Drain', 'Exsolution')) ||
         (move.hasType('Electric') && defender.hasAbility('Motor Drive', 'Volt Absorb', 'Lightning Rod')) ||
         (move.hasType('Ground') && !field.isGravity &&
             !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
