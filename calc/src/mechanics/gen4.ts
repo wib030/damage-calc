@@ -928,15 +928,6 @@ function calculateFinalModsDPP(
     baseDamage = Math.floor(baseDamage / 2);
     desc.defenderAbility = defender.ability;
   }
-  
-  if (defender.hasAbility('Unown Force') && move.type !== '???') {
-	if (move.type === 'Normal') {
-	  baseDamage = Math.floor(baseDamage * 2);
-	} else {
-	  baseDamage = Math.floor(baseDamage / 2);
-	}
-	desc.defenderAbility = defender.ability;
-  }
 
   return baseDamage;
 }

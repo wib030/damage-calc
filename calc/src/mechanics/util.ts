@@ -157,6 +157,15 @@ export function getMoveEffectiveness(
   if (defender?.hasAbility('Color Change')) {
 	type = move.type;
   }
+  
+  if (defender?.hasAbility('Unown Force') && move.type !== '???') {
+	if (type === 'Normal') {
+	  return 2;
+	} else {
+	  return 0.5;
+	}
+  }
+  
   if (isGhostRevealed && type === 'Ghost' && move.hasType('Normal', 'Fighting')) {
     return 1;
   } else if (attacker?.hasAbility('Corrosion') && type === 'Steel' && move.hasType('Poison')) {

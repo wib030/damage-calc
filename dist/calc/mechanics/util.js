@@ -184,6 +184,14 @@ function getMoveEffectiveness(gen, move, type, isGhostRevealed, isGravity, isRin
     if (defender === null || defender === void 0 ? void 0 : defender.hasAbility('Color Change')) {
         type = move.type;
     }
+    if ((defender === null || defender === void 0 ? void 0 : defender.hasAbility('Unown Force')) && move.type !== '???') {
+        if (type === 'Normal') {
+            return 2;
+        }
+        else {
+            return 0.5;
+        }
+    }
     if (isGhostRevealed && type === 'Ghost' && move.hasType('Normal', 'Fighting')) {
         return 1;
     }
