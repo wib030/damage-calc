@@ -159,7 +159,7 @@ export function getMoveEffectiveness(
   }
   
   if (defender?.hasAbility('Unown Force') && move.type !== '???') {
-	if (type === 'Normal') {
+	if (move.type === 'Normal') {
 	  return 2;
 	} else {
 	  return 0.5;

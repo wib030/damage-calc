@@ -185,7 +185,7 @@ function getMoveEffectiveness(gen, move, type, isGhostRevealed, isGravity, isRin
         type = move.type;
     }
     if ((defender === null || defender === void 0 ? void 0 : defender.hasAbility('Unown Force')) && move.type !== '???') {
-        if (type === 'Normal') {
+        if (move.type === 'Normal') {
             return 2;
         }
         else {
