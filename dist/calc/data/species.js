@@ -4215,6 +4215,7 @@ var DPP_PATCH = {
         bs: { hp: 73, at: 76, df: 75, sa: 91, sd: 100, sp: 111 },
         abilities: { 0: 'Drought' }
     },
+    Hoothoot: { abilities: { 0: 'Keen Eye' } },
     Noctowl: {
         bs: { hp: 130, at: 50, df: 50, sa: 86, sd: 126, sp: 70 },
         abilities: { 0: 'Intimidate' }
