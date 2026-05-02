@@ -3236,7 +3236,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Bug': {
         types: ['Flying', 'Steel'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3244,7 +3244,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Dark': {
         types: ['Fighting', 'Dark'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3252,7 +3252,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Dragon': {
         types: ['Ice', 'Steel'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3260,7 +3260,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Electric': {
         types: ['Ground', 'Dragon'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3268,7 +3268,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Fighting': {
         types: ['Flying', 'Ghost'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3276,7 +3276,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Fire': {
         types: ['Water', 'Dragon'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3284,7 +3284,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Flying': {
         types: ['Electric', 'Steel'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3292,7 +3292,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Ghost': {
         types: ['Ghost', 'Normal'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3300,7 +3300,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Grass': {
         types: ['Bug', 'Steel'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3308,7 +3308,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Ground': {
         types: ['Water', 'Flying'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3316,7 +3316,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Ice': {
         types: ['Fighting', 'Steel'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3324,7 +3324,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Poison': {
         types: ['Psychic', 'Steel'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3332,7 +3332,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Psychic': {
         types: ['Ghost', 'Dark'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3340,7 +3340,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Rock': {
         types: ['Fighting', 'Ground'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3348,7 +3348,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Steel': {
         types: ['Fire', 'Water'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
@@ -3356,7 +3356,7 @@ var DPP_PATCH = {
     },
     'Giratina-Anti-Water': {
         types: ['Electric', 'Dragon'],
-        bs: { hp: 150, at: 100, df: 120, sa: 100, sd: 120, sp: 90 },
+        bs: { hp: 150, at: 120, df: 100, sa: 120, sd: 100, sp: 90 },
         weightkg: 750,
         gender: 'N',
         abilities: { 0: 'Antitype' },
