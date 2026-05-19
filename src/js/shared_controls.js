@@ -334,7 +334,7 @@ $("input[name='weather']").change(function () {
 var lastManualWeather = "";
 var lastAutoWeather = ["", ""];
 function autosetWeather(ability, i) {
-
+	var pokeObj = $(this).closest(".poke-info");
 	if ($('.locked-weather').length) {
 		return;
 	}
@@ -381,6 +381,10 @@ function autosetWeather(ability, i) {
 		break;
 	case "Roche Radius":
 		$("#gravity").prop("checked", true);
+		break;
+	case "Ghostly":
+		pokeObj.find(".type1").val('Ghost');
+		pokeObj.find(".type2").val('(none)');
 		break;
 	default:
 		lastAutoWeather[i] = "";
