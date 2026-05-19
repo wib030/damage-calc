@@ -28,7 +28,15 @@ export function calculateDPP(
   field: Field
 ) {
   // #region Initial
-
+  
+  if (attacker.hasAbility('Ghostly')) {
+	  attacker.types = ['Ghost'];
+  }
+  
+  if (defender.hasAbility('Ghostly')) {
+	  defender.types = ['Ghost'];
+  }
+  
   checkAirLock(attacker, field);
   checkAirLock(defender, field);
   checkForecast(attacker, field.weather);

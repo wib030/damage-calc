@@ -32,6 +32,12 @@ var util_1 = require("./util");
 function calculateDPP(gen, attacker, defender, move, field) {
     var _a;
     var _b;
+    if (attacker.hasAbility('Ghostly')) {
+        attacker.types = ['Ghost'];
+    }
+    if (defender.hasAbility('Ghostly')) {
+        defender.types = ['Ghost'];
+    }
     (0, util_1.checkAirLock)(attacker, field);
     (0, util_1.checkAirLock)(defender, field);
     (0, util_1.checkForecast)(attacker, field.weather);
