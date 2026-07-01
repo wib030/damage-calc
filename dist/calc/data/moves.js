@@ -1023,7 +1023,7 @@ var DPP_PATCH = {
         makesContact: true,
         category: 'Physical'
     },
-    'Attack Order': { bp: 90, type: 'Bug', category: 'Physical' },
+    'Attack Order': { bp: 100, type: 'Bug', category: 'Physical' },
     Brine: { bp: 65, type: 'Water', category: 'Special' },
     'Bullet Punch': {
         bp: 40,
