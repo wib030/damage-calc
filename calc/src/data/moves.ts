@@ -1359,6 +1359,13 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     secondaries: true,
   },
+  'Invitriolize': {
+    bp: 100,
+    type: 'Bug',
+    makesContact: true,
+    category: 'Physical',
+	secondaries: true,
+  },
 };
 
 const DPP: {[name: string]: MoveData} = extend(true, {}, ADV, DPP_PATCH);

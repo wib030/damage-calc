@@ -1351,6 +1351,13 @@ var DPP_PATCH = {
         type: 'Psychic',
         category: 'Special',
         secondaries: true
+    },
+    'Invitriolize': {
+        bp: 100,
+        type: 'Bug',
+        makesContact: true,
+        category: 'Physical',
+        secondaries: true
     }
 };
 var DPP = (0, util_1.extend)(true, {}, ADV, DPP_PATCH);
