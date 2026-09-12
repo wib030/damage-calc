@@ -4921,6 +4921,19 @@ var DPP_PATCH = {
         bs: { hp: 140, at: 50, df: 95, sa: 70, sd: 65, sp: 35 },
         weightkg: 130,
         abilities: { 0: 'Thick Fat' }
+    },
+    Tamagon: {
+        nfe: true,
+        types: ['Bug'],
+        bs: { hp: 45, at: 30, df: 35, sa: 20, sd: 20, sp: 45 },
+        weightkg: 2.9,
+        abilities: { 0: 'Swarm' }
+    },
+    Ryussa: {
+        types: ['Dragon', 'Bug'],
+        bs: { hp: 87, at: 109, df: 96, sa: 132, sd: 82, sp: 105 },
+        weightkg: 82,
+        abilities: { 0: 'Levitate' }
     }
 };
 var DPP = (0, util_1.extend)(true, {}, ADV, DPP_PATCH);
