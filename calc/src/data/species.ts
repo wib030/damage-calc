@@ -4897,7 +4897,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Dragon', 'Bug'],
     bs: { hp: 87, at: 109, df: 96, sa: 132, sd: 82, sp: 105 },
     weightkg: 82,
-    abilities: {0: 'Levitate'},
+    abilities: {0: 'Compound Eyes'},
   },
 };
 
