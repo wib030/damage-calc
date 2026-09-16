@@ -4924,10 +4924,10 @@ var DPP_PATCH = {
     },
     Tamagon: {
         nfe: true,
-        types: ['Bug'],
-        bs: { hp: 45, at: 30, df: 35, sa: 20, sd: 20, sp: 45 },
+        types: ['Bug', 'Poison'],
+        bs: { hp: 45, at: 64, df: 32, sa: 76, sd: 62, sp: 45 },
         weightkg: 2.9,
-        abilities: { 0: 'Swarm' }
+        abilities: { 0: 'Poison Touch' }
     },
     Ryussa: {
         types: ['Dragon', 'Bug'],
