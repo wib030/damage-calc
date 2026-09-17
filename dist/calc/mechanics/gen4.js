@@ -531,7 +531,8 @@ function calculateBPModsDPP(attacker, defender, move, field, desc, basePower) {
         desc.attackerAbility = attacker.ability;
     }
     if ((defender.hasAbility('Heatproof') && move.hasType('Fire')) ||
-        (defender.hasAbility('Thick Fat') && (move.hasType('Fire', 'Ice')))) {
+        (defender.hasAbility('Thick Fat') && (move.hasType('Fire', 'Ice'))) ||
+        (defender.hasAbility('Ryunovirus') && (move.hasType('Dragon', 'Bug')))) {
         basePower = Math.floor(basePower * 0.5);
         desc.defenderAbility = defender.ability;
     }

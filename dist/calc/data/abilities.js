@@ -217,6 +217,7 @@ var DPP = ADV.concat([
     'Coward',
     'Peal Away',
     'Exsolution',
+    'Ryunovirus',
 ]);
 var BW = DPP.concat([
     'Analytic',

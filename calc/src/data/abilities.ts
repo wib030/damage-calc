@@ -180,6 +180,7 @@ const DPP = ADV.concat([
   'Coward',
   'Peal Away',
   'Exsolution',
+  'Ryunovirus',
 ]);
 
 const BW = DPP.concat([

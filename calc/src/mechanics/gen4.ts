@@ -645,7 +645,8 @@ export function calculateBPModsDPP(
   }
 
   if ((defender.hasAbility('Heatproof') && move.hasType('Fire')) ||
-      (defender.hasAbility('Thick Fat') && (move.hasType('Fire', 'Ice')))) {
+      (defender.hasAbility('Thick Fat') && (move.hasType('Fire', 'Ice'))) ||
+	  (defender.hasAbility('Ryunovirus') && (move.hasType('Dragon', 'Bug')))) {
     basePower = Math.floor(basePower * 0.5);
     desc.defenderAbility = defender.ability;
   } else if (defender.hasAbility('Dry Skin') && move.hasType('Fire')) {
