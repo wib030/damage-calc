@@ -4787,7 +4787,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 	abilities: {0: 'Anger Point'},
   },
   Clamperl: {
-	abilities: {0: 'Slush Rush'},
+	abilities: {0: 'Swift Swim'},
   },
   Omanyte: {
 	bs: { hp: 35, at: 40, df: 75, sa: 90, sd: 55, sp: 35 },
